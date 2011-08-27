@@ -9,6 +9,9 @@ In terms of practical computing, I use both R and Python in the course, sprinkle
 
 For the Fall 2011 semester I've decided to try a little experiment -- I'm putting all the course materials under a Creative Commons License (see below) in a public repository on GitHub. Hosting the course materials on GitHub has a number of advantages from my perspective -- version control, a wiki, etc.  I also like the idea of making my course materials freely available for re-use and re-mixing. In the past several years I've had some very positive feedback from a number of postdocs and students who haven't taken the course but used the course materials found on my lab wiki for self-study. Moving the course to GitHub is my modest attempt at making the course materials more widely available for anyone who is interested.
 
+# Wiki
+
+The [Bio 313 Wiki](https://github.com/pmagwene/Bio313/wiki) is hosted on GitHub.
 
 
 # License
