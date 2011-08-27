@@ -1,0 +1,94 @@
+
+\documentclass[11pt,letterpaper]{article}
+\usepackage{kpfonts}
+\usepackage{indentfirst}   %% if you want to have the first paragraph of each section indented %%
+\usepackage[top=0.75in, bottom=0.75in, left=1in, right=1in]{geometry} %% for setting page margins %%
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true
+}
+\usepackage{titlesec} % for more compact section spacing
+\titlespacing{\section}{0pt}{*2}{*1}
+
+\begin{document}
+
+
+\section*{\centering Biology 313: Scientific Computing for Biologists, Fall 2011}
+\begin{center}
+\begin{tabular}{ll}
+\textbf{Instructor}: Paul M. Magwene & \textbf{Office}: FFSC 4103\\
+\textbf{Phone}: 613-8159 & \textbf{Email}: paul.magwene@duke.edu
+\end{tabular}
+\end{center}
+
+\section*{Description}
+
+The focus of this course is statistical computing for the biological sciences with an emphasis on common multivariate statistical methods and techniques for exploratory data analysis. A major goal of the course is to help graduate students in the biological sciences develop practical insights into methods that they are likely to encounter in their own research, and the potential advantages and pitfalls that come with their use. 
+
+\section*{Prerequisites}
+
+Enrollment is limited to graduate students or undergraduates with permission of instructor. No previous programming experience is required, but familiarity with basic statistical concepts (equivalent of STA 213) is assumed. 
+
+\section*{Grading}
+Grading is based on weekly homework assignments. These homework assignments will typically consist of statistical problem solving exercises and/or programming tasks.
+
+\section*{Course Website}
+
+\href{https://github.com/pmagwene/Bio313}{https://github.com/pmagwene/Bio313}
+
+\renewcommand{\refname}{Texts}
+\begin{thebibliography}{99}
+
+\bibitem{Adler} Janert, P. K. 2010. Data Analysis with Open Source Tools. O'Reilly, Cambridge.
+
+\bibitem{CSpy}A. B. Downey, J. Elkner  and C.\ Meyers. How to think like a computer scientist: learning with Python. Available in \href{http://www.greenteapress.com/thinkpython/html/index.html}{HTML} and \href{http://www.greenteapress.com/thinkpython/thinkpython.pdf}{PDF} form under an open source license.
+
+\bibitem{Wickens} Wickens, T.\ D. 1995. The geometry of multivariate statistics. Lawrence Earlbaum Associates, New Jersey. 
+
+\end{thebibliography}
+
+\renewcommand{\refname}{Other Recommended Texts}
+
+\begin{thebibliography}{99}
+\setcounter{enumiv}{5}
+\bibitem{Hamilton} Hamilton, A.\ G. 1989. Linear algebra: An introduction with concurrent examples. Cambridge University Press, Cambridge.
+
+A well organized and readable introduction to linear algebra. If your linear algebra skills are shakey (or non-existent) I'd recommend working through some of the exercises in each chapter.
+
+\bibitem{Krzanowski} Krzanowski, W.\ J. 2000. Principles of multivariate analysis. Oxford University Press, New York.
+
+I would have made this a required text but it's become unreasonably expensive (I bought my copy in 2003 for \$25 used on Amazon, it's now over \$100 used). Nonetheless, if you plan on having just on book on multivariate statistics on your bookshelf this is the one I'd recommend.
+
+\bibitem{Sokal} Sokal, R.\ R. and F.\ J. Rohlf. 1995. Biometry. W.\ H. Freeman, New York.
+
+Another good text to have on your bookshelf. A readable and well organized basic statistics book with examples drawn from the biological literature.
+
+\end{thebibliography}
+
+\section*{Syllabus}
+
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{rp{5.5in}}
+\multicolumn{1}{c}{{\sl Date}} & \multicolumn{1}{c}{{\sl Topic}} \\
+August 30 & Introduction; Getting Acquainted with R and Python, Literate Programming \\
+September 6 & Data as Vectors and Exploratory Data Analysis; vector operations, dot product, correlation, regression as projection, univariate visualizations\\
+September 13 & Linear Algebra Review I; Descriptive statistics as matrix operations, multivariate visualizations \\
+September 20 & Linear Algebra Review II; Regression models \\
+September 27 & Eigenvectors and Eigenvalues; Principal Components Analysis \\
+October 4 & Singular Value Decomposition, Biplots, and Correspondence Analysis\\
+October 11 & \multicolumn{1}{c}{{\sc Fall Break}} \\
+October 18 & Discriminant analysis and Canonical Variate Analysis\\
+November 25 & Analyses based on Similarity/Distance I; Hierarchical and K-means clustering\\
+November 1 & Analyses based on Similarity/Distance II; Multidimensional scaling\\
+November 8 & Randomization and Monte Carlo Methods; Jackknife, Bootstrap\\
+November 15 & Building Bioinformatics Pipelines I; Pipes, redirection, subprocesses \\
+November 22 & Building Bioinformatics Pipelines II; Putting the concepts to work \\ 
+November 29 & Building Bioinformatics Pipelines III; Polishing the interface and generating publication quality graphics \\ 
+& \multicolumn{1}{c}{{\sc Graduate Classes End December 2}} \\
+\end{tabular}
+\end{center}
+%$^{*}$ We will need to reschedule the Nov. 30 class session as I will be travelling.
+
+
+\end{document}
