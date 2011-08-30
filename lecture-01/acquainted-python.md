@@ -1,16 +1,36 @@
 # Getting Acquainted with Python
 
-## Starting Python
+## Starting the Python interpretter
 
-On Windows Python can be started from the start menu. On Unix/Linux systems you can invoke Python by typing `python` at a shell prompt.
+The Python interpretter can be started in a number of ways. The simplest way is to open a terminal and type `python`. Go ahead and do this to make sure you have a working version of the default Python interpretter available on your system.  From within the default interpretter you can type `Ctrl-d` (Unix,Mac) or `Ctrl-z` (Windows) to stop the interpretter and return to the command line.
 
-## Various Python Shells and GUIs
+For interactive use, the default interpretter isn't very feature rich, so the Python community has developed a number of GUIs or shell interfaces that provide more functionality. For this class we will be using a shell interface called [IPython](http://ipython.org/). 
 
-There are variety of GUIs and console based programs that provide convenient access to the Python interpeter. The standard Python distribution comes with a simple GUI called ‘IDLE’ that can be invoked from the start menu (on Windows) or the command line.
+Recent versions of IPython (v0.11) provides both terminal and GUI-based shells. The EPD installer on Windows will place a number of shortcuts on your desktop, including ones that read `PyLab` and `QtConsole`.  These are a terminal based and GUI based versions of IPython respectively, both of which automatically load key numerical and plotting libraries. Click on both of these icons to compare their interfaces. 
 
-For this class we’ll be using a console based Python shell called ‘IPython’. If you don’t have much experience using console based programs you might initially find yourself at a bit of a loss as console programs tend not to be quite as user friendly as GUIs. However, IPython provides a variety of features that will make programming more efficient and easier in the long run.
+EPD on OS X doesn't create any convenient icon shortcuts.  To get the functionality of `PyLab`, run the following in a terminal:
 
-For now we’ll use the plain python shell. You can start python by clicking on the appropriate icon in the start menu or by typing `python` on the command line.
+	$ ipython --pylab
+	
+To get the equivalent of `QtConsole` you can run ipython with the following arguments:
+
+	$ ipython qtconsole --pylab=inline
+	
+If you'd prefer a dark background, call QtConsole as so:
+
+	$ ipython qtconsole --pylab=inline --colors=linux
+
+QtConsole is a recent addition to IPython and there may still be bugs to be sorted out, but it provides some very nice features like 'tooltips' (shows you useful information about functions as you type) and the ability to embed figures and plots directly into the console, and the ability to save a console session as a web page (with figures embedded!).
+
+### Quick IPython tips
+
+IPython has a wealth of features, many of which are detailed in its [documentation](http://ipython.org/documentation.html). There are also a number of videos available on the IPython page which demonstrate some of it's power.  Here are a few key features to get you started and save you time:
+
+- *Don't retype that long command!* -- You can scroll back and forth through your previous inputs using the up and down arrow keys (or `Ctrl-p` and `Ctrl-n`); once you find what you were looking forward you can edit or change it. For even faster searching, start to type the beginning of the input and then hit the up arrow.
+
+- *Navigate using standard Unix commands* -- IPython lets you use standard Unix commands like `ls` and `cd` and `pwd` to navigate around your file system (even on Windows!)
+
+- *Use \<Tab\> for command completion* -- when your navigating paths or typing function names in  you can hit the `<Tab>` key and IPython will show you matching functions or filenames (depending on context). For example, type `cd ./<Tab>` and  IPython will show you all the files and subdirectories of your current working directory. Type a few of the letters of the names of one of the subdirectories and hit `<Tab>` again and IPython will complete the name if it finds a unique match. Tab completeion allows you to very quickly navigate around the file system or enter function names so get the hang of using it.
 
 ## Accessing the Documentation in Python
 
@@ -25,6 +45,21 @@ interpreter has a help function that works similar to R's `help()`.
     
         Returns the sum of a sequence of numbers (NOT strings) plus the value
         of parameter 'start'.  When the sequence is empty, returns start.
+
+IPython also lets you use proceed the function name with a question mark, like in R:
+
+	In [1]: ?sum
+	Type:       builtin_function_or_method
+	Base Class: <type 'builtin_function_or_method'>
+	String Form:<built-in function sum>
+	Namespace:  Python builtin
+	Docstring:
+	sum(sequence[, start]) -> value
+
+	Returns the sum of a sequence of numbers (NOT strings) plus the value
+	of parameter 'start' (which defaults to 0).  When the sequence is
+	empty, returns start.
+
 
 ## Using Python as a Calculator
 
@@ -262,13 +297,12 @@ one-indexed.
 Numpy arrays support the comparison operators and return arrays of
 booleans.
 
-> \>\>\> x < 5 array([ True, True, False, False, False], dtype=bool)
-> \>\>\> x \>= 6 array([0, 0, 1, 1, 1])
+ 	>>> x < 5 
+	array([ True, True, False, False, False], dtype=bool)
+ 	>>> x >= 6 
+	array([0, 0, 1, 1, 1])
 
-NumPy  also supports the
-combination of comparison and indexing that R vectors can do. There are
-also a variety of more complicated indexing functions available for
-NumPy; see the [Indexing Routines](http://docs.scipy.org/doc/numpy/reference/routines.indexing.html) in the Numpy docs.
+NumPy  also supports the combination of comparison and indexing that R vectors can do. There are also a variety of more complicated indexing functions available for NumPy; see the [Indexing Routines](http://docs.scipy.org/doc/numpy/reference/routines.indexing.html) in the Numpy docs.
 
     >>> x[x < 5]
     array([2, 4])
@@ -295,3 +329,6 @@ arrays however you must use the functions defined in the `numpy` module.
     >>> import numpy
     >>> numpy.cos(x)
     array([-0.41614684, -0.65364362,  0.96017029, -0.14550003, -0.83907153])
+
+## Simple Plots in Python
+
