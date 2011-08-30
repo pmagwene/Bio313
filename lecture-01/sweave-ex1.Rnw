@@ -1,0 +1,21 @@
+\documentclass[12pt,b5paper]{article}
+\usepackage{tikz}
+\usepackage[margin=0.25in]{geometry}
+\pagestyle{empty} % suppress page numbering for this example
+
+\begin{document}
+
+Here are some trivial R examples that will help to 
+illustrate how Sweave works:
+
+<<>>= 
+z <- 1:10 
+mean(z) 
+summary(z) 
+z[z > 5] 
+@
+
+The above text was a code block woven into my description. 
+It gets evaluated and integrated into the output. Cool, eh?
+
+\end{document}

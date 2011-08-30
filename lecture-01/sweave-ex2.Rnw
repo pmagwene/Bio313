@@ -1,0 +1,31 @@
+\documentclass[12pt,b5paper,landscape]{article}
+\usepackage{tikz}
+\usepackage[margin=0.25in]{geometry}
+\pagestyle{empty} % suppress page numbering for this example
+
+\begin{document}
+    
+A Sweave example that incorporates graphics is always nice.
+First, let's generate the data by drawing 1000 observations
+from the standard normal ($\mu=0, \sigma=1$).
+
+<<>>= 
+data <- rnorm(1000) # 1000 obs. drawn from standard normal
+@
+
+Next, we create a summary table:
+
+<<>>=
+summary(data)
+@
+
+Finally, we create a nice figure in which a density estimate
+is superimposed on a histogram:
+
+\begin{center}
+<<fig=True,width=3,height=3,pdf=True>>=
+hist(data,breaks=50,freq=F,main='Hist rnorm(1000)',xlab='$x$')
+lines(density(data),col='red',lwd=2)
+@
+\end{center}
+\end{document}
