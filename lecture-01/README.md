@@ -6,12 +6,11 @@
 ## Hands-On for Class Session 1
 
 - If you haven't done so already, install all the software and go over the materials on the [Course Tools](https://github.com/pmagwene/Bio313/tree/master/course-tools) page.
-
 - [Getting acquainted with R](https://github.com/pmagwene/Bio313/tree/master/lecture-01/acquainted-R.md)
 - [Getting acquainted with Python](https://github.com/pmagwene/Bio313/tree/master/lecture-01/acquainted-python.md)
 - [Reproducible Research with Sweave and Pweave](https://github.com/pmagwene/Bio313/tree/master/lecture-01/intro-to-sweave.md)
 
-  - Sweave and Pweave templates
+  - [Sweave and Pweave templates](https://github.com/pmagwene/Bio313/tree/master/sweave-pweave-templates)
 
 ## Data sets for Class Session 1
 
@@ -23,7 +22,6 @@
 ## Readings
 
 - Wickens, T. D. The Geometry of multivariate statistics. --  Chapters 1 and 2.
-
 - Bryant, P. 1984. Geometry, statistics, probability: variations on a common theme. American Statistician 38: 38-48. [JSTOR Link](http://www.jstor.org/stable/2683558) -- Concentrate on sections 1, 2 and 4. Best read *after* the Wickens chapters.
 
 ## Programming exercises
