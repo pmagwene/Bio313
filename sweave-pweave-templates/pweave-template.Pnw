@@ -1,0 +1,26 @@
+\documentclass[letterpaper]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{graphicx}
+
+\title{Document title}
+\author{John Q. Public}
+
+\begin{document}
+\maketitle
+
+
+\section{Section title}
+
+% enter your Python code in code blocks like the one below
+<<>>=
+@
+
+
+\section{Another section title}
+
+
+% this is a code block for including a figure 
+<<fig=True>>=
+@
+
+\end{document} 

@@ -1,18 +1,23 @@
 # Getting Acquainted with R
 
-## Starting R
+## Starting the default R GUI
 
-Starting R is simple. If you’re using Windows simply navigate to the R
+Starting R is simple. If you're using Windows simply navigate to the R
 subfolder from the Start Menu. On a Unix/Linux system invoke the program
 by typing `R`. On OS X start R by clicking the R icon from the Dock or
 in the Applications folder.
-
-## The R Environment
 
 The OS X and Windows version of R provide a simple GUI interface that
 simplifies certain tasks. When you start up the R GUI you’ll be
 presented with a single window, the R console. The rest of this document
 will assume you’re using R under Windows or OS X.
+
+## R Studio
+
+[RStudio](http://rstudio.org/) is a new IDE for R being developed under an open source model (see the [RStudio GitHub Site](https://github.com/rstudio/rstudio)). It provides a nicely designed graphical interface that is consistent across platforms. It can even run as a server, allowing you to access R via a web interface! 
+
+Check out the [RStudio Docs](http://rstudio.org/docs/) for detailed info on configuring Rstudio. We'll go over some of RStudio's nice features in class.
+
 
 ## Accessing the Help System on R
 
@@ -59,7 +64,8 @@ Note that on Windows you can change your working directory by using the
 To get a list of the file in your current working directory use the
 `list.files()` function.
 
-> \> list.files() [1] "Shared" "pmagwene"
+	> list.files() 
+	[1] "Shared" "pmagwene"
 
 ## Using R as a Calculator
 
@@ -226,9 +232,9 @@ In the first example we retrieved all the elements of `x` that are
 larger than 5 (read ‘`x` where `x` is greater than 5’).
 
 In the second example we retrieved those elements of `x` that were
-smaller than four *or* greater than six. The symbol ‘`|`’ is the
-‘logical or’ operator. Other logical operators include ‘{&}’ (‘logical
-and’ or ‘intersection’) and ’`!`’ (negation).
+smaller than four *or* greater than six. The symbol `|` is the
+'logical or' operator. Other logical operators include `&` ('logical
+and' or 'intersection') and `!` (negation).
 
 Combining indexing and comparison is a powerful concept and one you’ll
 probably find useful for analyzing your own data.

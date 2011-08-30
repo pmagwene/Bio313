@@ -332,3 +332,30 @@ arrays however you must use the functions defined in the `numpy` module.
 
 ## Simple Plots in Python
 
+The Matplotlib package is the de facto standard for producing publication quality scientific graphics in Python.  Matplotlib is included with the EPD and was automatically pulled into the interpretter namespace if you're using the IPython PyLab or QtConsole configurations.
+
+Here are some simple plotting examples using matplotlib:
+
+	# only necessary if not using pylab
+	>>> from pylab import * 
+	
+	>>> import numpy as np # use a shorter alias
+	
+	# load the turtle data using the numpy.loadtxt function (see ?np.loadtxt)
+	# we skipped the first row (header) and the first column (info about sex)
+	# we'll see how to deal with more sophisticated data import next week
+
+	>>> turt = np.loadtxt('turtles.txt', skiprows=1, usecols=(1,2,3))
+	>>> turt.shape
+	(48, 3)
+	
+	# draw bivariate scatter plot
+	>>> scatter(turt[:,0], turt[:,1])
+	
+	# give the axes some labels and a title for the plot
+	>>> xlabel('Length')
+	>>> ylabel('Width')
+	>>> title('Turtle morphometry')
+	
+	
+

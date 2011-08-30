@@ -1,0 +1,28 @@
+\documentclass[letterpaper]{article}
+\usepackage[margin=0.75in]{geometry}
+
+\title{Document title}
+\author{John Q. Public}
+
+\begin{document}
+\maketitle
+
+
+\section{Section title}
+
+% enter your R code in code blocks like the one below
+<<>>=
+@
+
+
+\section{Another section title}
+
+
+% this tells Sweave to set the graphics 
+% to be half the width of the text
+% you can use this to plot a figure
+\setkeys{Gin}{width=0.5\textwidth} 
+<<fig=TRUE>>=
+@
+
+\end{document} 

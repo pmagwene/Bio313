@@ -42,7 +42,7 @@ learning a little bit more about the  document preparation system gives
 you the option of producing very nicely formatted output as we’ll see in
 a little bit.
 
-The R code is preceeded by the text `<<>>`. This tells Sweave that
+The R code is preceeded by the text `<<>>=`. This tells Sweave that
 you’re starting a code chunk. The `@` symbol after the code chunk tells
 Sweave that you’re going back to writing documentation chunks.
 
@@ -77,6 +77,11 @@ problem you can make this permanent by adding that line to your
 .Rprofile (located in `/Users/yourname` on OS X; if the file doesn’t
 already exist go ahead and create it). If that doesn’t work please see
 me for troubleshooting help.
+
+### RStudio makes Sweaving easy!
+
+RStudio hides some of the complexity of Sweaving documents. Simply create or open your Sweave document (use the .Rnw extension) in RStudio and then hit the `Compile PDF` button. If your LaTeX setup is working, and the document and code are valid, Rstudio will compile everything behind the scenes and pop up a nice PDF.
+
 
 ### A fancier Sweave document
 
