@@ -1,6 +1,7 @@
 
 ## PDF Slides for Class Session 1
 
+- [Slides, Lecture 1](https://github.com/pmagwene/Bio313/raw/master/lecture-01/slides-lecture-01.pdf)
 
 ## Hands-On for Class Session 1
 
