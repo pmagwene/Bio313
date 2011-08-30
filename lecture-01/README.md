@@ -9,7 +9,6 @@
 - [Getting acquainted with R](https://github.com/pmagwene/Bio313/tree/master/lecture-01/acquainted-R.md)
 - [Getting acquainted with Python](https://github.com/pmagwene/Bio313/tree/master/lecture-01/acquainted-python.md)
 - [Reproducible Research with Sweave and Pweave](https://github.com/pmagwene/Bio313/tree/master/lecture-01/intro-to-sweave.md)
-
   - [Sweave and Pweave templates](https://github.com/pmagwene/Bio313/tree/master/sweave-pweave-templates)
 
 ## Data sets for Class Session 1
@@ -29,5 +28,4 @@
 Read/work through the materials in the following:
 
 - Paradis, E. R for Beginners. [PDF](http://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf) -- Chapters 1-3.
-
 - Elkner, J. et al. How to think like a computer scientist: Learning with Python. 2nd edition. [Web version](http://openbookproject.net/thinkcs/python/english2e/index.html) -- Chapters 1-4 (ignore section 4.11). 
