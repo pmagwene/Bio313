@@ -6,19 +6,19 @@ The Python interpretter can be started in a number of ways. The simplest way is 
 
 For interactive use, the default interpretter isn't very feature rich, so the Python community has developed a number of GUIs or shell interfaces that provide more functionality. For this class we will be using a shell interface called [IPython](http://ipython.org/). 
 
-Recent versions of IPython (v0.11) provides both terminal and GUI-based shells. The EPD installer on Windows will place a number of shortcuts on your desktop, including ones that read `PyLab` and `QtConsole`.  These are a terminal based and GUI based versions of IPython respectively, both of which automatically load key numerical and plotting libraries. Click on both of these icons to compare their interfaces. 
+Recent versions of IPython (v0.11) provides both terminal and GUI-based shells. The EPD installer  will place a number of shortcuts on your Start Menu or in Launchpad on OS X 10.7, including ones that read `PyLab` and `QtConsole`.  These are a terminal based and GUI based versions of IPython respectively, both of which automatically load key numerical and plotting libraries. Click on both of these icons to compare their interfaces. 
 
-EPD on OS X doesn't create any convenient icon shortcuts.  To get the functionality of `PyLab`, run the following in a terminal:
+To get the functionality of `PyLab` from the terminal, run the following command:
 
 	$ ipython --pylab
 	
 To get the equivalent of `QtConsole` you can run ipython with the following arguments:
 
-	$ ipython qtconsole --pylab=inline
+	$ ipython qtconsole --pylab
 	
 If you'd prefer a dark background, call QtConsole as so:
 
-	$ ipython qtconsole --pylab=inline --colors=linux
+	$ ipython qtconsole --pylab --colors=linux
 
 QtConsole is a recent addition to IPython and there may still be bugs to be sorted out, but it provides some very nice features like 'tooltips' (shows you useful information about functions as you type) and the ability to embed figures and plots directly into the console, and the ability to save a console session as a web page (with figures embedded!).
 
