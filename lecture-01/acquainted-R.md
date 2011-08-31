@@ -420,9 +420,9 @@ convenient interface for reading tabular data. Using the file
 
 What kind of data structure is `turtles`? What happens when you call the `read.table()` function without specifying the argument `header=T`?
 
-You'll be using the \texttt{read.table()} function frequently. Spend some time reading the documentation and playing around with different argument values (for example, try and figure out how to specify different column names on input).
+You'll be using the `read.table()}`function frequently. Spend some time reading the documentation and playing around with different argument values (for example, try and figure out how to specify different column names on input).
 
-Note: \texttt{read.table()} is more convenient but \texttt{scan()} is more efficient for large files.  See the R documentation for more info.
+Note: `read.table()` is more convenient but `scan()` is more efficient for large files.  See the R documentation for more info.
 
 
 
