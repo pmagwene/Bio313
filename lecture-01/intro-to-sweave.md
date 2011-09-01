@@ -86,7 +86,7 @@ RStudio hides some of the complexity of Sweaving documents. Simply create or ope
 ### A fancier Sweave document
 
 Let’s get a little bit fancier and show how we can create graphics and
-use some LaTeX formatting features to produce a nicer document.
+use some LaTeX formatting features to produce a nicer document.
 
     \documentclass[letterpaper]{article}
     \usepackage[margin=0.75in]{geometry}
@@ -184,19 +184,13 @@ document chunks. Here's a simple Pweave document.
     \end{document}
 
 
-Note that the second code chunk, we wrote `fig=True` in the Pweave
-document, whereas we wrote `fig=TRUE` for the Sweave document. This
-minor difference reflects the different syntax for boolean values in R
-and Python.
+Note that the second code chunk, we wrote `fig=True` in the Pweave document, whereas we wrote `fig=TRUE` for the Sweave document. This minor difference reflects the different syntax for boolean values in R and Python.
 
-Save that code in a text file called `pweave1.Pnw` and from the bash
-shell (*not* in the Python interpretter) type the following command:
+Save that code in a text file called `pweave1.Pnw` and from the bash shell (*not* in the Python interpretter) type the following command:
 
-    Pweave -f 'tex' pweave1.Pnw
+    Pweave -f "tex" pweave1.Pnw
 
-The option `-f 'tex'` tells Pweave to output a  file. Assuming you got
-no error messages, you can then compile this to PDF using the following
-command:
+The option `-f "tex"` tells Pweave to output a file (Note: from the Windows command prompt you must use double quotes around "tex", on Unix-based systems either single our double quotes work fine). Assuming you got no error messages, you can then compile this to PDF using the following command:
 
     pdflatex pweave1.tex
 
