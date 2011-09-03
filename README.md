@@ -11,6 +11,10 @@ For the Fall 2011 semester I've decided to try a little experiment -- I'm puttin
 
 I also like the idea of making my course materials freely available for re-use and re-mixing. In the past several years I've had some very positive feedback from a number of postdocs and students who haven't taken the course but used the course materials found on my lab wiki for self-study. Moving the course to GitHub is my modest attempt at making the course materials more widely available for anyone who is interested.
 
+# Wiki
+
+The [Bio 313 Wiki](https://github.com/pmagwene/Bio313/wiki) is hosted on GitHub. Links to lecture slides, hands-on materials, data sets, and readings are all posted to the wiki site, so I recommend you navigate over there.
+
 # Syllabus
 
 A PDF version of the course syllabus is available [here](https://github.com/pmagwene/Bio313/raw/master/syllabus/2011-sci-comp-syllabus.pdf). As with all syllabi, it's a coarse guide, not a hard and set of marching instructions. It too will evolve over the semester.
@@ -18,11 +22,6 @@ A PDF version of the course syllabus is available [here](https://github.com/pmag
 # Getting started
 
 You can get started by installing the software tools, familiarizing yourself with the command-line, and configuring your computing environment. Links and instructions can be found on the [Course Tools](https://github.com/pmagwene/Bio313/tree/master/course-tools) page.
-
-# Wiki
-
-The [Bio 313 Wiki](https://github.com/pmagwene/Bio313/wiki) is hosted on GitHub.
-
 
 # License
 
