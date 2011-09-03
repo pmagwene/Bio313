@@ -21,7 +21,7 @@ A PDF version of the course syllabus is available [here](https://github.com/pmag
 
 # Getting started
 
-You can get started by installing the software tools, familiarizing yourself with the command-line, and configuring your computing environment. Links and instructions can be found on the [Course Tools](https://github.com/pmagwene/Bio313/tree/master/course-tools) page.
+You can get started by installing the software tools, familiarizing yourself with the command-line, and configuring your computing environment. Links and instructions can be found on the [Course Tools](https://github.com/pmagwene/Bio313/wiki/course-tools) page.
 
 # License
 
