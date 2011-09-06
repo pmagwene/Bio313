@@ -613,6 +613,35 @@ The mean, as you know, is the `optimal' (in a least square sense) single number 
 \begin{frame}
   \frametitle{Geometry of the Mean in Subject Space II}
 
+Geometric derivation of the sample mean:
+
+\begin{center}
+
+\begin{tikzpicture}[x=0.5cm, y=0.5cm]
+
+\draw[thick,->] (0,0) -- (6,0);
+\draw (6,0) node[above,font=\tiny] {$\vec{\mathbf{1}} $};
+
+\draw[thick,red,->] (0,0) -- (4,0);
+\draw (4,0) node[below,font=\footnotesize] {$P_{\vec{\mathbf{1}}}(\vec{\mathbf{x}}) = [\bar{x}, \bar{x},\ldots,\bar{x}]$};
+
+\draw[thick,->] (0,0) -- (4,3);
+\draw (4,3) node[above] {$\vec{\mathbf{x}}$};
+
+\draw[dashed,blue,->] (4,0) -- (4,3);
+\draw (4,3) node[below right,font=\footnotesize] {$\vec{e} = \vec{\mathbf{x}} - P_{\vec{\mathbf{1}}}(\vec{\mathbf{x}}) = [x_1-\bar{x}, x_2 - \bar{x},\ldots,x_n - \bar{x}]$};
+
+\end{tikzpicture}
+\end{center}
+
+
+\end{frame}
+%===========================================================
+
+%===========================================================
+\begin{frame}
+  \frametitle{Geometry of the Mean in Subject Space III}
+
 \begin{itemize}
 \item Recall that:
 \begin{eqnarray}
@@ -643,34 +672,6 @@ x_1 + x_2 + \cdots + x_n & = & n \bar{x} \\
 \end{frame}
 %===========================================================
 
-%===========================================================
-\begin{frame}
-  \frametitle{Geometry of the Mean in Subject Space III}
-
-Geometric derivation of the sample mean:
-
-\begin{center}
-
-\begin{tikzpicture}[x=0.5cm, y=0.5cm]
-
-\draw[thick,->] (0,0) -- (6,0);
-\draw (6,0) node[above,font=\tiny] {$\vec{\mathbf{1}} $};
-
-\draw[thick,red,->] (0,0) -- (4,0);
-\draw (4,0) node[below,font=\footnotesize] {$P_{\vec{\mathbf{1}}}(\vec{\mathbf{x}}) = [\bar{x}, \bar{x},\ldots,\bar{x}]$};
-
-\draw[thick,->] (0,0) -- (4,3);
-\draw (4,3) node[above] {$\vec{\mathbf{x}}$};
-
-\draw[dashed,blue,->] (4,0) -- (4,3);
-\draw (4,3) node[below right,font=\footnotesize] {$\vec{e} = \vec{\mathbf{x}} - P_{\vec{\mathbf{1}}}(\vec{\mathbf{x}}) = [x_1-\bar{x}, x_2 - \bar{x},\ldots,x_n - \bar{x}]$};
-
-\end{tikzpicture}
-\end{center}
-
-
-\end{frame}
-%===========================================================
 
 
 %===========================================================
