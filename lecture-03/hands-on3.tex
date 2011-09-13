@@ -439,13 +439,15 @@ applying the $\log_2$ function (so that a ratio of 1:1 has the value 0,
 a ratio of 2:1 has the value 1, and a ratio of 1:2 has the value 0.5).
 
 \begin{quote}
-Assignment: The raw data file \lstinline!yeast-subnetwork-raw.txt! has
-the genes (variables) arranged by rows and the observations
-(experiments) in columns. There are also missing values. Using R, show
-how to read in the data set and then create a matrix where the genes are
-in columns and the observations in rows. Then replace any missing values
-(\lstinline!NA!) in each column with the variable (gene) means (there
-are better ways to impute missing values but this will do for now).
+\textbf{Assignment 1}: The raw data file
+\lstinline!yeast-subnetwork-raw.txt! has the genes (variables) arranged
+by rows and the observations (experiments) in columns. There are also
+missing values. Using R, show how to read in the data set and then
+create a matrix where the genes are in columns and the observations in
+rows. Then replace any missing values (\lstinline!NA!) in each column
+with the variable (gene) means (there are better ways to impute missing
+values but this will do for now). Extra credit: see if you can
+encapsulate these steps in a function.
 
 \end{quote}
 Functions that might come in handy for the assignment above
@@ -520,7 +522,7 @@ $x_j$ and $x_i$. You can read this as `the correlation between x and y
 conditional on all other variables.'
 
 \begin{quote}
-\textbf{Assignment}: Create an R library that includes functions that
+\textbf{Assignment 2}: Create an R library that includes functions that
 use matrix operations to calculate each of the descriptive statistics
 discussed above (except the concentration matrix / partial
 correlations). Calculate these statistics for the
