@@ -1,0 +1,77 @@
+
+%\usepackage[small,compact]{titlesec}
+
+% for figures
+\usepackage[margin=10pt,font=small]{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage[usenames, dvipsnames]{color}
+
+
+% Assignment box environment
+
+\usepackage{fancybox}
+\usepackage{fancyvrb}
+
+\newcounter{assign_num}
+\setcounter{assign_num}{1}
+\newenvironment{assignment}%
+{\begin{Sbox}\begin{minipage}{6in}%
+\textbf{Assignment \arabic{assign_num}\stepcounter{assign_num}}:}% 
+{\end{minipage}\end{Sbox}\shadowbox{\TheSbox}}
+
+
+% Comment box environment
+
+\newenvironment{commentbox}%
+{\setlength{\fboxsep}{15pt}%
+\begin{Sbox}%
+\begin{minipage}{6in}%
+\sffamily \vspace*{1ex}%
+\textbf{\large Comments}\vspace*{0.5ex}\color{red}\\}% 
+{\vspace*{0.5ex}%
+\end{minipage}\end{Sbox}\ovalbox{\TheSbox}}
+
+\newenvironment{comment}[1]{\vspace*{2ex}\sffamily \color{red} #1}{\vspace*{2ex}}
+
+
+
+%% Fancy syntax coloring via pygments
+\usepackage{minted}
+\usemintedstyle{bw}
+
+\definecolor{bg}{rgb}{0.96,0.96,0.96}
+
+\newenvironment{Rcode}
+{\VerbatimEnvironment
+ \begin{minted}[xleftmargin=1em, baselinestretch=0.88]{r}}%
+{\end{minted}}
+
+\newenvironment{Pcode}
+{\VerbatimEnvironment
+ \begin{minted}[xleftmargin=1em,baselinestretch=0.88]{python}}%
+{\end{minted}}
+
+\newenvironment{Code}[1]
+{\VerbatimEnvironment
+ \begin{minted}[framesep=0.5em,xleftmargin=1em]{#1}}%
+{\end{minted}}
+
+
+\newenvironment{PageCode}[1]
+{\VerbatimEnvironment
+ \begin{minted}[frame=single, framerule=1.5pt,framesep=0.5em,xleftmargin=1em]{#1}}%
+{\end{minted}}
+
+\DefineShortVerb{\|} 
+
+
+% Math related macros
+\newcommand{\Mtx}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\Inv}[1]{\ensuremath{#1^{-1}}}
+
+% Hyperref should be the last package
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true
+}
