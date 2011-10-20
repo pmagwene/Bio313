@@ -190,7 +190,7 @@ Having created that function we can now put it to use to visualization our seria
 
 \subsection*{Data compression and noise filtering using SVD}
 
-Two common uses for singular value decomposition are for data compression and noise filtering. Will illustrate these with two examples involving matrices which represent image data. This examples is drawn from an article by David Austin, found on a tutorial about SVD at the American Mathematical Society Website (\href{http://www.ams.org/samplings/feature-column/fcarc-svd}{link}).
+Two common uses for singular value decomposition are for data compression and noise filtering. Will illustrate these with two examples involving matrices which represent image data. This example is drawn from an article by David Austin, found on a tutorial about SVD at the American Mathematical Society Website (\href{http://www.ams.org/samplings/feature-column/fcarc-svd}{link}).
 
 \subsubsection*{Data compression}
 
@@ -205,7 +205,7 @@ Download the file |zeros.dat| from the course wiki. This is a $25 \times 15$ bin
 ... output truncated ...
 
 # we'll use the image() function to visualize z
-> image(1:15,1:25,t(zmatx),col=c('black','white'),asp=1)    
+> image(1:15,1:25,t(z),col=c('black','white'),asp=1)    
 \end{Rcode}
 
 This matrix data is shown below in a slightly different form that emphasizes the individual elements of the matrix.  As you can see, this matrix can be thought of as being composed of just three types of vectors.
@@ -252,9 +252,11 @@ Our original matrix required $25 \times 15$ ($= 375$) storage elements. Using th
 The file |noisy-zero.dat| is the same 'zero' image, but now sprinkled with Gaussian noise draw from a normal distribution ($N(0,0.1)$. As in the data compression case we can use SVD to approximate the input matrix with a lower-dimensional approximation. Here the SVD is `lossy' as our approximation throws away information.  In this case we hope to choose the approximating dimension such that the information we lose corresponds to the noise which is `polluting' our data. 
 
 \begin{Rcode}
-> nz <- as.matrix(read.delim('noisey-ones.dat',header=F))
+> nz <- as.matrix(read.delim('noisy-zero.dat',header=F))
 > dim(nz)
 [1] 25 15
+> x <- 1:15
+> y <- 1:25
 # create a gray-scale representation of the matrix
 > image(x,y,t(nz),asp=1,xlim=c(1,15),ylim=c(1,25),col=gray(seq(0,1,0.05)))
 > round(nz.svd$d,2)
