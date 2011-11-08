@@ -139,7 +139,7 @@ Method for assigning observations to clusters and estimating parametric distribu
     Assume that the data set represents observations drawn from a mixture of $g$ sub-distributions (user specifies $g$), and that the probability density function of the mixture is given by:
     
 \[
-p(\Mtx{x}) = \sum_{s=1}^g \pi_s p(\Mtx{x};\Mtx{\theta}_s)
+p_{\mathrm{mix}} = \sum_{s=1}^g \pi_s p(\Mtx{x};\Mtx{\theta}_s)
 \]
 
 Where the $p(\Mtx{x};\Mtx{\theta}_s)$ represents the $s$-th `component density' (sub-distributions) and the $\Mtx{\theta}_s$ are the component parameters.  The $\pi_s$ represent the weighting factor of the $s$-th component in the mixture.
@@ -161,7 +161,71 @@ Where the $p(\Mtx{x};\Mtx{\theta}_s)$ represents the $s$-th `component density' 
 
 A common starting point in mixture modeling is to assume that the components are Gaussian.
 
-Therefore the components are multivariate Gaussian distributions:
+If the data are univariate, then the mixture model is given by:
+
+\[
+p_{\mathrm{mix}} = \sum_{s=1}^g \pi_s f(\Mtx{x}|\mu_i, \sigma_i^2)
+\]
+
+where the $\mu_i$ and $\sigma_i$ are the means and standard deviations of each component distribution and:
+
+\[
+f(\Mtx{x}|\mu, \sigma) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+\]
+
+\end{frame}
+
+%===========================================================
+
+
+%===========================================================
+\begin{frame}
+  \frametitle{Example: Waiting time between Old Faithful eruptions}
+
+\begin{center}
+\includegraphics[height=3.1in]{waitingtime.pdf}    
+\end{center}
+
+\end{frame}
+%===========================================================
+
+%===========================================================
+\begin{frame}
+  \frametitle{Example: Gaussian fit, Old Faithful waiting time}
+
+\vspace*{-0.15in}
+\begin{columns}
+\begin{column}{7cm}
+\begin{center}
+\includegraphics[height=3in]{waiting-fit.pdf}  
+\end{center}
+\end{column}
+
+
+\begin{column}{5cm}
+\begin{eqnarray*}
+\pi = (0.36, 0.64)\\
+\mu = (54.6, 80.1)\\
+\sigma = (5.87, 5.87) 
+\end{eqnarray*}
+\end{column}
+
+\end{columns}
+
+
+
+\end{frame}
+%===========================================================
+
+
+
+
+
+%===========================================================
+\begin{frame}
+  \frametitle{Gaussian Mixture Models, Multivariate data}
+
+When the components are multivariate Gaussian distributions:
 
 \[
 N(\Mtx{x};\Mtx{\theta}) \equiv (2\pi)^{-D/2}|\Sigma|^{-1/2} \exp 
@@ -173,6 +237,20 @@ N(\Mtx{x};\Mtx{\theta}) \equiv (2\pi)^{-D/2}|\Sigma|^{-1/2} \exp
 each with a different mean vector, $\Mtx{\mu}$ ($\Mtx{\mu} \in \Real^p$), and covariance matrix, $\Sigma$ ($p \times p$).
 
 \end{frame}
+%===========================================================
+
+%===========================================================
+\begin{frame}
+\frametitle{Mixture Model Clustering, Example}
+\begin{center}
+\includegraphics[width=\textwidth]{heart-disease.pdf}    
+\end{center}
+
+Heart disease example: 297 samples (137 with heart disease). 13 quantitative varibles (e.g. cholesterol, max heart rate, etc). Data centered and normalized. Data projected onto first two PCs. Two-component Gaussian mixture fit.
+
+\end{frame}
+%===========================================================
+
 
 %===========================================================
 \begin{frame}
@@ -205,17 +283,16 @@ The standard approach to estimating the parameters is called the "Expectation-Ma
 \end{frame}
 %===========================================================
 
-%===========================================================
-\begin{frame}
-\frametitle{Mixture Model Clustering, Example}
-\begin{center}
-\includegraphics[width=\textwidth]{heart-disease.pdf}    
-\end{center}
 
-Heart disease example: 297 samples (137 with heart disease). 13 quantitative varibles (e.g. cholesterol, max heart rate, etc). Data centered and normalized. Data projected onto first two PCs. Two-component Gaussian mixture fit.
 
-\end{frame}
 %===========================================================
+% Pull in slides from PDF
+{ 
+\setbeamercolor{background canvas}{bg=} 
+\includepdf[pages=24]{li-mixtures-lecture.pdf}
+}
+%===========================================================
+
 
 
 \end{document}

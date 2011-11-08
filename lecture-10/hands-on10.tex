@@ -86,17 +86,57 @@ Now that we've seen how to apply k-mean clustering to a synthetic data set, let'
 
 \section*{Gaussian Mixture Models in R}
 
+There are multiple packages for fitting mixture models in R.  We'll look at two -- |mixtools| and |MCLUST|.
+
+\subsection*{Installing mixtools}
+
+The package |mixtools| can be installed via the GUI or the |install.packages| command. A \href{http://cran.r-project.org/web/packages/mixtools/vignettes/vignette.pdf}{mixtools vignette} can be downloaded from the CRAN website.
+
+\subsection*{Using mixtools}
+
+We'll look at how to use mixtools using a data set on eruption times for the Old Faithful geyser in Yellowstone National Park (|?faithful| for details). We'll fit a univariate Gaussian mixture model to the time between eruptions data (|faithful$waiting|).
+
+\begin{Code}
+# allows us to refer to the variables within waiting time
+# without using the standard list "$" syntax
+> attach(faithful)    
+
+# create a nice histogram
+> hist(waiting, main = "Time between Old Faithful eruptions", 
+xlab = "Minutes", ylab = "", cex.main = 1.5, cex.lab = 1.5, cex.axis = 1.4)
+
+> library(mixtools)
+> ?normalmixEM  # read the docs!
+> wait.mix <- normalmixEM(waiting)
+
+> names(wait.mix)
+[1] "x"          "lambda"     "mu"         "sigma"      "loglik"     "posterior" 
+[7] "all.loglik" "restarts"   "ft"   
+
+# lambda is what we called "pi" in the lecture notes
+> wait.mix[c("lambda","mu","sigma")]
+
+> class(wait.mix)
+[1] "mixEM"
+> ?plot.mixEM  # read about the plotting options for the mixEM object
+> plot(wait.mix, density=TRUE)
+> plot(wait.mix, loglik=FALSE, density = TRUE, cex.axis = 1.4, cex.lab = 1.4,
+ cex.main = 1.8, main2 = "Time between Old Faithful eruptions", xlab2 = "Minutes")
+\end{Code}
+
+
 \subsection*{Installing MCLUST}
-The package |MCLUST| is one of several packages that provides maximum likelihood based estimation of mixture models.  You will need to install the package (and it's dependencies) from the R GUI or using the |install.packages| command.
+The package |MCLUST| is one of another package that provides maximum likelihood based estimation of mixture models.  You will need to install the package (and it's dependencies) from the R GUI or using the |install.packages| command.
 
 \subsection*{Using MCLUST}
 
-We're going to use two data set to illustrate some of |MCLUST|'s capabilities -- the iris data set we've worked with before, and a data set on eruption times for the Old Faithful geyser in Yellowstone National Park (|?faithful| for details). We'll start off with  the old faithful data set.
+We're going to use two data set to illustrate some of |MCLUST|'s capabilities -- the iris data set we've worked with before, and the bivariate version of the Old Faithful data set. We'll start off with  the old faithful data set.
+
 \begin{Code}
 > plot(faithful$eruptions, faithful$waiting)    
 \end{Code}
 
-From the graph it looks like there might be two major clusters. Let's apply the |Mclust| function which estimates a Gaussian Mixture Model:
+From visual inspection of the bivariate scatter plot, it looks like there two clusters. Let's apply the |Mclust| function and see what it suggests:
 
 \begin{Code}
 > library(mclust)
