@@ -1,24 +1,15 @@
 \documentclass[10pt,letterpaper]{scrartcl}
 \usepackage[top=1in, bottom=1in, left=1in, right=1.25in]{geometry}
-\usepackage{indentfirst}   
 
-\usepackage[T1]{fontenc} 
-\usepackage[utf8]{inputenc}
-\usepackage[lucidasmallscale, nofontinfo]{lucimatx}
+\usepackage{titlesec}
+\titlespacing{\section}{0pt}{*4}{*1.5}
+\titlespacing{\subsection}{0pt}{*3}{*1}
+\titlespacing{\subsubsection}{0pt}{*2}{*1}
 
-% The Lucida Fonts (http://www.pctex.com/Lucida_Fonts.html) are
-% a commercially available font package for LaTeX.
-% If you want to compile this document, and don't have access
-% to the Lucida Fonts, comment out the line above and uncomment 
-% the following lines (all the fonts below are standard in
-% TeXLive 2011):
-% \usepackage{paratype}
-% \usepackage[scaled]{beramono}
-
-\usepackage{microtype}
-\usepackage[pdftex,colorlinks]{hyperref}
-
+\input{../preamble/fontpreamble.tex}
 \input{../preamble/codepreamble.tex}
+
+\usepackage[pdftex,colorlinks]{hyperref}
 
 
 \author{Paul M.~Magwene}
@@ -180,7 +171,7 @@ $ ./ncbi-blast-2.2.25+/bin/blastp -help
 
 If you're on a Mac and get an error like the one shown below, try downloading and installing a slightly older version of the BLAST+ tools from \url{ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.2.23/}.
 
-\begin{lstlisting}
+\begin{Code}
 dyld: lazy symbol binding failed: Symbol not found: __ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_i
   Referenced from: /Users/pmagwene/tmp/./ncbi-blast-2.2.24+/bin/blastp
   Expected in: flat namespace
@@ -188,34 +179,19 @@ dyld: lazy symbol binding failed: Symbol not found: __ZSt16__ostream_insertIcSt1
 dyld: Symbol not found: __ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_i
   Referenced from: /Users/pmagwene/tmp/./ncbi-blast-2.2.24+/bin/blastp
   Expected in: flat namespace
-\end{lstlisting}
+\end{Code}
 
 Once you've confirmed that |blastp| works on your system check out the PDF documentation in the directory |~/tmp/ncbi-blast-2.2.25+/doc/| (or wherever you unzipped the file).
 
 
 \subsubsection*{Install Biopython}
 
-If you're on Windows you can download a prebuilt binary of Biopython from the \href{http://biopython.org/wiki/Download}{Biopython website}. For OS X  you can install Biopython from source relatively easily, assuming you've previously installed setuptools which includes the |easy_install| program:
-% 
-% \begin{enumerate}
-% \item Download |setuptools| from the Python Package Index at \href{http://pypi.python.org/pypi/setuptools}{http://pypi.python.org/pypi/setuptools}. Make sure you get the version that is appropriate for your platform and version of Python. From the command line install setuptools like so:
-% \begin{Code}
-% sudo sh setuptools-0.6c11-py2.7.egg
-% \end{Code}
-% 
-% \item Use the |easy_install| tool included with setuptools to install biopython.
+If you're on Windows you can download a prebuilt binary of Biopython from the \href{http://biopython.org/wiki/Download}{Biopython website}. For OS X you can install Biopython from source relatively easily, assuming you've previously installed setuptools which includes the |easy_install| program:
+%
 \begin{Code}
-sudo easy_install -f http://biopython.org/DIST/ biopython
+$ sudo easy_install -f http://biopython.org/DIST/ biopython
 \end{Code}
 
-
-% \subsubsection*{Install \texttt{aatranslate}}
-% 
-% I've written a short python script called |aatranslate| that we'll use for today's pipeline. This script takes a fasta file with nucleotide sequences and translates those into amino acid sequences.  Download this file from the class wiki, place it in your |~/tmp| directory and make it executable as follows:
-% 
-% \begin{Code}
-% $ chmod +x aatranslate
-% \end{Code}
 
 \subsection*{Testing the bionformatics tools}
 
@@ -223,14 +199,16 @@ Download the |fungal-ras.fas| file from the class website. This file includes pr
 
 \subsubsection*{Multiple alignments with Clustalw and MAFFT}
 
+Let's run Clustalw and MAFFT to align the Ras sequences:
+%
 \begin{Code}
 $ clustalw2 -infile=fungal-ras.fas
 $ mafft --auto fungal-ras.fas > fungal-ras-mafft.fas
 \end{Code}
-
+%
 The commands above should produce the following files: |fungal-ras.aln| and |fungal-ras.dnd| (Clustalw) and |fungal-ras-mafft.fas| (MAFFT).  To visualize the alignments there are a variety of different multiple alignment viewers. One such program is \href{http://www.jalview.org/}{Jalview}, a free cross platform, multiple alignment viewer/editor written in Java.  Take a look at both the clustalw and mafft alignments using Jalview.
 
-\vspace{1ex}
+
 \subsubsection*{Testing HMMER}
 
 To test out HMMER and Pfam download the |Rme1.fas| file from the class website. Rme1 is a transcription factor that regulates sporulation and meiosis in budding yeast, \textit{Saccharomyces cerevisiae}.  We'll use HMMER to analyze the domain structure of Rme1.
@@ -255,7 +233,7 @@ $ hmmscan --domtblout Rme1-output.txt -o /dev/null Pfam-A.hmm Rme1.fas
 
 This call produces a file |Rme1-output.txt| that contains a space delimited text file summarizing the per-domain output. The |-o| option redirects the main human-readable output (in this case to the `bit-bucket', /dev/null). You can then manipulate the tabular output in |Rme1-output.txt| using standard Unix tools like |awk|. 
 
-See pp.\ 24-26  of the \href{ftp://selab.janelia.org/pub/software/hmmer3/3.0/Userguide.pdf}{HMMER user guide} for more info on the |hmmscan| program and settings. E-values and bit-scores are the criteria you want to look at when trying to judge which domains you sequence of interest has good matches to.  HMMER bit scores reflect the extent to which a sequence is a good match to a  profile model (higher bit scores are better matches). See p.\ 43 of the HMMER 2.3 user guide (use Google to find a copy of the older version of the HMMER manual) for a discussion of E-values and bit scores.  If you examine the output file |Rme1-output.txt| you'll see that the model with the lowest E-values and highest bit-scores is a ``zinc finger" domain.  There are three such domains in the Rme1 protein (see the column labeled ``N'' in the output), though two of them are weaker matches (larger E-values). Rme1 is a zinc finger transcriptional factor. The two weaker zinc finger domains are weak matches to the HMM model for zinc fingers but are nonetheless functional domains.
+See pp.\,24-26  of the \href{ftp://selab.janelia.org/pub/software/hmmer3/3.0/Userguide.pdf}{HMMER user guide} for more info on the |hmmscan| program and settings. E-values and bit-scores are the criteria you want to look at when trying to judge which domains you sequence of interest has good matches to.  HMMER bit scores reflect the extent to which a sequence is a good match to a  profile model (higher bit scores are better matches). See p.\,43 of the HMMER 2.3 user guide (use Google to find a copy of the older version of the HMMER manual) for a discussion of E-values and bit scores.  If you examine the output file |Rme1-output.txt| you'll see that the model with the lowest E-values and highest bit-scores is a ``zinc finger" domain.  There are three such domains in the Rme1 protein (see the column labeled ``N'' in the output), though two of them are weaker matches (larger E-values). Rme1 is a zinc finger transcriptional factor. The two weaker zinc finger domains are weak matches to the HMM model for zinc fingers but are nonetheless functional domains.
 
 
 \subsubsection*{Testing the BLAST+ tools}
@@ -295,7 +273,7 @@ This first pipeline will do the following:
 
 Here's a simple bash script that implements this pipeline. Save this script as |pipeline1.sh|.
 
-\begin{codeblock}[language=bash]
+\begin{codeblock}[bash]
 #!/bin/bash
 
 # change these if these files are located somewhere else
@@ -309,7 +287,7 @@ outfile="$2" # the output file for the report
 
 # run blastp
 echo "Running blastp"
-"$BLASTP" -db refseq_protein -evalue 2e-10 -remote < "$fastafile" > "$outfile"
+"$BLASTP" -db refseq4_protein -evalue 2e-10 -remote < "$fastafile" > "$outfile"
 
 # run hmmscan and append to outfile
 echo "Running hmmscan"
@@ -347,7 +325,7 @@ Our second pipeline will do the following:
 
 First we're going to write a Python script to take care of step 2, translating the nucleotide sequence to a protein sequence. Save the following code as |aatranslate.py|.
 
-\begin{codeblock}[language=python]
+\begin{codeblock}[python]
 #!/usr/bin/env python
 
 import sys
@@ -379,7 +357,7 @@ $ cat unknowns.fas | ./aatranslate.py | less
 
 Save the following code as |pipeline2.sh|:
 
-\begin{codeblock}[language=bash]
+\begin{codeblock}[bash]
 #!/bin/bash
 
 # change these if these files are located somewhere else

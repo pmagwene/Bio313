@@ -20,12 +20,13 @@ showtabs=false}
 \definecolor{boxframe}{rgb}{0.6,0,0}
 \definecolor{boxfill}{rgb}{1,.95,.95}
 
-\lstnewenvironment{codeblock}
+\lstnewenvironment{codeblock}[1][]
 {\lstset{frame=single,
 backgroundcolor=\color{boxfill},
 rulecolor=\color{boxframe},
 framesep=2.5pt,
-framerule=0.5pt}}
+framerule=0.5pt,
+language=#1}}
 {}
 
 \lstnewenvironment{Code}
