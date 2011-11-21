@@ -1,12 +1,13 @@
 \documentclass[10pt,letterpaper]{scrartcl}
-\usepackage[top=1in, bottom=1in, left=1in, right=1.25in]{geometry} %% for setting page margins %%
+\usepackage[top=1in, bottom=1in, left=1in, right=1.25in]{geometry}
 \usepackage{indentfirst}   
 
 \usepackage[T1]{fontenc} 
 \usepackage[utf8]{inputenc}
 \usepackage[lucidasmallscale, nofontinfo]{lucimatx}
+
 % The Lucida Fonts (http://www.pctex.com/Lucida_Fonts.html) are
-% a commercially available font package for LaTeX
+% a commercially available font package for LaTeX.
 % If you want to compile this document, and don't have access
 % to the Lucida Fonts, comment out the line above and uncomment 
 % the following lines (all the fonts below are standard in
@@ -15,50 +16,9 @@
 % \usepackage[scaled]{beramono}
 
 \usepackage{microtype}
-
-
-\usepackage{listings}
-\lstMakeShortInline|
-
-\lstset{%
-aboveskip=1em,
-xleftmargin=3pt,
-xrightmargin=3pt,
-breaklines=true,
-basicstyle={\ttfamily \small},
-breakatwhitespace=false,
-showspaces=false,
-showstringspaces=false
-showtabs=false}
-
-
-
-
-\usepackage{xcolor}
-\definecolor{boxframe}{rgb}{0.6,0,0}
-\definecolor{boxfill}{rgb}{1,.95,.95}
-
-\lstnewenvironment{codeblock}
-{\lstset{frame=single,
-backgroundcolor=\color{boxfill},
-rulecolor=\color{boxframe},
-framesep=2.5pt,
-framerule=0.5pt}}
-{}
-
-\lstnewenvironment{Code}
-{}{}
-
-\lstnewenvironment{python}
-{\lstset{language=python}}
-{}
-\lstnewenvironment{bash}
-{\lstset{language=bash}}
-{}
-
-
-
 \usepackage[pdftex,colorlinks]{hyperref}
+
+\input{../preamble/codepreamble.tex}
 
 
 \author{Paul M.~Magwene}
@@ -193,7 +153,7 @@ We will be using the Pfam database (Release 25) in conjunction with HMMER to sea
 $ curl -O ftp://ftp.sanger.ac.uk/pub/databases/Pfam/releases/Pfam25.0/Pfam-A.hmm.gz
 \end{Code}
 
- This is a large file (185MB) and decompresses to an even larger file (approx. 986MB). Make sure you have adequate disk space. Uzip it as follows:
+ This is a large file (185MB) and decompresses to an even larger file (approx. 986MB). Make sure you have adequate disk space. Unzip it as follows:
 
 \begin{Code}
 $ gunzip Pfam-A.hmm.gz 
