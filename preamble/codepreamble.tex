@@ -14,8 +14,6 @@ showstringspaces=false
 showtabs=false}
 
 
-
-
 \usepackage{xcolor}
 \definecolor{boxframe}{rgb}{0.6,0,0}
 \definecolor{boxfill}{rgb}{1,.95,.95}
@@ -39,3 +37,16 @@ language=#1}}
 {\lstset{language=bash}}
 {}
 
+
+
+% Assignment box environment
+
+\usepackage{fancybox}
+\usepackage{fancyvrb}
+
+\newcounter{assign_num}
+\setcounter{assign_num}{1}
+\newenvironment{assignment}%
+{\begin{Sbox}\begin{minipage}{6in}%
+\textbf{Assignment \arabic{assign_num}\stepcounter{assign_num}}:}% 
+{\end{minipage}\end{Sbox}\shadowbox{\TheSbox}}

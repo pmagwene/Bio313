@@ -310,6 +310,11 @@ You can then execute the code as follows:
 $ ./pipeline1.sh Rme1.fas Rme1-report.out
 \end{Code}
 
+
+\begin{assignment}
+    Submit your |Rme1-report.out| file via email.
+\end{assignment}
+
 \subsection*{Pipeline II}
 
 Our second pipeline will do the following:
@@ -399,7 +404,7 @@ echo "Running hmmscan"
 After setting the script to be executable you can run it like so:
 
 \begin{Code}
-$ ./pipeline2.sh unknowns.fas unknowns-trans.fas unknowns-align.fas unknowns-report.fas
+$ ./pipeline2.sh unknowns.fas unknowns-trans.fas unknowns-align.fas unknowns-report.txt
 \end{Code}
 
 This will produce three files, one containing the translated amino acid sequences, the second giving the multiple alignment of those amino acid sequences, and the third with the PFAM output. Use less or a text editor to take a look at the generated files.
@@ -412,5 +417,9 @@ Compare this to what happens when you run |pipeline1.sh| without the arguments:
 \begin{Code}
 $ ./pipeline1.sh    
 \end{Code}
+
+\begin{assignment}
+    Submit your |unknowns-report.txt| file via email.
+\end{assignment}
 
 \end{document}
