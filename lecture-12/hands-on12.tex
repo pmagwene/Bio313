@@ -249,8 +249,7 @@ $ ./blastp -db refseq_protein -evalue 2e-10 -remote < ~/tmp/Rme1.fas > ~/tmp/rme
 This runs a remote BLAST search with an E-value cutoff of $2^{-10}$. It might take a little while because it will access the NCBI servers to run the search. Note the use of both an input redirection operator as well as an output redirection operator.  If you want the output in HTML format for easy reading run it as follows and open the resulting file |rme1-blastout.html| in  your web browser:
 
 \begin{Code}
-$ ./blastp -db refseq_protein -evalue 2e-10 -remote -html \
-        < ~/tmp/Rme1.fas > ~/tmp/rme1-blast.html
+$ ./blastp -db refseq_protein -evalue 2e-10 -remote -html < ~/tmp/Rme1.fas > ~/tmp/rme1-blast.html
 \end{Code}
 
 If all of the commands above worked (produced no errors, generated valid output) then you're ready to move on to implementing the pipelines.
