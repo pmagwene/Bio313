@@ -1,38 +1,14 @@
 \documentclass{beamer}
 
-\useoutertheme[glossy]{wuerzburg}
-\useinnertheme[shadow,outline]{chamfered}
-\usecolortheme{shark}
-\beamertemplatenavigationsymbolsempty 
+\input{../preamble/slidespreamble.tex}
 
-%% Fancy syntax coloring via pygments
-\usepackage{minted}
-\definecolor{bg}{rgb}{0.95,0.95,0.95}
-\usemintedstyle{tango}
-
-\newenvironment{Rcode}
-{\VerbatimEnvironment
- \begin{minted}[fontsize=\small,baselinestretch=0.75]{r}}%
-{\end{minted}}
-
-\newenvironment{Pcode}
-{\VerbatimEnvironment
- \begin{minted}[fontsize=\small,baselinestretch=0.75]{python}}%
-{\end{minted}}
-
-\newenvironment{Code}[1]
-{\VerbatimEnvironment
- \begin{minted}[fontsize=\small,baselinestretch=0.75]{#1}}%
-{\end{minted}}
 \usepackage{tikz}
 
-\usepackage{amsfonts}
+%\usepackage{amsfonts}
 \newcommand{\Real}{\ensuremath{\mathbb{R}}}
 \newcommand{\Mtx}[1]{\ensuremath{\mathbf{#1}}}
 \newcommand{\Inv}[1]{\ensuremath{#1^{-1}}}
 
-\newtheorem{Alert}{Alert}
-\newtheorem{Highlight}{Highlight}
 
 %===========================================================
 % Title Info

@@ -1,29 +1,7 @@
 \documentclass{beamer}
 
-\useoutertheme[glossy]{wuerzburg}
-\useinnertheme[shadow,outline]{chamfered}
-\usecolortheme{shark}
-\beamertemplatenavigationsymbolsempty 
+\input{../preamble/slidespreamble.tex}
 
-%% Fancy syntax coloring via pygments
-\usepackage{minted}
-\definecolor{bg}{rgb}{0.95,0.95,0.95}
-\usemintedstyle{tango}
-
-\newenvironment{Rcode}
-{\VerbatimEnvironment
- \begin{minted}[fontsize=\small,baselinestretch=0.75]{r}}%
-{\end{minted}}
-
-\newenvironment{Pcode}
-{\VerbatimEnvironment
- \begin{minted}[fontsize=\small,baselinestretch=0.75]{python}}%
-{\end{minted}}
-
-\newenvironment{Code}[1]
-{\VerbatimEnvironment
- \begin{minted}[fontsize=\small,baselinestretch=0.75]{#1}}%
-{\end{minted}}
 \usepackage{tikz}
 
 \usepackage{amsfonts}
@@ -41,11 +19,6 @@
 
 \newtheorem{Alert}{Alert}
 \newtheorem{Highlight}{Highlight}
-
-\usepackage{fancyvrb}
-\DefineVerbatimEnvironment%
-{Code}{Verbatim}
-{fontsize=\tiny,baselinestretch=0.75}
 
 
 %===========================================================
@@ -442,20 +415,18 @@ Note:
   \frametitle{Example of Curvilinear Regression}
 
 \begin{center}
-\includegraphics[height=2in]{curvilinear}
+\includegraphics[height=1.75in]{curvilinear}\\
+ $\Mtx{y} = 3\Mtx{x} + 0.5\Mtx{x}^2 + \Mtx{e}$
 \end{center}  
-$$
-\Mtx{y} = 3\Mtx{x} + 0.5\Mtx{x}^2 + \Mtx{e}
-$$
 
-\begin{Code}
+\begin{Rcode}
 lm(formula = y ~ x + I(x^2))
 Coefficients:
             Estimate Std. Error t value Pr(>|t|)    
 (Intercept)  0.02229    0.11651   0.191    0.849    
 x            2.94001    0.09693  30.331  < 2e-16 ***
 I(x^2)       0.47146    0.07685   6.135 1.68e-07 ***
-\end{Code}
+\end{Rcode}
 
 
 \end{frame}
@@ -467,7 +438,7 @@ I(x^2)       0.47146    0.07685   6.135 1.68e-07 ***
 \begin{itemize}
     \item A type of non-parametric regression
     \item Basic idea -- fit a curve (or surface) to a set of data by fitting a large number of \emph{local regressions}.
-    \item Cleveland, W.S. (1979). ``Robust Locally Weighted Regression and Smoothing Scatterplots". Journal of the American Statistical Association 74 (368): 829–836. doi:10.2307/2286407.
+    \item Cleveland, W.S. (1979). ``Robust Locally Weighted Regression and Smoothing Scatterplots". Journal of the American Statistical Association 74 (368): 829-836. doi:10.2307/2286407.
 \end{itemize}
 
 \begin{center}
@@ -562,7 +533,6 @@ P(Y = 1 | X) = \frac{e^{X\beta}}{1+e^{X\beta}}
 
 \begin{center}
 \asyinclude[height=1.25in,keepAspect=true]{logistic-fxn.asy}
-%\includegraphics[height=1.25in]{logistic-fxn.pdf}
 \end{center}
 
 \end{frame}

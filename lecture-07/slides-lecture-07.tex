@@ -1,41 +1,14 @@
 \documentclass{beamer}
 
-\useoutertheme[glossy]{wuerzburg}
-\useinnertheme[shadow,outline]{chamfered}
-\usecolortheme{shark}
-\beamertemplatenavigationsymbolsempty 
+\input{../preamble/slidespreamble.tex}
 
-\usepackage{amsfonts}
 \usepackage{tikz}
 \usepackage{marvosym} % for male/female symbols
 \usepackage{MnSymbol} % for thinstar
 
-%\usepackage{enumitem}
-%\setdescription{itemindent=2em}
-%\setdescription{font=\sffamily\bfseries}
-
- \setbeamersize{description width=2em}
-
-\usepackage{fancyvrb}
-\DefineVerbatimEnvironment%
-{Code}{Verbatim}
-{fontsize=\tiny,baselinestretch=0.75}
-
-
-\newcommand{\Species}[1]{{\rmfamily \itshape #1}}
-\newcommand{\Real}{\ensuremath{\mathbb{R}}}
-\newcommand{\RealN}{\ensuremath{\mathbb{R}^n}}
-\newcommand{\RealP}{\ensuremath{\mathbb{R}^p}}
-\newcommand{\Mtx}[1]{\ensuremath{\mathbf{#1}}}
-\newcommand{\Inv}[1]{\ensuremath{#1^{-1}}}
-\newcommand{\InvMtx}[1]{\ensuremath{\mathbf{#1}^{-1}}}
-\newcommand{\Red}[1]{\textcolor{red}{#1}}
-\newcommand{\PsInv}[1]{\ensuremath{\mathbf{#1}^{+}}}
+\setbeamersize{description width=2em}
 
 \DeclareMathOperator{\rank}{rank} 
-
-\newtheorem{Alert}{Alert}
-\newtheorem{Highlight}{Highlight}
 
 %===========================================================
 % Title Info
@@ -345,7 +318,7 @@ Different choices of $\alpha$ emphasize different relationships in the data.
 \end{itemize}
 
 \begin{center}
-\includegraphics[height=2.5in]{crab-biplot}
+\includegraphics[height=2.25in]{crab-biplot}
 
 {\footnotesize Biplot ($\alpha=1$) for dataset of five morphological measurements on crabs.}
 \end{center}

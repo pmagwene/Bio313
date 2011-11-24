@@ -1,35 +1,6 @@
 \documentclass{beamer}
 
-\useoutertheme[glossy]{wuerzburg}
-\useinnertheme[shadow,outline]{chamfered}
-\usecolortheme{shark}
-\beamertemplatenavigationsymbolsempty 
-
-%% Fancy syntax coloring via pygments
-\usepackage{minted}
-\definecolor{bg}{rgb}{0.95,0.95,0.95}
-\usemintedstyle{tango}
-
-\newenvironment{Rcode}
-{\VerbatimEnvironment
- \begin{minted}[fontsize=\small,baselinestretch=0.75]{r}}%
-{\end{minted}}
-
-\newenvironment{Pcode}
-{\VerbatimEnvironment
- \begin{minted}[fontsize=\small,baselinestretch=0.75]{python}}%
-{\end{minted}}
-
-\newenvironment{Code}[1]
-{\VerbatimEnvironment
- \begin{minted}[fontsize=\small,baselinestretch=0.75]{#1}}%
-{\end{minted}}
-
-\usepackage{tikz}
-
-\usepackage{textfit} % commands \scaletoheight{height}{text} and \scaletowidth{width}{text}
-
-
+\input{../preamble/slidespreamble.tex}
 
 %===========================================================
 % Title Info

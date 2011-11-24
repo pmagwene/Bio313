@@ -1,35 +1,6 @@
 \documentclass{beamer}
-\usepackage{fancyvrb}
 
-%% Fancy syntax coloring via pygments
-\usepackage{minted}
-\definecolor{bg}{rgb}{0.95,0.95,0.95}
-\usemintedstyle{tango}
-
-\newenvironment{Rcode}
-{\VerbatimEnvironment
- \begin{minted}[fontsize=\small,baselinestretch=0.7,bgcolor=bg]{r}}%
-{\end{minted}}
-
-\newenvironment{Pcode}
-{\VerbatimEnvironment
- \begin{minted}[fontsize=\small,baselinestretch=0.7,bgcolor=bg]{python}}%
-{\end{minted}}
-
-\newenvironment{Code}[1]
-{\VerbatimEnvironment
- \begin{minted}[fontsize=\small,baselinestretch=0.7,bgcolor=bg]{#1}}%
-{\end{minted}}
-
-
-
-\usepackage{textfit} % commands \scaletoheight{height}{text} and \scaletowidth{width}{text}
-
-\useoutertheme[glossy]{wuerzburg}
-\useinnertheme[shadow,outline]{chamfered}
-\usecolortheme{shark}
-\beamertemplatenavigationsymbolsempty 
-
+\input{../preamble/slidespreamble.tex}
 
 %===========================================================
 % Title Info
@@ -112,7 +83,7 @@ Phone: 613-8159
 \scriptsize
 
 \renewcommand{\arraystretch}{1.1}
-\begin{tabular}{rp{28em}}
+\begin{tabular}{rp{3.5in}}
 \multicolumn{1}{c}{{\sl Date}} & \multicolumn{1}{c}{{\sl Topic}} \\
 August 30 & Introduction; Getting Acquainted with R and Python, Literate Programming \\
 September 6 & Data as Vectors and Exploratory Data Analysis; vector operations, dot product, correlation, regression as projection, univariate visualizations\\
@@ -625,7 +596,7 @@ November 29 & Building Bioinformatics Pipelines III; Polishing the interface and
   \frametitle{Numeric Data Types in R}
 \begin{itemize}
 
-\item Floating point values (“doubles”)
+\item Floating point values (`doubles')
 \begin{Rcode}
 > x <- 10.0
 > typeof(x)
@@ -1176,7 +1147,7 @@ Traceback (most recent call last):
     sqrt(x)
 TypeError: only length-1 arrays can be converted to Python scalars.
 >>> numpy.sqrt(x) # use sqrt function in the Numeric package
-array([ 1.41421356,  2.        ,  2.44948974,  2.82842712])
+array([ 1.41421356,  2.,  2.44948974,  2.82842712])
 >>> numpy.sqrt(10) 
 3.1622776601683795
 \end{minted}

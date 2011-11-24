@@ -1,0 +1,53 @@
+\useoutertheme[glossy]{wuerzburg}
+\useinnertheme[shadow,outline]{chamfered}
+\usecolortheme{shark}
+\beamertemplatenavigationsymbolsempty 
+
+\usefonttheme{professionalfonts}
+\let\digamma\relax
+\usepackage[scale=0.85,stdmathitalics=true,romanfamily=casual]{lucimatx}
+\usefonttheme[stillsansseriftext]{serif}
+
+
+\usepackage{fancyvrb}
+
+%% Fancy syntax coloring via pygments
+\usepackage{minted}
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+\usemintedstyle{borland}
+
+
+\newenvironment{Rcode}
+{\VerbatimEnvironment
+ \begin{minted}[fontsize=\scriptsize,baselinestretch=1]{r}}%
+{\end{minted}}
+
+\newenvironment{Pcode}
+{\VerbatimEnvironment
+ \begin{minted}[fontsize=\scriptsize,baselinestretch=1]{python}}%
+{\end{minted}}
+
+\newenvironment{Code}[1]
+{\VerbatimEnvironment
+ \begin{minted}[fontsize=\scriptsize,baselinestretch=1]{#1}}%
+{\end{minted}}
+
+
+\usepackage{textfit} % commands \scaletoheight{height}{text} and \scaletowidth{width}{text}
+
+\usepackage{tikz}
+
+
+\newtheorem{Alert}{Alert}
+\newtheorem{Highlight}{Highlight}
+
+\newcommand{\Species}[1]{{\rmfamily \itshape #1}}
+\newcommand{\Real}{\ensuremath{\mathbb{R}}}
+\newcommand{\RealN}{\ensuremath{\mathbb{R}^n}}
+\newcommand{\RealP}{\ensuremath{\mathbb{R}^p}}
+\newcommand{\Mtx}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\Inv}[1]{\ensuremath{#1^{-1}}}
+\newcommand{\InvMtx}[1]{\ensuremath{\mathbf{#1}^{-1}}}
+\newcommand{\Red}[1]{\textcolor{red}{#1}}
+\newcommand{\PsInv}[1]{\ensuremath{\mathbf{#1}^{+}}}
+
