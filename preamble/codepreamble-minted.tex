@@ -1,0 +1,75 @@
+% Assignment box environment
+
+\usepackage{fancybox}
+\usepackage{fancyvrb}
+
+\newcounter{assign_num}
+\setcounter{assign_num}{1}
+\newenvironment{assignment}%
+{\begin{Sbox}\begin{minipage}{6in}%
+\textbf{Assignment \arabic{assign_num}\stepcounter{assign_num}}:}% 
+{\end{minipage}\end{Sbox}\shadowbox{\TheSbox}}
+
+
+\usepackage{minted}
+\mintedstyle{
+
+\usepackage{listings}
+\lstMakeShortInline|
+
+\lstset{%
+aboveskip=1em,
+xleftmargin=3pt,
+xrightmargin=3pt,
+breaklines=true,
+basicstyle={\ttfamily \small},
+breakatwhitespace=false,
+showspaces=false,
+showstringspaces=false
+showtabs=false}
+
+
+\usepackage{xcolor}
+\definecolor{boxframe}{rgb}{0.6,0,0}
+\definecolor{boxfill}{rgb}{1,.95,.95}
+
+\lstnewenvironment{codeblock}[1][]
+{\lstset{frame=single,
+backgroundcolor=\color{boxfill},
+rulecolor=\color{boxframe},
+framesep=2.5pt,
+framerule=0.5pt,
+language=#1}}
+{}
+
+% \lstnewenvironment{Code}
+% {}{}
+% 
+% \lstnewenvironment{python}
+% {\lstset{language=python}}
+% {}
+% \lstnewenvironment{bash}
+% {\lstset{language=bash}}
+% {}
+
+
+\usepackage{fancyvrb}
+
+\newenvironment{Rcode}
+{\VerbatimEnvironment
+ \begin{minted}[fontsize=\scriptsize,baselinestretch=1]{r}}%
+{\end{minted}}
+
+\newenvironment{Pcode}
+{\VerbatimEnvironment
+ \begin{minted}[fontsize=\scriptsize,baselinestretch=1]{python}}%
+{\end{minted}}
+
+% \newenvironment{Code}
+% {\VerbatimEnvironment%
+%  \begin{minted}[fontsize=\scriptsize,baselinestretch=1]{python}}%
+% {\end{minted}}
+
+\newminted[Code]{python}{}
+
+
