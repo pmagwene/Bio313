@@ -1,3 +1,9 @@
+"""
+pipline.py --  An illustrative example of a bioinformatics pipeline.
+Requires Python 2.6+ and BioPython 1.53+
+(c) Copyright by Paul M. Magwene, 2009-2011  (mailto:paul.magwene@duke.edu)
+"""
+
 from Bio import Seq, SeqIO, SeqRecord
 from Bio import ExPASy, SwissProt
 from Bio.Blast import NCBIWWW, NCBIXML
@@ -102,7 +108,7 @@ def oneseq_pipeline(infilename, pfamdb=None,
     
     # run blastp on protein sequence against swissprot and extract best hits
     protrec = parse_fasta(protout)[0]        
-    blastout ='blast-' + protout        
+    blastout ='blast-' + protout + '.XML'        
     besthitids = []
     for organism in compareto:
         equery = '(%s[ORGN])' % organism # create the entrez organism query
