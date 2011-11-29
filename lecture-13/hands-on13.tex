@@ -271,7 +271,7 @@ We can use Biopython do network based BLAST searches. Here we will use blastp to
 \begin{python}
 >>> from Bio.Blast import NCBIWWW, NCBIXML
 >>> prot1 = pipeline.read_fasta('unknown1-protein.fasta')
->>> results_handle = NCBIWWW.qblast('blastp','swissprot',prot1.seq.tostring(), entrez_query='(Homo sapiens[ORGN]')
+>>> results_handle = NCBIWWW.qblast('blastp','swissprot',prot1.seq.tostring(), entrez_query='(Homo sapiens[ORGN])')
 >>> results = results_handle.read()
 >>> sfile = open('prot1_blast.out','w')
 >>> sfile.write(results)
