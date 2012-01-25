@@ -1,0 +1,107 @@
+\documentclass[extrafontsizes]{memoir}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=black]{hyperref}
+\usepackage{natbib}
+
+
+%% Formatting options
+
+\input{fontpreamble.tex}
+\input{codepreamble.tex}
+
+\headstyles{memman}
+\chapterstyle{ell}
+
+%% Macros
+\input{macros.tex}
+
+%% Title Page Formatting
+\input{titlepage.tex}
+
+
+\usepackage[shortlabels]{enumitem}
+
+%% Document
+\begin{document}
+\pagestyle{empty} 
+\mytitlepage
+
+\newpage
+
+\tableofcontents
+
+
+\chapter{Getting your feet wet with R and Python}
+\input{hands-on1.tex}
+
+\chapter{Data structures and function in R and Python}
+\input{hands-on2.tex}
+
+\chapter{Matrices and matrix operations in R and Python}
+\input{hands-on3.tex}
+
+\chapter{Regression models in R}
+\input{hands-on4.tex}
+
+\chapter{Eigenanalysis and PCA}
+\input{hands-on5.tex}
+
+\chapter{Singular value decomposition}
+\input{hands-on7.tex}
+
+\chapter{Discriminant Analysis}
+\input{hands-on8.tex}
+
+
+\chapter{Hierarchical clustering, minimum spanning trees, and multidimensional scaling}
+\input{hands-on9.tex}
+
+\chapter{Clustering via K-means and Gaussian mixture modeling}
+\input{hands-on10.tex}
+
+\chapter{Building a Bioinformatics Pipeline, Part I}
+\input{hands-on11.tex}
+
+\chapter{Building a Bioinformatics Pipeline, Part II}
+\input{hands-on12.tex}
+
+\chapter{Building a Bioinformatics Pipeline, Part III}
+\input{hands-on13.tex}
+
+% 
+% \chapter{March}
+% %\input{research-2010-XX.tex}
+% 
+% \chapter{April}
+% %\input{research-2010-XX.tex}
+% 
+% \chapter{May}
+% %\input{research-2010-XX.tex}
+% 
+% \chapter{June}
+% %\input{research-2010-XX.tex}
+% 
+% \chapter{July}
+% %\input{research-2010-XX.tex}
+% 
+% \chapter{August}
+% %\input{research-2010-XX.tex}
+% 
+% \chapter{September}
+% %\input{research-2010-XX.tex}
+% 
+% \chapter{October}
+% %\input{research-2010-XX.tex}
+% 
+% \chapter{November}
+% %\input{research-2010-XX.tex}
+% 
+% \chapter{December}
+% %\input{research-2010-XX.tex}
+% 
+% 
+% 
+% \bibliography{../researchjournal-refs.bib}
+% \bibliographystyle{cbe}
+
+\end{document}
+

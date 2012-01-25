@@ -1,0 +1,29 @@
+
+\newlength{\drop}% for my convenience 
+\newcommand*{\titleGM}{\begingroup% Gentle Madness 
+\drop = 0.1\textheight 
+\vspace*{\baselineskip} 
+\vfill 
+\hbox{% 
+\hspace*{0.2\textwidth}% 
+\rule{1pt}{\textheight} 
+\hspace*{0.05\textwidth}% 
+\parbox[b]{0.75\textwidth}{ 
+\vbox{% 
+\vspace{\drop} 
+{\noindent\HUGE\bfseries Scientific Computing \\[0.5\baselineskip] 
+for Biologists}\\[2\baselineskip] 
+{\Large\itshape 
+Bio313, Fall Semester 2011}\\[4\baselineskip] 
+{\Large PAUL M. MAGWENE}\par 
+\vspace{0.5\textheight} 
+{\noindent Duke University\\Durham, North Carolina, USA}\\[\baselineskip] 
+}% end of vbox 
+}% end of parbox
+}% end of hbox 
+\vfill 
+\null 
+\endgroup} 
+
+
+\newcommand{\mytitlepage}{\titleGM}

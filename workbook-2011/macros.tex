@@ -1,0 +1,49 @@
+% For nice fleur fancybreak
+\usepackage{pifont} % for Dingbat fonts
+\renewcommand{\pfbreakdisplay}{% 
+\ding{167}\quad\ding{167}\quad\ding{167}} 
+\newcommand{\fleur}{\vspace*{0.75ex}\fancybreak{\pfbreakdisplay}\vspace*{0.75ex}}
+\newcommand{\edot}{\vspace*{0.5ex}\fancybreak{$\cdots$}\vspace*{0.5ex}}
+
+% %% For nicely formatted verbatim environments
+% \usepackage{fancybox}
+% \usepackage{fancyvrb}
+% 
+% \DefineShortVerb{\|} 
+% 
+% \usepackage[usenames,dvipsnames]{color}
+% \definecolor{lightlightgray}{gray}{0.95}
+% \usepackage{listings}
+% \lstset{
+% language=R,
+% alsolanguage=Python,
+% basicstyle={\ttfamily \small},                
+% keywordstyle=\color{BrickRed},        
+% stringstyle=\color{NavyBlue},       
+% commentstyle={\color{Apricot}\itshape},    
+% numberstyle=\color{LimeGreen},
+% backgroundcolor=\color{lightlightgray}, 
+% frame=none,           
+% framexleftmargin=1ex,                  
+% tabsize=4,
+% captionpos=b,                           
+% breaklines=true,                        
+% breakatwhitespace=false,                
+% showspaces=false,                       
+% showstringspaces=false
+% showtabs=false,                        
+% }
+
+\newcommand{\latin}[1]{\textit{#1}}
+\newcommand{\ktilde}{$\sim$}
+
+
+% Geometry settins from Memoir manual
+\settrimmedsize{11in}{210mm}{*} \setlength{\trimtop}{0pt} \setlength{\trimedge}{\stockwidth} \addtolength{\trimedge}{-\paperwidth} \settypeblocksize{7.75in}{33pc}{*} \setulmargins{4cm}{*}{*} \setlrmargins{1.25in}{*}{*} \setmarginnotes{17pt}{51pt}{\onelineskip} \setheadfoot{\onelineskip}{2\onelineskip} \setheaderspaces{*}{2\onelineskip}{*} \checkandfixthelayout
+
+
+\usepackage{graphicx}
+
+\newcommand{\Mtx}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\Inv}[1]{\ensuremath{#1^{-1}}}
+
