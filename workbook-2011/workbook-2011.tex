@@ -1,24 +1,22 @@
-\documentclass[extrafontsizes]{memoir}
+\documentclass[extrafontsizes,10pt]{memoir}
 \usepackage[colorlinks=true,citecolor=blue,linkcolor=black]{hyperref}
 \usepackage{natbib}
 
 
 %% Formatting options
-
+\input{layoutpreamble.tex}
+\input{stylepreamble.tex}
 \input{fontpreamble.tex}
+
+\input{packages.tex}
 \input{codepreamble.tex}
-
-\headstyles{memman}
-\chapterstyle{ell}
-
-%% Macros
 \input{macros.tex}
 
 %% Title Page Formatting
 \input{titlepage.tex}
 
 
-\usepackage[shortlabels]{enumitem}
+
 
 %% Document
 \begin{document}
@@ -33,7 +31,7 @@
 \chapter{Getting your feet wet with R and Python}
 \input{hands-on1.tex}
 
-\chapter{Data structures and function in R and Python}
+\chapter{Data structures and functions in R and Python}
 \input{hands-on2.tex}
 
 \chapter{Matrices and matrix operations in R and Python}
@@ -50,7 +48,6 @@
 
 \chapter{Discriminant Analysis}
 \input{hands-on8.tex}
-
 
 \chapter{Hierarchical clustering, minimum spanning trees, and multidimensional scaling}
 \input{hands-on9.tex}

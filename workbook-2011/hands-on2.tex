@@ -1,6 +1,6 @@
+%!TEX root = ./workbook-2011.tex
 
-
-\subsection{Vector Operations in R}
+\section{Vector Operations in R}
 
 As you saw last week R vectors support basic arithmetic operations that
 correspond to the same operations on geometric vectors. For example:
@@ -39,7 +39,8 @@ the vectors \lstinline!x = [-3, -3, -1, -1, 0, 0, 1, 2, 2, 3]! and
 \lstinline!y = [-8, -5, -3, 0, -1, 0, 5, 1, 6, 5]!.
 
 \end{quote}
-\subsection{Vector Operations in Python}
+
+\section{Vector Operations in Python}
 
 The Python equivalent of the R code above is:
 
@@ -84,7 +85,8 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: range() integer step argument expected, got float.
 \end{lstlisting}
-\subsection{Writing Functions in R}
+
+\section{Writing Functions in R}
 
 So far we've been using R's built in functions. However the power of a
 true programming language is the ability to write your own functions.
@@ -123,7 +125,7 @@ function's definition. This works for built-in functions as well
 (thought sometimes these functions are defined in C code in which case R
 will tell you that the function is a `.Primitive').
 
-\subsubsection{Putting R functions in Scripts}
+\subsection{Putting R functions in Scripts}
 
 When you define a function at the interactive prompt and then close the
 interpreter your function definition will be lost. The simple way around
@@ -180,7 +182,8 @@ $\vec{y}$ on $\vec{x}$ and the component of $\vec{y}$ in $\vec{x}$:
 % and \[C_{\vec{x}}(\vec{y}) = \frac{\vec{x} \cdot \vec{y}}{|\vec{x}|}\]
 
 \end{quote}
-\subsection{Writing Functions in Python}
+
+\section{Writing Functions in Python}
 
 The general form of a Python function is as follows:
 
@@ -244,7 +247,8 @@ as well you could define the function as follows:
 >>> mypyfunc(a,b)
 array([ 5, 20, 45, 80])
 \end{lstlisting}
-\subsubsection{Putting Python functions in Modules}
+
+\subsection{Putting Python functions in Modules}
 
 As with R, you can define your own Python modules that contain user
 defined functions. Using a programmer's text editor, write your
@@ -294,7 +298,8 @@ Remember that your module will need to have access to the
 statement.
 
 \end{quote}
-\subsection{Dealing with Data Subsets in R}
+
+\section{Dealing with Data Subsets in R}
 
 Manipulating or analyzing subsets of data is one of the most common
 tasks in R. The \lstinline!subset()! function comes in handy for such
