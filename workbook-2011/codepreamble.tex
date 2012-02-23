@@ -32,6 +32,17 @@ framerule=0.5pt,
 language=#1}}
 {}
 
+\lstnewenvironment{noindentcodeblock}[1][]
+{\lstset{frame=single,
+backgroundcolor=\color{boxfill},
+rulecolor=\color{boxframe},
+framesep=2.5pt,
+framerule=0.5pt,
+breakindent=0pt,
+breakautoindent=false,
+language=#1}}
+{}
+
 \lstnewenvironment{Code}
 {}{}
 
@@ -56,6 +67,6 @@ language=#1}}
 \newcounter{assign_num}
 \setcounter{assign_num}{1}
 \newenvironment{assignment}%
-{\begin{Sbox}\begin{minipage}{6in}%
+{\begin{Sbox}\begin{minipage}{\columnwidth}%
 \textbf{Assignment \arabic{assign_num}\stepcounter{assign_num}}:}% 
 {\end{minipage}\end{Sbox}\shadowbox{\TheSbox}}

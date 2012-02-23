@@ -9,24 +9,21 @@ code, or to turn the entire document into a nicely formatted report.
 
 Here's a simple Sweave document to get you started:
 %
-\begin{codeblock}[tex]
+\begin{noindentcodeblock}[tex]
 \documentclass{article}
 \begin{document}
 
-This is a very simple Sweave file. It includes only a single
-code chunk.
+This is a very simple Sweave file. It includes only a single code chunk.
 
 <<>>=
 z <- rnorm(30, mean=0, sd=1)
 summary(z)
 @
 
-That code chunk generated a random sample of 30 observations 
-drawn from a normal distribution with mean zero and standard 
-deviation one.
+That code chunk generated a random sample of 30 observations drawn from a normal distribution with mean zero and standard deviation one.
 
 \end{document}  
-\end{codeblock}
+\end{noindentcodeblock}
 %
 Type those lines into a text editor and save the document with the name
 |sweave1.Rnw|.
@@ -110,9 +107,7 @@ use some LaTeX formatting features to produce a nicer document.
 
 \begin{document}
 \maketitle
-This is a still a simple Sweave file. However, 
-now it includes several code chunks and several 
-\LaTeX\ specific commands.
+This is a still a simple Sweave file. However, now it includes several code chunks and several \LaTeX\ specific commands.
 
 \section{Sampling from the random normal distribution}
 
@@ -121,15 +116,11 @@ z <- rnorm(30, mean=0, sd=1)
 summary(z)
 @
 
-That code chunk generated a random sample of 30 
-observations drawn from a normal distribution with mean 
-zero ($\mu = 0$) and standard deviation one ($\sigma = 1$).
+That code chunk generated a random sample of 30 observations drawn from a normal distribution with mean zero ($\mu = 0$) and standard deviation one ($\sigma = 1$).
 
 \section{Generating figures}
 
-We can also automatically imbed graphics in our 
-report. For example, the following will generate 
-a histogram.
+We can also automatically imbed graphics in our report. For example, the following will generate a histogram.
 
 % this tells Sweave to set the graphics 
 % to be half the width of the text
