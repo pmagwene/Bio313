@@ -1,7 +1,13 @@
 
+
 \usepackage[svgnames]{xcolor}
+
+\usepackage[listings]{tcolorbox}
 \usepackage{listings}
 \lstMakeShortInline|
+
+\definecolor{boxfill}{gray}{0.95}
+\definecolor{boxframe}{named}{gray}
 
 \lstset{%
 aboveskip=1ex,
@@ -13,15 +19,18 @@ breakatwhitespace=false,
 showspaces=false,
 showstringspaces=false
 showtabs=false,
-keywordstyle=\color{DarkBlue}\bfseries,
+%keywordstyle=\color{DarkBlue}\bfseries,
 stringstyle=\color{DarkRed},
-commentstyle=\color{Olive}\itshape,
+%commentstyle=\color{Olive}\itshape,
+commentstyle=\color{gray!90}\itshape,
 }
 
 
 
-\definecolor{boxframe}{rgb}{0.6,0,0}
-\definecolor{boxfill}{rgb}{1,.95,.95}
+%\definecolor{boxframe}{rgb}{0.6,0,0}
+%\definecolor{boxfill}{rgb}{1,.95,.95}
+
+
 
 \lstnewenvironment{codeblock}[1][]
 {\lstset{frame=single,
@@ -47,13 +56,13 @@ language=#1}}
 {}{}
 
 \lstnewenvironment{python}
-{\lstset{language=python}}
+{\lstset{language=python,backgroundcolor=\color{boxfill}}}
 {}
 \lstnewenvironment{bash}
-{\lstset{language=bash}}
+{\lstset{language=bash,backgroundcolor=\color{boxfill}}}
 {}
 \lstnewenvironment{R}
-{\lstset{language=R}}
+{\lstset{language=R,backgroundcolor=\color{boxfill}}}
 {}
 
 
@@ -63,10 +72,26 @@ language=#1}}
 \usepackage{fancybox}
 \usepackage{fancyvrb}
 
+%\tcbset{before={\par\medskip\pagebreak[0]\noindent},
+%        after={\par\medskip}}
 
-\newcounter{assign_num}
-\setcounter{assign_num}{1}
-\newenvironment{assignment}%
-{\begin{Sbox}\begin{minipage}{\columnwidth}%
-\textbf{Assignment \arabic{assign_num}\stepcounter{assign_num}}:}% 
-{\end{minipage}\end{Sbox}\shadowbox{\TheSbox}}
+\usepackage{chngcntr}  % provides \counterwithin
+% \newcounter{assign_num}
+% \counterwithin*{assign_num}{chapter}
+% \setcounter{assign_num}{1}
+% \newenvironment{assignment}{%
+% \tcolorbox[colback=red!5,colframe=red!75!black,fonttitle=\sffamily\bfseries,title={Assignment \thechapter.\arabic{assign_num}\stepcounter{assign_num}}]}%
+% {\endtcolorbox}
+
+\newcounter{assignnum}
+\counterwithin{assignnum}{chapter}
+\setcounter{assignnum}{1}
+\newenvironment{assignment}{%
+\tcolorbox[colback=red!5,colframe=red!75!black,fonttitle=\sffamily\bfseries,title={Assignment \stepcounter{assignnum}\theassignnum}]}%
+{\endtcolorbox}
+
+
+% \newenvironment{assignment}%
+% {\begin{Sbox}\begin{minipage}{0.95\columnwidth}%
+% \textbf{Assignment \arabic{assign_num}\stepcounter{assign_num}}:}% 
+% {\end{minipage}\end{Sbox}\shadowbox{\TheSbox}}

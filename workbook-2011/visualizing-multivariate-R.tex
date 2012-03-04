@@ -1,0 +1,74 @@
+
+\section{Visualizing Multivariate data in R}
+
+Plotting and visualizing multivariate data sets can be challenge and a
+variety of representations are possible. We cover some of the basic ones
+here. Get the file \lstinline!yeast-subset-clean.txt! from the class
+website (or use the cleaned up data set you created in the assignment
+above).
+
+\subsection{Scatter plot matrix}
+
+A scatter plot shows the relationship between two variables by plotting
+the observations in the variable space. A scatter of points that falls
+approximately along a line indicate that the variables of interested are
+linearly correlated, while a circular scatter indicates a lack of
+correlation. Other shapes in the scatter can be indicative of non-linear
+relationships. Scatter plots can also be useful for highlighting
+outliers.
+
+A scatter plot matrix is a simply a set of scatter plots, arranged like
+a matrix, showing the bivariate relationships for every pair of
+variables. The size of this plot is $p^2$ where $p$ is the number of
+variables so you should only use it for relatively small subsets of
+variables (maybe up to 7 or 8 variables at a time). The R function
+\lstinline!pairs()! will create a scatter plot matrix.
+
+\begin{R}
+> yeast.clean <- read.delim("yeast-subnetwork-clean.txt")
+> names(yeast.clean)
+ [1] "FLO8" "RAS2" "TEC1" "PHD1" "ACE2" "SWI5" "SOK2" "RME1" "IME1" "GPA2" "MEP2" "IME2" "CLN2"
+[14] "ASH1" "MUC1"
+> pairs(yeast.clean[1:4]) # create a scatter plot matrix of the first 4 variables
+\end{R}
+\subsection{3D Scatter Plots}
+
+A three-dimensional scatter plot can come in handy. The R library
+\lstinline!lattice! has a function called \lstinline!cloud()! that
+allows you to make such plots. There is also a package available on CRAN
+called \lstinline!scatterplot3d! with similar functionality. I will
+demonstrate in class how to install packages.
+
+\begin{R}
+> library(lattice)
+> cloud(ACE2 ~ ASH1 * RAS2, data=yeast.clean)
+> cloud(ACE2 ~ ASH1 * RAS2, data=yeast.clean, screen=list(x=-90, y=70)) # same plot from different angle
+> attach(yeast.clean) # so we can access the variables directly
+> library(scatterplot3d) # assumes package is properly installed
+> scatterplot3d(ASH1, RAS2, ACE2)
+> scatterplot3d(ASH1, RAS2, ACE2, angle=-30)
+\end{R}
+See the help file for \lstinline!cloud()! and \lstinline!panel.cloud()!
+for information on setting parameters.
+
+\subsection{Colored grid plots}
+
+A colored grid (or `heatmap') is another way of representing 3D data. It
+most often is used to represent a variable of interest as a function of
+two parameters. Grid plots are created using the \lstinline!image()!
+function in R.
+
+\begin{R}
+> x <- seq(0, 2*pi, pi/20)
+> y <- seq(0, 2*pi, pi/20)
+> coolfxn <- function(x,y){
++    cos(x) * cos(y)}
+> z <- outer(x,y,coolfxn) # the outer product of two matrices or vectors, see docs
+> dim(z)
+[1] 41 41
+> image(x,y,z)
+\end{R}
+The \lstinline!x! and \lstinline!y! arguments to \lstinline!image()! are
+vectors, the \lstinline!z! argument is a matrix (in this case created
+using the outer product operator in conjunction with our function of
+interest).

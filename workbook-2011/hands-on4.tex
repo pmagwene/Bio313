@@ -1,16 +1,12 @@
 
 
 
-
 This weeks hands-on exercises draw from a nice set of introductory R
 notes written by John Verzani, entitled ``simpleR -- Using R for
 Introductory Statistics.'' This text used to available online at:
 \url{http://www.math.csi.cuny.edu/Statistics/R/simpleR/} (the page still
-exists, but the PDF is not available as of Sept. 2011, but see below).
-
-I've put up a
-\href{https://raw.github.com/pmagwene/Bio313/master/lecture-04/simpleR.pdf}{PDF
-version of the Verzani text} on GitHub. Also from the class wiki
+exists, but the PDF is not available as of Sept. 2011, but see below). I've put up a
+\href{https://raw.github.com/pmagwene/Bio313/master/lecture-04/simpleR.pdf}{PDF version of the Verzani text} on GitHub. Also from the class wiki
 download the set of R functions and data that are associated with the
 Verzani text
 \href{https://raw.github.com/pmagwene/Bio313/master/lecture-04/simpleR.R}{\lstinline!simpleR.R!}
@@ -19,9 +15,7 @@ and put it in your R working directory.
 \section{Bivariate Linear Regression in R revisited}
 
 Recall from previous class sessions that the main function for carrying
-out regression in R is \lstinline!lm()! (short for linear-model).
-
-Read and work through the exercises in Verzani, section 13 (starting at
+out regression in R is \lstinline!lm()! (short for linear-model). Read and work through the exercises in Verzani, section 13 (starting at
 p.~100 in the PDF), for a refresher on bivariate regression. As you work
 through the material you will notice that Verzani uses a number of
 functions that are defined in the code file \lstinline!simple.R!, for
@@ -30,27 +24,29 @@ example \lstinline!simple.lm()!. Most of these are what me might call
 them more convenient to use, for example automatically creating useful
 plots.
 
-\begin{quote}
-\textbf{Assignment 1}: Open up \lstinline!simple.R! in your text editor
+\begin{assignment}
+Open up \lstinline!simple.R! in your text editor
 and read through the code for \lstinline!simple.lm()!. Write a
 description of what each of the major steps in the
 \lstinline!simple.lm()! accomplishes. If you want you can embed little
 snippets of code in your explanation by surrounding the code with
 \lstinline!\begin{verbatim}...\end{verbatim}!:
 
-\end{quote}
+\smallskip
 \begin{lstlisting}
 \begin{verbatim}
 x < - 1:10
 y <- 10:20
 z <- x + y
-\end{!verbatim} # don't include the exclamation mark
+\end{verbatim}
 \end{lstlisting}
-\begin{quote}
+
+\smallskip   
 These verbatim snippets will not get evaluated when you compile your
 document to a PDF.
 
-\end{quote}
+\end{assignment}
+
 \section{Multiple Regression in R}
 
 Like bivariate regression, multiple regression in R is typically
@@ -88,7 +84,7 @@ Laboratory}, 209--225.
 We'll load the Bumpus data set and rename the variable names to shorter,
 more convenient ones.
 
-\begin{lstlisting}
+\begin{R}
 > bumpus <- read.delim("bumpus-data.txt")
 > names(bumpus)
  [1] "line.number"                 "sex"                         "age..a...adult..y...young." 
@@ -113,11 +109,11 @@ more convenient ones.
  [7] "weight"      "beak"        "humerus"     "femur"       "tibiotarsus" "skull"      
 [13] "sternal"   
 > names(bumpus) <- new.names
-\end{lstlisting}
+\end{R}
 Having made the names more convenient we can now proceed to carrying out
 the logistic regression:
 
-\begin{lstlisting}
+\begin{R}
 > weight <- bumpus$weight
 > survived <- bumpus$survived
 > plot(survived ~ weight)
@@ -148,13 +144,15 @@ Number of Fisher Scoring iterations: 4
 > newx <- seq(20,35,0.5)
 > p <- predict.glm(fit, newdata=data.frame(weight = newx), type="response")
 > lines(newx,p)
-\end{lstlisting}
-\begin{quote}
-\textbf{Assignment 2}: Repeat the logistic regression of survival as a
+\end{R}
+
+\medskip
+\begin{assignment}
+Repeat the logistic regression of survival as a
 function of body weight for: 1)the female birds and 2) the adult male
 birds. Produce plots illustrating these regressions for each sex.
+\end{assignment}
 
-\end{quote}
 \subsection{LOESS Models}
 
 LOESS (aka LOWESS; `Locally weighted scatterplot smoothing') is a
@@ -173,14 +171,17 @@ $\hat{\beta}_j(x)$ as the values that minimize:
 \[\sum_{k=1}^n w_k(x_i)(y_k - \beta_0 - \beta_1 x_k - \ldots - \beta_d x_k^2)^2\]
 where $d$ is the degree of the polynomial (usually 1 or 2) and $w_k$ is
 a weight function. The most common choice of weighting function is
-called the ``tri-cube'' function as is defined as:
+called the ``tri-cube'' function which is defined as:
 
-%\[w(x) = (1-|x|^3)^3, \mbox{for}\ |x| < 1\]
+% \begin{align*}
+%  w(x) & = (1-|x|^3)^3, \mbox{for}\ |x| < 1  
+%       & = 0, \mbox{for}\ |x| \geq 1 
+% \end{align*}
 
-%\[= 0, \mbox{for}\ |x| \geq 1\]
 
-\begin{quote}
-\textbf{Assignment 3}: Write an R function that computes the tri-cube
+\medskip
+\begin{assignment}
+Write an R function that computes the tri-cube
 function described above. Create a plot of the tri-cube function over
 the range (--3,3). Create a second R function that calculates the
 Gaussian function $f(x) = e^{-x^2}$ and plot that function over the same
@@ -188,8 +189,8 @@ range in the same plot. If you're struggling with writing the functions
 you may wish to review Chapter 6 of Paradis, R for Beginners (see wiki)
 and Chapters 9 (Grouping, loops and conditional execution) and 10
 (Writing your own functions) in the ``R Introduction'' included with R.
+\end{assignment}
 
-\end{quote}
 The primary parameter that a user must decide on when using LOESS is the
 size of the neighborhood function to apply (i.e.~over what distance
 should the weight function drop to zero). This is referred to as the
@@ -201,7 +202,7 @@ We'll illustrate fitting a Loess model using data on Barack Obama's
 approval ratings over the period from November 2008 to September 2010
 (\lstinline!obama-polls.txt! available on the class wiki).
 
-\begin{lstlisting}
+\begin{R}
 > polls <- read.table('obama-polls.txt',header=T,sep="\t")
 > names(polls)
 [1] "Pollster"   "Dates"      "N.Pop"      "Approve"    "Disapprove" "Undecided" 
@@ -218,20 +219,20 @@ approval ratings over the period from November 2008 to September 2010
 > loess.app2 <- loess(approve ~ pollnum, span=0.25)
 > pred.app2 <- predict(loess.app2, pollnum)
 > lines(pollnum, pred.app2, lwd=2, col='cyan')
-\end{lstlisting}
+\end{R}
 Take note of how the loess curve changed when we made the span smaller.
 By decreasing the span we've increased the sensitivity of the model
 (perhaps overfitting in this case).
 
-\begin{quote}
-\textbf{Assignment 4}: Write an R function that genereates a plot that
+\medskip
+\begin{assignment}
+Write an R function that genereates a plot that
 simultaneously illustrates trends in both approval and disapproval
 ratings for Barack Obama, showing both the raw data and corresponding
 loess fits. Use colors and/or shapes to distinguish the two trends. Make
 sure both your x- and y-axes are scaled to show the full range of the
 data. Label your axes and create a title in the plot. Aim for a
 `publication quality' figure.
-
-\end{quote}
+\end{assignment}
 
 

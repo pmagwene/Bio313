@@ -1,18 +1,17 @@
 \documentclass[9pt,paper=a5,landscape,noonelinecaption,tablecaptionabove,twocolumn,bigheadings,pagesize,oneside]{scrbook}
 \KOMAoptions{BCOR=0mm,DIV=25}
 
-\usepackage[colorlinks=true,citecolor=blue,linkcolor=black]{hyperref}
-\usepackage{natbib}
-
 
 %% Formatting options
 %\input{layoutpreamble.tex}
 %\input{stylepreamble.tex}
 \input{fontpreamble.tex}
-
 \input{packages.tex}
 \input{codepreamble.tex}
 \input{macros.tex}
+
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=black]{hyperref}
+\usepackage[capitalize]{cleveref} % should always be loaded after hyperref
 
 %% Title Page Formatting
 %\input{titlepage.tex}
@@ -32,6 +31,10 @@
 
 \chapter{Getting your feet wet with R and Python}
 \input{hands-on1.tex}
+
+% \begin{assignment}
+%     Does it work?
+% \end{mybox}
 
 \chapter{Data structures and functions in R and Python}
 \input{hands-on2.tex}
@@ -66,37 +69,7 @@
 \chapter{Building a Bioinformatics Pipeline, Part III}
 \input{hands-on13.tex}
 
-% 
-% \chapter{March}
-% %\input{research-2010-XX.tex}
-% 
-% \chapter{April}
-% %\input{research-2010-XX.tex}
-% 
-% \chapter{May}
-% %\input{research-2010-XX.tex}
-% 
-% \chapter{June}
-% %\input{research-2010-XX.tex}
-% 
-% \chapter{July}
-% %\input{research-2010-XX.tex}
-% 
-% \chapter{August}
-% %\input{research-2010-XX.tex}
-% 
-% \chapter{September}
-% %\input{research-2010-XX.tex}
-% 
-% \chapter{October}
-% %\input{research-2010-XX.tex}
-% 
-% \chapter{November}
-% %\input{research-2010-XX.tex}
-% 
-% \chapter{December}
-% %\input{research-2010-XX.tex}
-% 
+
 % 
 % 
 % \bibliography{../researchjournal-refs.bib}

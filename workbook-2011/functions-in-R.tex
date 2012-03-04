@@ -1,0 +1,103 @@
+%!TEX root = ./workbook-2011.tex
+
+\section{Writing Functions in R}
+
+So far we've been using R's built in functions. However the power of a
+true programming language is the ability to write your own functions.
+
+The general form of an R function is as follows:
+
+\begin{R}
+funcname <- function(arg1, arg2) {
+ # one or more expressions
+ # last expression is the object returned
+}
+\end{R}
+To make this concrete, here's an example where we define a function in
+the interpreter and then put it to use:
+%
+\begin{R}
+> myfunc <- function(x,y){
++   x^2 + y^2     # don't type the '+' symbols, these show continuation lines
++ }
+
+> a <- 1:5
+> b <- 6:10
+> a
+[1] 1 2 3 4 5
+> b
+[1]  6  7  8  9 10
+> myfunc(a,b)
+[1]  37  53  73  97 125
+> myfunc
+function(x,y){
+  x^2 + y^2
+}
+\end{R}
+%
+If you type a function name without parentheses R shows you the
+function's definition. This works for built-in functions as well
+(thought sometimes these functions are defined in C code in which case R
+will tell you that the function is a `.Primitive').
+
+\subsection{Putting R functions in Scripts}
+
+When you define a function at the interactive prompt and then close the
+interpreter your function definition will be lost. The simple way around
+this is to define your R functions in a script that you can than access
+at any time.
+
+Choose \lstinline!File > New Script! (or \lstinline!New Document! in OS
+X) in the R GUI (\lstinline!File > New > R Script! in RStudio). This
+will bring up a blank editor window. Enter your function into the editor
+and save the source file in your R working directory with a name like
+\lstinline!vecgeom.R!.
+
+\begin{R}
+# functions defined in vecgeom.R
+
+veclength <- function(x) {
+  # Given a numeric vector, returns length of that vector
+  sqrt(drop(x %*% x))
+}
+
+unitvector <- function(x) {
+  # Given a numeric vector, returns a unit vector in the same direction
+  x/veclength(x)
+}
+\end{R}
+There are two functions defined above, one of which calls the other.
+Both take single vector arguments. At this point there is no error
+checking to insure that the argument is reasonable but R's built in
+error handling will do just fine for now.
+
+Once your functions are in a script file you can make them accesible by
+using the \lstinline!source()! function (See also the
+\lstinline!File > Source R code...! menu item (R GUI);
+\lstinline!Edit > Source File..! in RStudio):
+
+\begin{R}
+> source("vecgeom.R")
+> x <- c(-3,-3,-1,-1,0,0,1,2,2,3)
+> veclength(x)
+[1] 6.164414
+> ux <- unitvector(x)
+> ux
+ [1] -0.4866643 -0.4866643 -0.1622214 -0.1622214  0.0000000  0.0000000
+ [7]  0.1622214  0.3244428  0.3244428  0.4866643
+> veclength(ux)
+ [1] 1
+\end{R}
+
+\begin{assignment}
+Write a function in R that takes two vectors, $\vec{x}$ and $\vec{y}$, and returns a list containing the projection of $\vec{y}$ on $\vec{x}$ and the component of $\vec{y}$ in $\vec{x}$:
+
+\lstDeleteShortInline|
+
+\[P_{\vec{x}}(\vec{y}) = \left(\frac{\vec{x} \cdot \vec{y}}{|\vec{x}|}\right) \frac{\vec{x}}{|\vec{x}|}\]
+and 
+\[C_{\vec{x}}(\vec{y}) = \frac{\vec{x} \cdot \vec{y}}{|\vec{x}|}\]
+
+\lstMakeShortInline|
+
+\end{assignment}

@@ -1,0 +1,232 @@
+
+\section{Matrices in R}
+
+In R matrices are two-dimensional collections of elements all of which
+have the same mode or type. This is different than a data frame in which
+the columns of the frame can hold elements of different type (but all of
+the same length), or from a list which can hold objects of arbitrary
+type and length. Matrices are more efficient for carrying out most
+numerical operations, so if you're working with a very large data set
+that is amenable to representation by a matrix you should consider using
+this data structure.
+
+\subsection{Creating matrices in R}
+
+There are a number of different ways to create matrices in R. For
+creating small matrices at the command line you can use the
+\lstinline!matrix()! function.
+
+\begin{R}
+> X <- matrix(1:5)
+> X
+      [,1]
+ [1,]    1
+ [2,]    2
+ [3,]    3
+ [4,]    4
+ [5,]    5
+> X <- matrix(1:12, nrow=4)
+> X
+     [,1] [,2] [,3]
+[1,]    1    5    9
+[2,]    2    6   10
+[3,]    3    7   11
+[4,]    4    8   12
+> dim(X) # give the shape of the matrix 
+[1] 4 3
+\end{R}
+\lstinline!matrix()! takes a data vector as input and the shape of the
+matrix to be created is specified by using the \lstinline!nrow! and
+\lstinline!ncol! arguments (if the number of elements in the input data
+vector is less than \lstinline!nrow! $\times$ \lstinline!ncols! the
+elements will be 'recycled' as discussed in previous lectures). Without
+any shape arguments the \lstinline!matrix()! function will create a
+column vector as shown above. By default the \lstinline!matrix()!
+function fills in the matrix in a column-wise fashion. To fill in the
+matrix in a row-wise fashion use the argument \lstinline!byrow=T!.
+
+If you have a pre-existing data set in a list or data frame you can use
+the \lstinline!as.matrix()! function to convert it to a matrix.
+
+\begin{R}
+> turtles <- read.table('turtles.txt', header=T)
+> tmtx <- as.matrix(turtles) 
+> tmtx   # note how the elements were all converted to character 
+   sex length width height
+1  "f" " 98"  " 81" "38"  
+2  "f" "103"  " 84" "38"  
+3  "f" "103"  " 86" "42"  
+4  "f" "105"  " 86" "40"  
+ ... output truncated ...
+> tsub <- subset(turtles, select=-sex)
+> tmtx <- as.matrix(tsub)
+> tmtx    # this is probably more along the lines of what you want
+   length width height
+1      98    81     38
+2     103    84     38
+3     103    86     42
+4     105    86     40
+ ... output truncated ...
+\end{R}
+You can use the various indexing operations to get particular rows,
+columns, or elements. Here are some examples:
+
+\begin{R}
+> X
+     [,1] [,2] [,3]
+[1,]    1    5    9
+[2,]    2    6   10
+[3,]    3    7   11
+[4,]    4    8   12
+> X[1,] # get the first row
+[1] 1 5 9
+> X[,1] # get the first column
+[1] 1 2 3 4
+> X[1:2,] # get the first two rows
+     [,1] [,2] [,3]
+[1,]    1    5    9
+[2,]    2    6   10
+> X[,2:3] # get the second and third columns
+     [,1] [,2]
+[1,]    5    9
+[2,]    6   10
+[3,]    7   11
+[4,]    8   12
+> Y <- matrix(1:12, byrow=T, nrow=4)
+> Y
+     [,1] [,2] [,3]
+[1,]    1    2    3
+[2,]    4    5    6
+[3,]    7    8    9
+[4,]   10   11   12
+> Y[4] # see explanation below
+[1] 10 
+> Y[5]
+[1] 2
+> dim(Y) <- c(2,6)
+> Y
+     [,1] [,2] [,3] [,4] [,5] [,6]
+[1,]    1    7    2    8    3    9
+[2,]    4   10    5   11    6   12
+> Y[5]
+[1] 2
+\end{R}
+The example above where we create a matrix \lstinline!Y! is meant to
+show that matrices are stored internally in a column wise fashion (think
+of the columns stacked one atop the other), regardless of whether we use
+the \lstinline!byrow=T! argument. Therefore using single indices returns
+the elements with respect to this arrangement. Note also the use of
+assignment operator in conjuction with the \lstinline!dim()! function to
+reshape the matrix. Despite the reshaping, the internal representation
+in memory hasn't changed so \lstinline!Y[5]! still gives the same
+element.
+
+You can use the \lstinline!diag()! function to get the diagonal of a
+matrix or to create a diagonal matrix as show below:
+
+\begin{R}
+> Z <- matrix(rnorm(16), ncol=4)
+> Z
+           [,1]       [,2]         [,3]        [,4]
+[1,] -1.7666373  2.1353032 -0.903786375 -0.70527447
+[2,] -0.9129580  1.1873620  0.002903752  0.51174408
+[3,] -1.5694273 -0.5670293 -0.883259848  0.05694691
+[4,]  0.9903785 -1.6138958  0.408543336  2.39152400
+> diag(Z)
+[1] -1.7666373  1.1873620 -0.8832598  2.3915240
+> diag(5) # create the 5 x 5 identity matrix
+     [,1] [,2] [,3] [,4] [,5]
+[1,]    1    0    0    0    0
+[2,]    0    1    0    0    0
+[3,]    0    0    1    0    0
+[4,]    0    0    0    1    0
+[5,]    0    0    0    0    1
+> s <- sqrt(10:13)
+> diag(s)
+         [,1]     [,2]     [,3]     [,4]
+[1,] 3.162278 0.000000 0.000000 0.000000
+[2,] 0.000000 3.316625 0.000000 0.000000
+[3,] 0.000000 0.000000 3.464102 0.000000
+[4,] 0.000000 0.000000 0.000000 3.605551
+\end{R}
+
+
+\subsubsection{Matrix operations in R}
+
+The standard mathematical operations of addition and subtraction and
+scalar multiplication work element-wise for matrices in the same way as
+they did for vectors. Matrix multiplication uses the operator
+\lstinline!%*%! which you saw last week for the dot product. To get the
+tranpose of a matrix use the function \lstinline!t()!. The
+\lstinline!solve()! function can be used to get the inverse of a matrix
+(assuming it's non-singular) or to solve a set of linear equations.
+
+\begin{R}
+> A <- matrix(1:12, nrow=4)
+> B <- matrix(rnorm(12), nrow=4)
+> A
+     [,1] [,2] [,3]
+[1,]    1    5    9
+[2,]    2    6   10
+[3,]    3    7   11
+[4,]    4    8   12
+> B
+           [,1]        [,2]        [,3]
+[1,] -2.9143953  0.38204730 -1.33207235
+[2,]  0.1778266 -0.44563686  0.76143612
+[3,]  1.7226235  0.03320553 -0.06652767
+[4,]  0.5291281 -0.13145408  0.14108766
+> A + B
+          [,1]     [,2]      [,3]
+[1,] -1.914395 5.382047  7.667928
+[2,]  2.177827 5.554363 10.761436
+[3,]  4.722623 7.033206 10.933472
+[4,]  4.529128 7.868546 12.141088
+> A - B
+         [,1]     [,2]      [,3]
+[1,] 3.914395 4.617953 10.332072
+[2,] 1.822173 6.445637  9.238564
+[3,] 1.277377 6.966794 11.066528
+[4,] 3.470872 8.131454 11.858912
+> 5 * A
+     [,1] [,2] [,3]
+[1,]    5   25   45
+[2,]   10   30   50
+[3,]   15   35   55
+[4,]   20   40   60
+> A %*% B
+Error in A %*% B : non-conformable arguments
+> A %*% t(B)
+          [,1]     [,2]     [,3]     [,4]
+[1,] -12.99281 4.802567 1.289902 1.141647
+[2,] -16.85723 5.296193 2.979203 1.680408
+[3,] -20.72165 5.789819 4.668505 2.219170
+[4,] -24.58607 6.283445 6.357806 2.757932
+> C <- matrix(1:16, nrow=4)
+> solve(C)
+Error in solve.default(C) : Lapack routine dgesv: system is exactly singular
+> C <- matrix(rnorm(16), nrow=4)
+> C
+           [,1]       [,2]       [,3]       [,4]
+[1,] -1.6920758 -0.8104245  0.9940420  0.3592050
+[2,]  1.5949448 -0.9508142 -0.1960434 -0.5678855
+[3,] -1.2443831  0.6400100  0.2645679 -0.8733987
+[4,]  0.2129116  0.6719323  0.7494698 -0.3856085
+> Cinv <- solve(C)
+> C %*% Cinv
+             [,1]          [,2]          [,3]          [,4]
+[1,] 1.000000e+00 -2.360850e-17  6.193505e-17  4.189425e-18
+[2,] 2.710844e-17  1.000000e+00  3.577867e-18 -7.264493e-17
+[3,] 4.944640e-17  7.643625e-17  1.000000e+00  5.134714e-17
+[4,] 1.978161e-17 -1.187201e-17 -4.022390e-17  1.000000e+00
+> all.equal(C %*% Cinv, diag(4)) # test approximately equality 
+[1] TRUE
+\end{R}
+
+
+We expect that $CC^{-1}$ should return the above should return the
+$4 \times 4$ identity matrix. As shown above this is true up to the
+approximate floating point precision of the machine you're operating on.
+
+
+

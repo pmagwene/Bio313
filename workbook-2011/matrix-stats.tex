@@ -1,0 +1,110 @@
+
+\section{Descriptive statistics as matrix functions}
+
+Assume you have a data set represented as a $n \times p$ matrix $X$ with
+observations in rows and variables in columns. Below I give formulae for
+calculating some descriptive statistics as matrix functions.
+
+\subsection{Mean vector and matrix}
+
+To calculate a row vector of means, $\mathbf{m}$: 
+\[
+\mathbf{m} = \frac{1}{n} \mathbf{1}^T  X
+\] where $1$ is a $n \times 1$ vector of ones.
+
+A $n \times p$ matrix $M$ where each column is filled with the mean
+value for that column is: 
+\[
+M = \mathbf{1}\mathbf{m}
+\]
+
+\subsection{Deviation matrix}
+
+To re-express each value as the deviation from the variable means
+(i.e.~each columns is a mean centered vector) we calculate a deviation
+matrix: 
+\[
+D = X - M
+\]
+
+\subsection{Covariance matrix}
+
+The $p \times p$ covariance matrix is given by: 
+\[
+S = \frac{1}{n-1} D^T D
+\]
+
+\subsection{Correlation matrix}
+
+The correlation matrix, $R$, can be calculated from the covariance
+matrix by: 
+\[
+R = V S V
+\]
+
+where $V$ is a $p \times p$ diagonal matrix where
+$V_{ii} = 1/\sqrt{S_{ii}}$.
+
+\subsection{Concentration matrix and Partial Correlations}
+
+If the covariance matrix, $S$ is invertible, than inverse of the
+covariance matrix, $S^{-1}$, is called the `concentration matrix' or
+`precision matrix'. We can relate the concentration matrix to partial
+correlations as follow. Let 
+\[
+P = S^{-1}
+\]
+Then:
+\[
+\mbox{cor}(x_i,x_j \mid X \setminus \{x_i,x_j\}) = -\frac{p_{ij}}{\sqrt{p_{ii} p_{jj}}}
+\]
+
+where $X \backslash \{x_i,x_j\}$ indicates all variables other than
+$x_j$ and $x_i$. You can read this as `the correlation between x and y
+conditional on all other variables.'
+
+\medskip
+\begin{assignment}
+\small
+The data set |yeast-subnetwork-raw.txt| (see class website), consists of gene expression measurements
+for 15 genes from 173 two-color microarray experiments (see Gasch et al.
+2000). These genes are members of a gene regulatory network that determines how yeast cells
+respond to nitrogen starvation. The values in the data set are
+expression ratios (treatment:control) that have been transformed by
+applying the $\log_2$ function (so that a ratio of 1:1 has the value 0,
+a ratio of 2:1 has the value 1, and a ratio of 1:2 has the value 0.5).    
+    
+\par\medskip    
+The raw data file
+\lstinline!yeast-subnetwork-raw.txt! has the genes (variables) arranged
+by rows and the observations (experiments) in columns. There are also
+missing values. Using R, show how to read in the data set and then
+create a matrix where the genes are in columns and the observations in
+rows. Then replace any missing values (\lstinline!NA!) in each column
+with the variable (gene) means (there are better ways to impute missing
+values but this will do for now). Encapsulate these steps in a \emph{generic} function that will work with any data file with the same organization as that above.
+
+\par\medskip
+Functions that might come in handy for this assignment 
+include: \lstinline!read.delim()!, \lstinline!t()!, \lstinline!subset()!,
+\lstinline!as.matrix()!, and \lstinline!is.na()!. Note that
+\lstinline!t()! applies to data frames as well as matrices. Also take
+note of the \lstinline!na.rm! argument of \lstinline!mean()!. You might consider creating a function that handles the missing value
+replacement and using it in conjunction with the \lstinline!apply()!
+function. \lstinline!colnames()! and \lstinline!rownames()! allow you to
+assign/extract column and row names for a matrix. Use the
+\lstinline!write.table()! function to save your results (I recommend you
+use \lstinline!"\t"! (i.e.~tab) as the \lstinline!sep! argument).
+\end{assignment}
+
+
+\medskip
+\begin{assignment}
+Create an R library that includes functions that
+use matrix operations to calculate each of the descriptive statistics
+discussed above (except the concentration matrix / partial
+correlations). Calculate these statistics for the
+\lstinline!yeast-subnetwork! data set and check the results of your
+functions against the built-in R functions.
+\end{assignment}
+
