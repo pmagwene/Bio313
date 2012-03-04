@@ -1,71 +1,43 @@
 
-
-\section*{SVD in R}
-
+\section{SVD in R}
 
 If \Mtx{A} is an $n \times p$ matrix, and the singular value decomposition of \Mtx{A} is given by $\Mtx{A} = \Mtx{U} \Mtx{S} \Mtx{V}^T$, the columns of the  matrix $\Mtx{V}^T$ are the eigenvectors of the square matrix $\Mtx{A}^T \Mtx{A}$ (sometimes refered to  as the minor product of \Mtx{A}). The singular values of \Mtx{A} are equal to the square roots of the eigenvalues of $\Mtx{A}^T \Mtx{A}$. 
 
 The \texttt{svd()} function computes the singular value decomposition of an arbitrary rectangular matrix. Below I demonstrate the use of the \texttt{svd()} function and confirm the relationships described above:
 
-
 \begin{R}
-
 > A <- matrix(c(2,1,2,3),nrow=2)
 > A
-
-
      [,1] [,2]
 [1,]    2    2
 [2,]    1    3
-
-
 > a.svd <- svd(A)
 > a.svd$u
-
-
            [,1]       [,2]
 [1,] -0.6618026 -0.7496782
 [2,] -0.7496782  0.6618026
-
-
 > a.svd$d  # R uses the notation A = u d v' rather than A = u s v' 
-
-
 [1] 4.1306486 0.9683709
-
-
 > all.equal(A, a.svd$u %*% diag(a.svd$d) %*% t(a.svd$v)) 
-
-
 [1] TRUE
-
-
 > AtA <- t(A) %*% A
 > eigen.AtA <- eigen(AtA)
 > eigen.AtA
-
-
 $values
 [1] 17.0622577  0.9377423
-
 $vectors
           [,1]       [,2]
 [1,] 0.5019268 -0.8649101
 [2,] 0.8649101  0.5019268
-
-
 > all.equal(a.svd$d, sqrt(eigen.AtA$values))
-
-
 [1] TRUE
-
 \end{R}
 
 As we discussed in lecture, the eigenvectors of square matrix, \Mtx{A}, point in the directions that are unchanged by the transformation specified by \Mtx{A}.
 
 
 
-\section*{Creating Biplots in R}
+\section{Creating Biplots in R}
 
 To illustrate the construction of biplots we'll use the same iris data set we used last week to introduce PCA. The built-in R function is |biplot()|. We'll also use the |prcomp()| function to do PCA rather than |princomp()|. |prcomp()| uses SVD of the mean-centered data matrix to do the PCA.
 
@@ -109,7 +81,7 @@ Using R, apply PCA (on the covariances) to the \texttt{yeast-subnetwork} data se
 
 
 
-\section*{SVD in Python}
+\section{SVD in Python}
 
 Like the |eig()| function, the |svd()| function is found in the |numpy.linalg| module.
 
@@ -147,7 +119,7 @@ array([ 17.06225775,   0.93774225])
 \end{python}
 
 
-\subsection*{`Seriating' samples using SVD}
+\subsection{`Seriating' samples using SVD}
 
 The term `seriation' refers to the process of finding an ordering of objects or variables such that they follow a natural ordering with respect to some criteria (e.g. time, similarity, etc.). One way to think about this problem is in terms of ordering objects on a line (i.e. a 1D approximation).  Since we've learned that SVD can be used to provide optimal approximations (in the least squares sense) it seems natural to apply the technique to the problem of seriation. We'll illustrate this application by seriating both experimental conditions (samples) and variables (genes) for the yeast expression data set we've been working with.  There's some support for the assertion that seriation by SVD is a better method for re-ordering data matrices for heat maps than the more commonly used hierarchical clustering methods that you see in many microarray papers (Wilkinson, L. and M. Friendly. The History of the Cluster Heat Map. The American Statistician. May 1, 2009, 63(2): 179-184. \href{http://dx.doi.org/10.1198/tas.2009.0033}{doi link}) 
 
@@ -227,11 +199,11 @@ Having created that function we can now put it to use to visualization our seria
 >>> fig.show()
 \end{python}
 
-\subsection*{Data compression and noise filtering using SVD}
+\subsection{Data compression and noise filtering using SVD}
 
 Two common uses for singular value decomposition are for data compression and noise filtering. Will illustrate these with two examples involving matrices which represent image data. This example is drawn from an article by David Austin, found on a tutorial about SVD at the American Mathematical Society Website (\href{http://www.ams.org/samplings/feature-column/fcarc-svd}{link}).
 
-\subsubsection*{Data compression}
+\subsubsection{Data compression}
 
 Download the file |zeros.dat| from the course wiki. This is a $25 \times 15$ binary matrix that represents pixel values in a simple binary (black-and-white) image.
 
@@ -286,7 +258,7 @@ If SVD is working like expected it should capture that feature of our input matr
 
 Our original matrix required $25 \times 15$ ($= 375$) storage elements. Using the SVD we can represent the same data using only $15 \times 3 + 25 \times 3 + 3 = 123$ units of storage (corresponding to the truncated U, V, and D in the example above). Thus our SVD allows us to represent the same data with at less than $1/3$ the size of the original matrix. In this case, because all the singular values after the 3rd were zero this is a lossless data compression procedure. 
 
-\subsubsection*{Noise filtering using SVD}
+\subsubsection{Noise filtering using SVD}
 
 The file |noisy-zero.dat| is the same 'zero' image, but now sprinkled with Gaussian noise draw from a normal distribution ($N(0,0.1)$. As in the data compression case we can use SVD to approximate the input matrix with a lower-dimensional approximation. Here the SVD is `lossy' as our approximation throws away information.  In this case we hope to choose the approximating dimension such that the information we lose corresponds to the noise which is `polluting' our data. 
 
@@ -315,7 +287,7 @@ The file |noisy-zero.dat| is the same 'zero' image, but now sprinkled with Gauss
 
 As you can see from the images you created the approximation based on the approximation based on the SVD manages to capture the major features of the matrix and filters out much of (but not all) the noise.
 
-\subsection*{Image Approximation Using SVD in Python}
+\subsection{Image Approximation Using SVD in Python}
 
 The Python Imaging Library (PIL) is a package of routines for manipulating image data in Python. If you're using the Enthought build of Python this was included in your installation. If building packages from scratch you can find the PIL at \href{http://www.pythonware.com/products/pil/}{http://www.pythonware.com/products/pil/} or pre-built binaries for OS X can be found at \href{http://www.pythonmac.org/packages/}{http://www.pythonmac.org/packages/}. Documentation on PIL is available \href{http://www.pythonware.com/library/pil/handbook/index.htm}{here}.
 
@@ -382,6 +354,8 @@ The Python Image Library has lots of useful functions for manipulating image dat
 \bigskip
 
 \begin{assignment}
+\small
+
 Write a function (|svd_img()|) in Python that automates the creation of a lower dimensional approximation of a grayscale image using SVD.  Test your function on various images using a variety of approximating dimensions (e.g. 5,10, 25, 50, 100, 250 on the \texttt{chesterbw.jpg} image).  Your function should take as input a floating point array representing the original image and an integer specifying the approximating dimension (i.e. function will be called as |svd_img(imgarray,dim)|). Your function should return two objects: 1) an array representing the approximated image; and 2) an array representing the difference between the original and approximating images.
 
 In addition to your code consider the following questions:
@@ -406,7 +380,7 @@ In addition to your code consider the following questions:
 
 
 % 
-% \section*{Correspondence Analysis in R}
+% \section{Correspondence Analysis in R}
 % 
 % There is no built-in function in R for doing correspondence analysis. However, a simple correspondence analysis function is found in the \texttt{MASS} package. Here we recreate the correspondence analysis for a contigency table that relates hair color (columns) to eye color (rows) in sample taken in a town in Scotland.
 % 

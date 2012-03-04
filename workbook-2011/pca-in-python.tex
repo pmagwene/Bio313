@@ -1,0 +1,104 @@
+\section{Principal Components Analysis in Python}
+
+There are no built-in functions for carrying out PCA in Python. Luckily
+you have all the tools you need at your disposal to write your own PCA
+module.
+
+Note that when performing PCA on a correlation matrix, to get the proper
+PC scores you need to use mean centered and standardized variates.
+
+Here's an example:
+
+\begin{python}
+>>> import numpy as np, numpy.linalg as la
+>>> turt = np.loadtxt('turtles.txt',skiprows=1,usecols=(1,2,3)) # see the Numpy docs
+>>> turt.shape
+(48, 3)
+>>> import pylab # convenient interface to Matplotlib
+>>> pylab.scatter(turt[:,0], turt[:,1])
+<matplotlib.collections.CircleCollection object at 0x2502630>
+>>> pylab.show()
+>>> pylab.scatter(turt[:,0], turt[:,2])
+<matplotlib.collections.CircleCollection object at 0x66d4a30>
+>>> pylab.scatter(turt[:,1], turt[:,2])
+<matplotlib.collections.CircleCollection object at 0x63296b0>
+>>> tmean = np.mean(turt,axis=0) # get the column means
+>>> tmean
+array([ 124.6875    ,   95.4375    ,   46.33333333])
+>>> deviates = turt - tmean # this mean centers each observation
+>>> stdized = deviates/np.std(deviates,axis=0) # standardize variates
+>>> pylab.scatter(stdized[:,0],stdized[:,1],color='red') # plot the standardized observations
+>>> tcor = np.corrcoef(turt,rowvar=False)
+>>> tcor
+array([[ 1.        ,  0.97831162,  0.96469455],
+       [ 0.97831162,  1.        ,  0.96057053],
+       [ 0.96469455,  0.96057053,  1.        ]])
+>>> u,v = la.eig(tcor)
+>>> u # the eigenvalues
+array([ 2.93573765,  0.02141848,  0.04284387])
+>>> v  
+array([[-0.57879812, -0.74789704, -0.32502731],
+       [-0.57798399,  0.65741263, -0.48346989],
+       [-0.57526276,  0.09197088,  0.81278171]])
+>>> colsort = np.argsort(u)[::-1] # fancy way  to do the 
+                  # argsort and reversing to sort index in one call
+>>> colsort
+array([0, 2, 1])
+>>> usort = np.take(u,colsort)
+>>> vsort = np.take(v,colsort,axis=1)
+>>> usort
+array([ 2.93573765,  0.04284387,  0.02141848])
+>>> vsort # the PC coefficents are the normalized eigenvectors
+array([[-0.57879812, -0.32502731, -0.74789704],
+       [-0.57798399, -0.48346989,  0.65741263],
+       [-0.57526276,  0.81278171,  0.09197088]])
+>>> L = np.diag(usort**0.5) # mtx with sqrt of eigenvalues on diagonal
+>>> L
+array([[ 1.71339944,  0.        ,  0.        ],
+       [ 0.        ,  0.2069876 ,  0.        ],
+       [ 0.        ,  0.        ,  0.14635054]])
+>>> f=np.dot(vsort,L) # "factor loadings" -- gives corr. btw original vars and PC axes
+>>> f
+array([[-0.99171237, -0.06727662, -0.10945514],
+       [-0.99031745, -0.10007227,  0.09621269],
+       [-0.98565489,  0.16823574,  0.01345999]])
+>>> scores = np.dot(stdized,vsort)
+>>> scores[:5]  # compare to the values you got in R
+array([[ 2.00466025,  0.16892135,  0.13583391],
+       [ 1.72362844, -0.02689852,  0.10856089],
+       [ 1.35439901,  0.2874806 ,  0.25768234],
+       [ 1.43581697,  0.05967203,  0.16172995],
+       [ 0.95235368,  0.30990249,  0.16324351]])
+>>> pylab.scatter(scores[:,0],scores[:,1]) # don't close the plot 
+                                        # or else the next line won't work
+<matplotlib.collections.CircleCollection object at 0x66d5f50>
+>>> pylab.axes().set_aspect(1) # equivalent of the asp=1 argument in R
+>>> pylab.xlim(-5,3)  # to make the plot limits more like those we saw in R
+(-5, 3)
+>>> pylab.ylim(-3,3)
+(-3, 3)
+\end{python}
+
+\begin{assignment}
+Write a Python function that takes as it's input
+an $n \times p$ data matrix and returns the following four objects
+(\emph{in this order}):
+
+\begin{enumerate}[1.]
+\item
+  A vector of the \textbf{eigenvalues of the correlation matrix} sorted
+  from largest to smallest
+\item
+  A corresponding matrix of \textbf{eigenvectors of the correlation
+  matrix} sorted relative to their eigenvalues
+\item
+  The \textbf{principal component scores} for the dataset
+\item
+  An array giving the percentage of variation explained by each
+  principal component.
+\end{enumerate}
+
+Apply this to the \lstinline!yeast-subnetwork! data set and check your
+answers against the R implementation.
+
+\end{assignment}

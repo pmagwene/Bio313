@@ -1,63 +1,63 @@
 
  
-\section*{Bioinformatics tools}
+\section{Bioinformatics tools}
 
 In last weeks class we worked through some examples that illustrated how standard Unix command line tools could be chained together into simple pipelines to analyze genome sequence information. Today we'll examine how to build  pipelines using a mix of standard bioinformatics software packages and a Python script.
 
-\subsection*{Installing the tools}
+\subsection{Installing the tools}
 
 For the purposes of these exercises we will install all of our software tools into a directory called |tmp| in your home directory (you might already have such a directory).
 %
-\begin{Code}
+\begin{bash}
 $ mkdir ~/tmp
-\end{Code}
+\end{bash}
 %
 Recall that the tilde (|~|) is Unix shorthand for your home directory (|/Users/pmagwene| in my case).
 
-\subsubsection*{Cygwin on Windows}
+\subsubsection{Cygwin on Windows}
 
 If you're running Windows, see the \href{https://github.com/pmagwene/Bio313/wiki/Cygwin-notes}{Notes on Cygwin} link on the course wiki for some information that may be required to get the tools and scripts listed below working properly.
 
 
-\subsubsection*{Clustalw}
+\subsubsection{Clustalw}
 
 Clustalw is a popular progressive multiple sequence alignment program.  There are pre-built binaries of Clustalw available but for the purposes of this exercises we're going to build the program from source. This assumes you have the appropriate command line tools available on your platform, either the Xcode tools on OS X, or Cygwin plus gcc, make, autoconf, etc.
 
 Use the |curl| command to download the source code for Clustalw as I demonstrate below:
 
-\begin{Code}
+\begin{bash}
 $ cd ~/tmp
 $ curl -O ftp://ftp.ebi.ac.uk/pub/software/clustalw2/2.1/clustalw-2.1.tar.gz 
-\end{Code}
+\end{bash}
 %
 Once you have the clustalw source code decompress the tarball and make the programs as follows:
 %
-\begin{Code}
+\begin{bash}
 $ tar xvzf clustalw-2.1.tar.gz 
 $ cd clustalw-2.1/
 $ ./configure  # configures the source code for your operating system
 $ make  # compiles the code files
 $ sudo make install # puts the binary executables in standard directories
                     # you don't need sudo on cygwin
-\end{Code}
+\end{bash}
 %
 The command |sudo make install| will install the clustalw binaries you just built into the |/usr/local/bin| directory. |sudo| let's you run this command with `superuser' (i.e. admin) privileges.  Assuming everything compiled without errors you can check that the program installed correctly as follows:
 
-\begin{Code}
+\begin{bash}
 $ which clustalw2
 /usr/local/bin/clustalw2
 
 $ clustalw2
 
- **************************************************************
- ******** CLUSTAL 2.0.12 Multiple Sequence Alignments  ********
- **************************************************************
+******************************************************
+**** CLUSTAL 2.0.12 Multiple Sequence Alignments  ****
+******************************************************
  
      ... output truncated ...
-\end{Code}
+\end{bash}
 
 
-\subsubsection*{MAFFT}
+\subsubsection{MAFFT}
 
 MAFFT is another multiple sequence alignment program. It's relatively fast and a number of studies have shown that it is amongst the best performing multiple sequence aligners. MAFFT is usually the sequence aligner I reach for first.  Clustalw is the `classic' alignment tool, so it's useful to have on your system, but MAFFT usually gives better alignments (though Clustalw2 is supposed to address some of the short-comings of the older versions of Clustalw). See the \href{http://mafft.cbrc.jp/alignment/software/}{MAFFT website} for additional references and information.
 
@@ -80,26 +80,26 @@ Building MAFFT was almost exactly the same as building Clustalw, except we didn'
 
 Once you've built and installed MAFFT check the installation location and confirm that the binary is working:
 %
-\begin{Code}
+\begin{bash}
 $ which mafft
 /usr/local/bin/mafft
 $ mafft  # type ctrl-c to exit from the interactive prompt
 
----------------------------------------------------------------------
+---------------------------------------------------
 
    MAFFT v6.864b (2011/11/10)
 
         Copyright (c) 2011 Kazutaka Katoh
         NAR 30:3059-3066, NAR 33:511-518
         http://mafft.cbrc.jp/alignment/software/
----------------------------------------------------------------------
-\end{Code}
+---------------------------------------------------
+\end{bash}
 
-\subsubsection*{HMMER}
+\subsubsection{HMMER}
 
 HMMER is an implementation of a profile Hidden Markov Model (HMM) for protein sequence analysis. You can read up on HMMER at the \href{http://hmmer.janelia.org/}{HMMER website}. We will use it here for finding protein domains in sequences in conjuction with the PFAM database. By now, the steps needed to download and build programs from source are familiar to you:
 %
-\begin{Code}
+\begin{bash}
 $ cd ~/tmp
 $ curl -O http://selab.janelia.org/software/hmmer3/3.0/hmmer-3.0.tar.gz    
 $ tar xzvf hmmer-3.0.tar.gz
@@ -108,46 +108,46 @@ $ ./configure
 $ make
 $ make check # optional, not every source package includes such a call
 $ sudo make install
-\end{Code}
+\end{bash}
 %
 After compiling from source as above the binaries will be placed in |/usr/local/bin|.
 
-\subsubsection*{Get the PFAM HMM library}
+\subsubsection{Get the PFAM HMM library}
 
 We will be using the Pfam database (Release 25) in conjunction with HMMER to search for known protein domains in our sequences of interest. Since the the Pfam HMM libraries are large I'll try and provide a couple of thumb drives with the necessary library. If you're using this document outside of class you can download the necessay library as follows:
 
-\begin{Code}
+\begin{bash}
 $ curl -O ftp://ftp.sanger.ac.uk/pub/databases/Pfam/releases/Pfam25.0/Pfam-A.hmm.gz
-\end{Code}
+\end{bash}
 
  This is a large file (185MB) and decompresses to an even larger file (approx. 986MB). Make sure you have adequate disk space. Unzip it as follows:
 
-\begin{Code}
+\begin{bash}
 $ gunzip Pfam-A.hmm.gz 
-\end{Code}
+\end{bash}
 
 
-\subsubsection*{Install the BLAST+ suite}
+\subsubsection{Install the BLAST+ suite}
 
 NCBI provides a set of command line blast tools called the BLAST+ suite.  This used to include a command line program called |blastcl3| that you could use to run a BLAST search against the NCBI BLAST servers.  In the latest version of the BLAST+ toolset each of the core blast programs has a |-remote| option that does the same thing.  The |-remote| option is useful for a moderate number of files, but if you were building a computationally intensive pipeline you would want to install a local copy of the BLAST databases and the accompanying tools.
 
-Becuase the BLAST+ tools are complicated to build from source, we'll use the precompiled binaries that NCBI provides. Download the appropriate binary distribution for your from the \href{ftp://ftp.ncbi.nlm.nih.gov/blast/executables/LATEST/}{NCBI ftp server} (see links on class wiki). Once you've got the file you simply unzip the tarball in your |~/tmp| directory.  The binaries can be installed elsewhere but we'll just leave everything in |~/tmp|.
+Because the BLAST+ tools are complicated to build from source, we'll use the precompiled binaries that NCBI provides. Download the appropriate binary distribution for your from the \href{ftp://ftp.ncbi.nlm.nih.gov/blast/executables/LATEST/}{NCBI ftp server} (see links on class wiki). Once you've got the file you simply unzip the tarball in your |~/tmp| directory.  The binaries can be installed elsewhere but we'll just leave everything in |~/tmp|.
 
-\begin{Code}
+\begin{bash}
 $ cd tmp
 $ curl -O ftp://ftp.ncbi.nlm.nih.gov/blast/executables/LATEST/ncbi-blast-2.2.25+-universal-macosx.tar.gz
 $ tar xvzf ncbi-blast-2.2.25+-universal-macosx.tar.gz 
-\end{Code}
+\end{bash}
 
 To confirm that the binary works on your system do the following:
-
-\begin{Code}
+%
+\begin{bash}
 $ ./ncbi-blast-2.2.25+/bin/blastp -help    
-\end{Code}
+\end{bash}
 
 If you're on a Mac and get an error like the one shown below, try downloading and installing a slightly older version of the BLAST+ tools from \url{ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.2.23/}.
 
-\begin{Code}
+\begin{bash}
 dyld: lazy symbol binding failed: Symbol not found: __ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_i
   Referenced from: /Users/pmagwene/tmp/./ncbi-blast-2.2.24+/bin/blastp
   Expected in: flat namespace
@@ -155,12 +155,12 @@ dyld: lazy symbol binding failed: Symbol not found: __ZSt16__ostream_insertIcSt1
 dyld: Symbol not found: __ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_i
   Referenced from: /Users/pmagwene/tmp/./ncbi-blast-2.2.24+/bin/blastp
   Expected in: flat namespace
-\end{Code}
+\end{bash}
 
 Once you've confirmed that |blastp| works on your system check out the PDF documentation in the directory |~/tmp/ncbi-blast-2.2.25+/doc/| (or wherever you unzipped the file).
 
 
-\subsubsection*{Install Biopython}
+\subsubsection{Install Biopython}
 
 If you're on Windows you can download a prebuilt binary of Biopython from the \href{http://biopython.org/wiki/Download}{Biopython website}. For OS X you can install Biopython from source relatively easily, assuming you've previously installed setuptools which includes the |easy_install| program:
 %
@@ -169,11 +169,11 @@ $ sudo easy_install -f http://biopython.org/DIST/ biopython
 \end{Code}
 
 
-\subsection*{Testing the bionformatics tools}
+\subsection{Testing the bioinformatics tools}
 
 Download the |fungal-ras.fas| file from the class website. This file includes protein sequences of Ras-family proteins from a number of different fungi.  Ras proteins are small GTPases that are involved in cellular signal transduction.  Ras signaling is often involved in cellular growth and differentiation and mutations that affect Ras signaling often lead to cancer.  We'll use this data to do some quick tests to confirm that our software tools are working correctly. Of course, when putting together an analysis pipeline for your own purposes you'll want to spend a fair amount of time reading the documentation (and related papers) for each tool and make sure you understand the various options and settings.
 
-\subsubsection*{Multiple alignments with Clustalw and MAFFT}
+\subsubsection{Multiple alignments with Clustalw and MAFFT}
 
 Let's run Clustalw and MAFFT to align the Ras sequences:
 %
@@ -185,7 +185,7 @@ $ mafft --auto fungal-ras.fas > fungal-ras-mafft.fas
 The commands above should produce the following files: |fungal-ras.aln| and |fungal-ras.dnd| (Clustalw) and |fungal-ras-mafft.fas| (MAFFT).  To visualize the alignments there are a variety of different multiple alignment viewers. One such program is \href{http://www.jalview.org/}{Jalview}, a free cross platform, multiple alignment viewer/editor written in Java.  Take a look at both the clustalw and mafft alignments using Jalview.
 
 
-\subsubsection*{Testing HMMER}
+\subsubsection{Testing HMMER}
 
 To test out HMMER and Pfam download the |Rme1.fas| file from the class website. Rme1 is a transcription factor that regulates sporulation and meiosis in budding yeast, \textit{Saccharomyces cerevisiae}.  We'll use HMMER to analyze the domain structure of Rme1.
 
@@ -212,30 +212,30 @@ This call produces a file |Rme1-output.txt| that contains a space delimited text
 See pp.\,24-26  of the \href{ftp://selab.janelia.org/pub/software/hmmer3/3.0/Userguide.pdf}{HMMER user guide} for more info on the |hmmscan| program and settings. E-values and bit-scores are the criteria you want to look at when trying to judge which domains you sequence of interest has good matches to.  HMMER bit scores reflect the extent to which a sequence is a good match to a  profile model (higher bit scores are better matches). See p.\,43 of the HMMER 2.3 user guide (use Google to find a copy of the older version of the HMMER manual) for a discussion of E-values and bit scores.  If you examine the output file |Rme1-output.txt| you'll see that the model with the lowest E-values and highest bit-scores is a ``zinc finger" domain.  There are three such domains in the Rme1 protein (see the column labeled ``N'' in the output), though two of them are weaker matches (larger E-values). Rme1 is a zinc finger transcriptional factor. The two weaker zinc finger domains are weak matches to the HMM model for zinc fingers but are nonetheless functional domains.
 
 
-\subsubsection*{Testing the BLAST+ tools}
+\subsubsection{Testing the BLAST+ tools}
 
 Let's use |blastp| to query the NCBI BLAST servers for proteins with sequence homology to Rme1.
 
 
-\begin{Code}
+\begin{bash}
 $ cd ncbi-blast-2.2.25+/bin
 $ ./blastp -db refseq_protein -evalue 2e-10 -remote < ~/tmp/Rme1.fas > ~/tmp/rme1-blast.out
-\end{Code}
+\end{bash}
 
 This runs a remote BLAST search with an E-value cutoff of $2^{-10}$. It might take a little while because it will access the NCBI servers to run the search. Note the use of both an input redirection operator as well as an output redirection operator.  If you want the output in HTML format for easy reading run it as follows and open the resulting file |rme1-blastout.html| in  your web browser:
 
-\begin{Code}
+\begin{bash}
 $ ./blastp -db refseq_protein -evalue 2e-10 -remote -html < ~/tmp/Rme1.fas > ~/tmp/rme1-blast.html
-\end{Code}
+\end{bash}
 
 If all of the commands above worked (produced no errors, generated valid output) then you're ready to move on to implementing the pipelines.
 
 
-\section*{The Pipelines}
+\section{The Pipelines}
 
 In today's exercises we're going to look at two very simple pipelines.  In next week's class we'll combine and expand on these pipelines using Python.
 
-\subsection*{Pipeline I}
+\subsection{Pipeline I}
 
 This first pipeline will do the following:
 
@@ -275,22 +275,22 @@ As we've seen before, the `she-bang' line simply instructs the operating system 
 
 Once you've entered and saved the code for |pipeline1.sh| you need to make it executable:
 
-\begin{Code}
+\begin{bash}
 $ chmod +x pipeline1.sh
-\end{Code}
+\end{bash}
 
 You can then execute the code as follows:
 
-\begin{Code}
+\begin{bash}
 $ ./pipeline1.sh Rme1.fas Rme1-report.out
-\end{Code}
+\end{bash}
 
 
 \begin{assignment}
     Submit your |Rme1-report.out| file via email.
 \end{assignment}
 
-\subsection*{Pipeline II}
+\subsection{Pipeline II}
 
 Our second pipeline will do the following:
 
@@ -301,7 +301,7 @@ Our second pipeline will do the following:
 \item Run HMMMER on the the translated output and produce a report file.
 \end{enumerate}
 
-\subsubsection*{A small Python script}
+\subsubsection{A small Python script}
 
 First we're going to write a Python script to take care of step 2, translating the nucleotide sequence to a protein sequence. Save the following code as |aatranslate.py|.
 
@@ -333,7 +333,7 @@ $ cat unknowns.fas | ./aatranslate.py | less
 
 
 
-\subsubsection*{Combining Python and MAFFT}
+\subsubsection{Combining Python and MAFFT}
 
 Save the following code as |pipeline2.sh|:
 

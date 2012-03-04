@@ -1,9 +1,9 @@
 
-\section*{Overview}
+\section{Overview}
 
 Last week we installed a number of bioinformatics tools and showed how they could be used to build simple analysis pipelines using bash scripts.  This week we'll build a more sophisticated pipeline using BioPython.  This pipeline will incorporate such features as web based queries and conversion of information between different file formats.
 
-\section*{The Pipeline}
+\section{The Pipeline}
 
 
 The tasks carried out by the pipeline will be as follows:
@@ -23,12 +23,12 @@ The tasks carried out by the pipeline will be as follows:
 
 You will need a working installation of Python (2.6+), IPython, and the BioPython library (1.53+) as well as the command line tools we installed last week (MAFFT, HMMER). 
 
-\subsubsection*{The test files}
+\subsubsection{The test files}
 
 Download the file |unknown1.fas| and |unknown2.fas| from the class website. I recommend you place these in |~/tmp|.
 
 
-\subsection*{Reading in a single sequence from a FASTA file}
+\subsection{Reading in a single sequence from a FASTA file}
 
 As we build our pipeline I will first demonstrate the use of various modules, classes, and functions in the interactive shell and then I will give a set of functions that consolidate the commands to make them convenient to use.  
 
@@ -64,7 +64,7 @@ Seq('MMNFFTSKSS', HasStopCodon(ExtendedIUPACProtein(), '*'))
 
 |SeqIO| is a sub-module of the top-level module BioPython module |Bio|.  |SeqIO.read| reads a single sequence object from a file and returns an instance of a |SeqRecord| class (defined in the Biopython package). A \emph{class} is a programming concept that groups data and functions that operate on that data into a single object. For example, in the code above we used the |.name| and |.description| attributes to examine information about the sequence (this information was retrieved from the FASTA file itself).  A |SeqRecord| holds a |Seq| object (yet another class!) as well as accessory information like the name of the sequence, a description, etc. |Seq| objects act very much like strings in terms of slicing and element access but they also have specialized function like |.translate()| that can be used to translate a nucleotide sequence into a peptide sequence. 
 
-\subsubsection*{Reading in multiple sequences from a FASTA file}
+\subsubsection{Reading in multiple sequences from a FASTA file}
 
 In the code above we demonstrated how to read a single sequence from a FASTA file.  Here we demonstrate how to read multiple sequences.  The key difference is the use of the |SeqIO.parse()| function rather than |SeqIO.read()|.
 
@@ -116,7 +116,7 @@ def parse_fasta(infile):
     return [i for i in recs] 
 \end{python}
 
-\subsubsection*{List comprehensions}
+\subsubsection{List comprehensions}
 The |parse_fasta()| function  above introduces another new concept called \emph{list comprehensions}. A list comprehension is a compact way of applying a function to each element in a sequence. In this case the list comprehension implicitly called |.next()| to get all the |SeqRecords| from the generator returned by |SeqIO.parse()|.  You'll recall that most functions in R works in a vector-wise manner. List comprehensions provide similar semantics for Python.  Below are some simpler examples of list comprehensions. Try and predict the output of each of these before typing them in:
 
 \begin{python}
@@ -143,7 +143,7 @@ You can  use the |read_fast()| function as follows:
 
 Note that the |parse_fasta()| function will return a list of |SeqRecords| even when there is only a single sequence in the file. In contrast, if you use the function |read_fasta()| on a FASTA file with more than one sequence it will raise an error.
 
-\subsection*{Translating nucleotide sequence to a protein sequence}
+\subsection{Translating nucleotide sequence to a protein sequence}
 
 The next step is to translate each  DNA sequence into a corresponding protein sequence. This is very easy using the |.translate()| method associated with the |Seq| class.
 
@@ -194,7 +194,7 @@ We can then use this function from the Python interpreter like so:
 %
 Take a moment to open the file \texttt{unknown2-protein.fasta} in a text editor to confirm that the file now hold amino acid sequences rather than nucleotide sequences.
 
-\subsubsection*{Globbing to get multiple files of a given type}
+\subsubsection{Globbing to get multiple files of a given type}
 As an aside, what if we wanted to repeat this for a whole directory full of DNA sequences in separate FASTA files?  Here's a function to help accomplish that task:
 \begin{python}
 import glob
@@ -236,7 +236,7 @@ Note that I changed the file suffix from |.fas| to |.fasta| on the output files.
 
 
 
-\subsection*{BLAST searches via the NCBI server}
+\subsection{BLAST searches via the NCBI server}
 
 We can use Biopython do network based BLAST searches. Here we will use blastp to search against protein sequences in the Swiss-Prot database.
 
@@ -310,7 +310,7 @@ Go to the UniProt \href{http://www.uniprot.org/}{website} and use the search box
 
 
 
-\subsection*{Getting records from Swiss-Prot}
+\subsection{Getting records from Swiss-Prot}
 
 For a small number of accession numbers it's easy to use the web interface to UniProt (Swiss-Prot). For hundred of blast hits that's just not an option. Conveniently, we can use Biopython to query the Swiss-Prot database to retrieve information about these presumed orthologs. You can access the Swiss-Prot database as follows:
 
@@ -372,7 +372,7 @@ SeqRecord(seq=Seq('MNYLPFVLQRRSTVVASAPAPGSASRIPESPTTTGSNIINIIYSQSTHPNSSPT...SMQ'
 \end{python}
 
 
-\subsection*{Multiple sequence alignment via MAFFT}
+\subsection{Multiple sequence alignment via MAFFT}
 
 We've now generated a new FASTA file that includes our original protein sequence and the sequences for the human and fly BLAST best hits.  We will use MAFFT to perform a multiple alignment. Biopython has built in code to simplify command line usage of common alignment programs like CLUSTALW, MAFFT, and MUSCLE.  However I'll show you how to do this with your own code using the |subprocess| module.  Knowing how the |subprocess| module works is useful because it allows you to interface with any command line program from within Python.
 
@@ -415,7 +415,7 @@ In [8]: pipeline.mafft_align('unknown1-plus-human-fly.fasta', 'unknown1-alignmen
 
 If all went well this should have created the file |unknown1-alignment.fasta| in your directory.  Open this alignment using JalView to examine the alignment in more detail.
 
-\subsection*{Searching for protein domains using HMMER and Pfam}
+\subsection{Searching for protein domains using HMMER and Pfam}
 
 As the final step of our pipeline we'll use HMMER and the Pfam database to search for known protein domains in our original protein. This assumes you have the HMMER binaries and Pfam database installed as demonstrated in last weeks exercises and that you've already run |hmmpress| against the Pfam database. Again we write a small wrapper function using the |subprocess| module. This time we'll use the |Popen| class to illustrate how we can capture the output produced by |hmmpfam|. Note that if you haven't installed the HMMER binaries to one of the standard locations you might need to specify the full path to the |hmmscan| executable in the code below. 
 
@@ -440,7 +440,7 @@ This function can be called like this:
 As before this search may take several minutes.
 
 
-\subsection*{Putting it all together}
+\subsection{Putting it all together}
 
 We've generated a variety of functions that take care of the major steps of our pipeline. It's time to put the steps together to automate the entire process. 
 
@@ -487,7 +487,7 @@ def oneseq_pipeline(infilename, pfamdb=None,
 
 Our function can take as input a FASTA file with a single sequence or with multiple sequences. In the case of a multiple sequences it assumes that the `target' sequence for the search is the first sequence in the file. Also, note the |skipHMMER| argument included in the function. The HMMER search takes a relatively long time and doing it sequence by sequence is not very efficient so by default the pipeline will skip this step. If you want to include the HMMER step than specify the Pfam database file and set |skipHMMER=False|.
 
-\subsubsection*{Testing out the pipeline}
+\subsubsection{Testing out the pipeline}
 To test out the function we do:
 \begin{python}
 >>> reload(pipeline)
@@ -522,7 +522,7 @@ For completeness let's also test the pipeline with the HMMER step included:
 skipHMMER=False)
 \end{python}
 
-\subsubsection*{Extending the pipeline to deal with multiple inputs}
+\subsubsection{Extending the pipeline to deal with multiple inputs}
 Now that we're confident out single sequence pipeline function works it can be easily adapted to deal with multiple input files:
 
 \begin{python}
@@ -546,7 +546,7 @@ Given our example data this function will process just two input files.  However
 There are a number of ways the pipeline could be sped up. One obvious improvement would be to utilize a local installation of BLAST and the respective databases. However, optimization is often a complex task. The pipeline we developed here doesn't require us to install BLAST (which can be somewhat involved) and provides adequate performance for a modest number of sequences. It is possible to turn this set of Python functions into a program that you could run from the command line (rather than the Python interpeter) just like any other Unix program. 
 
 
-\section*{The pipeline.py module}
+\section{The pipeline.py module}
 The pages that follow give the complete code listing for the |pipeline.py| module.
 
 \newpage

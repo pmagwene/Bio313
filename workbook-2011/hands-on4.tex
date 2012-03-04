@@ -173,10 +173,12 @@ where $d$ is the degree of the polynomial (usually 1 or 2) and $w_k$ is
 a weight function. The most common choice of weighting function is
 called the ``tri-cube'' function which is defined as:
 
-% \begin{align*}
-%  w(x) & = (1-|x|^3)^3, \mbox{for}\ |x| < 1  
-%       & = 0, \mbox{for}\ |x| \geq 1 
-% \end{align*}
+\lstDeleteShortInline|
+\begin{align*}
+ w(x) & = (1-|x|^3)^3, \mbox{for}\ |x| < 1  \\
+      & = 0,\ \mbox{for}\ |x| \geq 1 
+\end{align*}
+\lstMakeShortInline|
 
 
 \medskip

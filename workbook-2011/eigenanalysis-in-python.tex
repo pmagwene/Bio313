@@ -1,0 +1,74 @@
+
+\section{Eigenanalysis in Python}
+
+The eigenanalysis functions in Python are found in the
+\lstinline!linalg! module in the \lstinline!Numpy! package. These
+functions are specified by \lstinline!linalg.eig()! (which returns both
+eigenvalues and eigenvectors) and \lstinline!linalg.eigvals()! (which
+only returns the eigenvalues).
+
+\begin{python}
+>>> import numpy as np, numpy.linalg as la
+>>> A = np.array([[2,2],[1,3]],np.float)
+>>> A
+array([[ 2.,  2.],
+       [ 1.,  3.]])
+>>> evals, evecs = la.eig(A)
+>>> evals
+array([ 1.,  4.])
+>>> evecs
+array([[-0.89442719, -0.70710678],
+       [ 0.4472136 , -0.70710678]])
+\end{python}
+Note that (somewhat inconveniently) the \lstinline!eig()! function does
+not necessarily return the eigenvalues and eigenvectors in sorted
+fashion. The Numpy documentation states that the normalized eigenvector
+corresponding to the eigenvalue \lstinline!w[i]! is the column
+\lstinline!v[:,i]!. Also note that both the R \lstinline!eigen()!
+function and the Numpy \lstinline!eig()! function return normalized
+eigenvectors (i.e.~each eigenvector has length 1).
+
+We can get sort the eigenvectors by their eigenvalues as so:
+
+\begin{python}
+>>> colorder = list(np.argsort(evals)) # get back argsort as a list
+>>> colorder
+[0, 1]
+>>> colorder.reverse() # need to reverse the column order because want from large to small
+>>> colorder
+[1, 0]
+>>> srtevals = np.take(evals, colorder) #see the Numpy docs on take()
+>>> srtevals
+array([ 4.,  1.])
+>>> srtevecs = np.take(evecs, colorder,axis=1) # sort columns
+>>> srtevecs
+array([[-0.70710678, -0.89442719],
+       [-0.70710678,  0.4472136 ]])
+>>> V = srtevecs
+>>> Vinv = la.inv(srtevecs)
+>>> D = np.diag(srtevals)
+>>> np.dot(V, np.dot(D, Vinv))
+array([[ 2.,  2.],
+       [ 1.,  3.]])
+>>> Arecon = np.dot(V, np.dot(D, Vinv))
+>>> Arecon == A
+array([[ True,  True],
+       [ True, False]], dtype=bool)
+>>> np.allclose(Arecon, A)  # like R's all.equal()
+True     
+\end{python}
+See the Numpy docs for more information on the \lstinline!argsort()!
+(\href{http://docs.scipy.org/doc/numpy/reference/routines.sort.html}{Numpy:
+Sorting and searching}), \lstinline!take()!
+((\href{http://docs.scipy.org/doc/numpy/reference/routines.indexing.html}{Numpy:
+Indexing Routines}), and \lstinline!allclose()!
+(\href{http://docs.scipy.org/doc/numpy/reference/routines.logic.html}{Numpy:
+Logic functions}).
+
+\begin{quote}
+\textbf{Assignment 1}: Write a Python function that takes as input a
+square matrix, and returns a vector of sorted eigenvalues (sorted from
+largest to smallest) and the corresponding matrix of eigenvectors sorted
+according to their corresponding eigenvalues.
+
+\end{quote}
