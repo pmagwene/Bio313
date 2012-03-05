@@ -22,3 +22,17 @@
 \newcommand{\numpy}{NumPy\xspace}
 
 
+
+\newcommand*\tikzhead{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[yshift=-0.35in] at (current page.north west)
+      {\begin{tikzpicture}[remember picture, overlay]
+        \path[fill=\headcolor] (0,0) rectangle
+          (\paperwidth,0.35in);
+       \end{tikzpicture}
+      };
+   \end{tikzpicture}}
+\newcommand*\headcolor{DarkRed}
+\newcommand*\setheadcolor[1]{\renewcommand*\headcolor{#1}}
+
+

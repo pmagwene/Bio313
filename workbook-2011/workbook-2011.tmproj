@@ -3,53 +3,53 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>hands-on12.tex</string>
+	<string>hands-on11.tex</string>
 	<key>documents</key>
 	<array>
 		<dict>
 			<key>filename</key>
 			<string>workbook-2011.tex</string>
 			<key>lastUsed</key>
-			<date>2012-03-04T05:23:33Z</date>
+			<date>2012-03-05T23:00:48Z</date>
 		</dict>
 		<dict>
 			<key>children</key>
 			<array>
 				<dict>
 					<key>filename</key>
-					<string>codepreamble.tex</string>
+					<string>layoutpreamble.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T05:47:17Z</date>
+					<date>2012-03-05T22:47:39Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>fontpreamble.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T02:33:20Z</date>
+					<date>2012-03-05T22:48:55Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
-					<string>layoutpreamble.tex</string>
+					<string>codepreamble.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T02:46:02Z</date>
+					<date>2012-03-05T22:58:35Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>stylepreamble.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T01:07:38Z</date>
+					<date>2012-03-05T22:48:36Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>macros.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T01:07:47Z</date>
+					<date>2012-03-05T22:58:39Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>packages.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T01:07:50Z</date>
+					<date>2012-03-05T22:50:58Z</date>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -70,13 +70,13 @@
 					<key>filename</key>
 					<string>hands-on1.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T04:30:39Z</date>
+					<date>2012-03-05T16:36:49Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>acquainted-R.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T04:30:32Z</date>
+					<date>2012-03-05T21:55:13Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -103,7 +103,7 @@
 					<key>filename</key>
 					<string>hands-on2.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T03:17:12Z</date>
+					<date>2012-03-05T22:44:47Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -121,13 +121,13 @@
 					<key>filename</key>
 					<string>functions-in-python.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T04:28:04Z</date>
+					<date>2012-03-05T22:44:38Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>basic-stats-in-R.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T05:12:11Z</date>
+					<date>2012-03-05T22:46:14Z</date>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -220,13 +220,13 @@
 					<key>filename</key>
 					<string>pca-in-R.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T05:20:15Z</date>
+					<date>2012-03-05T21:58:17Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>pca-in-python.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T05:23:14Z</date>
+					<date>2012-03-05T16:06:06Z</date>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -249,7 +249,7 @@
 					<key>filename</key>
 					<string>hands-on7.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T05:39:57Z</date>
+					<date>2012-03-05T16:32:25Z</date>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -264,7 +264,7 @@
 					<key>filename</key>
 					<string>hands-on8.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T05:41:58Z</date>
+					<date>2012-03-05T23:03:30Z</date>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -294,7 +294,7 @@
 					<key>filename</key>
 					<string>hands-on10.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T05:35:31Z</date>
+					<date>2012-03-05T23:00:57Z</date>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -309,7 +309,9 @@
 					<key>filename</key>
 					<string>hands-on11.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T05:35:42Z</date>
+					<date>2012-03-05T23:07:01Z</date>
+					<key>selected</key>
+					<true/>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -324,9 +326,7 @@
 					<key>filename</key>
 					<string>hands-on12.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T05:47:26Z</date>
-					<key>selected</key>
-					<true/>
+					<date>2012-03-05T23:07:01Z</date>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -359,14 +359,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>4</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>322</integer>
+				<integer>158</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>284</integer>
+			<integer>133</integer>
 		</dict>
 		<key>acquainted-python.tex</key>
 		<dict>
@@ -387,44 +387,28 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>79</integer>
+				<integer>10</integer>
 				<key>line</key>
-				<integer>230</integer>
+				<integer>107</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>226</integer>
+			<integer>74</integer>
 		</dict>
 		<key>codepreamble.tex</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>16</integer>
+				<integer>28</integer>
 				<key>line</key>
-				<integer>6</integer>
+				<integer>66</integer>
 			</dict>
-			<key>columnSelection</key>
-			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>1</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>1</integer>
-				<key>line</key>
-				<integer>6</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>19</integer>
-				<key>line</key>
-				<integer>6</integer>
-			</dict>
+			<integer>21</integer>
 		</dict>
 		<key>eigenanalysis-in-R.tex</key>
 		<dict>
@@ -461,7 +445,7 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>0</integer>
+				<integer>6</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -503,14 +487,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>15</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>119</integer>
+				<integer>86</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>80</integer>
+			<integer>69</integer>
 		</dict>
 		<key>hands-on1.tex</key>
 		<dict>
@@ -521,84 +505,52 @@
 				<key>line</key>
 				<integer>0</integer>
 			</dict>
-			<key>columnSelection</key>
-			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>32</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
 		</dict>
 		<key>hands-on10.tex</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>18</integer>
+				<integer>129</integer>
 				<key>line</key>
-				<integer>197</integer>
+				<integer>203</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>183</integer>
+			<integer>181</integer>
 		</dict>
 		<key>hands-on11.tex</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>8</integer>
+				<integer>22</integer>
 				<key>line</key>
-				<integer>479</integer>
+				<integer>349</integer>
 			</dict>
-			<key>columnSelection</key>
-			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>448</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>1</integer>
-				<key>line</key>
-				<integer>479</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>8</integer>
-				<key>line</key>
-				<integer>479</integer>
-			</dict>
+			<integer>424</integer>
 		</dict>
 		<key>hands-on12.tex</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>9</integer>
 				<key>line</key>
-				<integer>163</integer>
+				<integer>168</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>125</integer>
+			<integer>243</integer>
 		</dict>
 		<key>hands-on13.tex</key>
 		<dict>
@@ -621,28 +573,12 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>0</integer>
+				<integer>9</integer>
 			</dict>
-			<key>columnSelection</key>
-			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>1</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
 		</dict>
 		<key>hands-on3.tex</key>
 		<dict>
@@ -707,28 +643,28 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>25</integer>
 				<key>line</key>
-				<integer>357</integer>
+				<integer>226</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
-			<integer>148</integer>
+			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>349</integer>
+			<integer>211</integer>
 		</dict>
 		<key>hands-on8.tex</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>116</integer>
 				<key>line</key>
-				<integer>220</integer>
+				<integer>234</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>213</integer>
+			<integer>162</integer>
 		</dict>
 		<key>hands-on9.tex</key>
 		<dict>
@@ -781,7 +717,7 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>4</integer>
+				<integer>1</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -793,9 +729,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>25</integer>
+				<integer>21</integer>
 				<key>line</key>
-				<integer>20</integer>
+				<integer>33</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -865,9 +801,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>20</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>4</integer>
+				<integer>12</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -881,12 +817,12 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>20</integer>
+				<integer>55</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>2</integer>
+			<integer>0</integer>
 		</dict>
 		<key>pca-in-python.tex</key>
 		<dict>
@@ -900,7 +836,7 @@
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>64</integer>
+			<integer>55</integer>
 		</dict>
 		<key>plotting-in-python.tex</key>
 		<dict>
@@ -921,9 +857,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>26</integer>
 				<key>line</key>
-				<integer>0</integer>
+				<integer>6</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -993,14 +929,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>23</integer>
 				<key>line</key>
-				<integer>9</integer>
+				<integer>39</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>24</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
@@ -1056,6 +992,6 @@
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{298, 0}, {1091, 878}}</string>
+	<string>{{861, 26}, {1052, 1151}}</string>
 </dict>
 </plist>

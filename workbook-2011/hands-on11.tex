@@ -345,11 +345,9 @@ $ awk '$3 == "gene" && ($5 - $4) < 300 && match($9, "Dubious") {print $0 }' \
 \end{bash}
 
 
-
-
 There's lots of powerful things you can do with |awk| one-liners, but writing short command files often makes things easier to understand. You can think of an |awk| command file as a set of |pattern {action}| statements.  Our command file  will create a table giving both the length of each chromosome and the number of genes on that chromosome. Save the following awk script in a file called |gcount.awk|.
 
-\begin{bash}
+\begin{codeblock}[awk]
 # gcount.awk
 # length of each chromosome
 $3 == "chromosome" {
@@ -367,7 +365,7 @@ for (chr in clen) {
     print chr "\t" clen[chr] "\t" ngenes[chr]
     }
 }
-\end{bash}
+\end{codeblock}
 
 In the example above we create two arrays -- |clen| and |ngenes| -- to keep track of the chromosome lengths and number of genes on each chromosome. Arrays can be indexed by either integers or strings; when there indxed by strings we can think of them like Python dictionaries. We have two patterns -- whether the 3rd field equals 1) ``chromosome" or 2) ``gene". The final pattern, labeled |END|, says what to do once we've processed all the lines in the file.  To run this script do the following:
 
@@ -383,7 +381,7 @@ $ awk -f gcount.awk saccharomyces_cerevisiae.gff | sort
 
 Our |gcount.awk| script works pretty well, but what if we wanted to count pseudogenes rather than genes, or tRNA features? In its current form the feature type is hardcoded into the script. Let's see how we can get rid of that constraint. Save the following awk script as |fcount.awk|.
 
-\begin{bash}
+\begin{codeblock}[awk]
 # fcount.awk
 BEGIN {
 # if var ftype has NOT been defined, assign it a default value
@@ -406,7 +404,7 @@ for (chr in clen) {
     print chr "\t" clen[chr] "\t" ngenes[chr]
     }
 }
-\end{bash}
+\end{codeblock}
 
 Here we introduced the |BEGIN| pattern. This pattern is carried out before any lines of the file are processed.  By default, this new script will count genes like our previous script did, but if you specify the variable |ftype| using the |-v| option on the command line it will count the specified feature type:
 
@@ -430,7 +428,7 @@ $ awk 'match($9,"FLO") && $3 == "gene" { print $0 }' \
 
 This works, but the output is a bit ugly because of how the attribute field is specified. Let's write a simple awk |function| that nicely formats the output, with each of the attributes appearing as a subline. Save the following script as |attribs.awk|.
 
-\begin{bash}
+\begin{codeblock}[awk]
 # attribs.awk
 # parse the attributes field of a GFF file
 
@@ -450,7 +448,7 @@ NF >= 9 {
         }
     print "\n"
 }
-\end{bash}
+\end{codeblock}
 
 The awk function |gsub()| globally substitutes one string for another. In this case it's replacing HTML type encoding of spaces, commas, semi-colons, etc. with more human friendly versions of the same.
 
@@ -490,7 +488,7 @@ Copyright (C) 2007 Free Software Foundation, Inc.
 
 Assuming, that you've got bash working on your system, enter the following code into your text-editor and save it with the filename |genome_reporter.sh| in the same directory where you've saved |fcount.awk| that we created earlier. Be careful that you enter the text as shown as |bash| is particularly picky about extra spaces around the equal sign (=) in variable assignment so if you get error messages when you try and run this script (see below), that's the first thing to check.
 
-\begin{bash}
+\begin{codeblock}[bash]
 #!/bin/bash
 
 URL='http://downloads.yeastgenome.org/curation/chromosomal_feature/saccharomyces_cerevisiae.gff'
@@ -525,7 +523,7 @@ awk -f fcount.awk  -v ftype="pseudogene" $FILENAME | wc -l >> $REPORT
 
 echo -e "\nChromosome, length, genes per chromosome: " >> $REPORT
 awk -f fcount.awk $FILENAME | sort >> $REPORT    
-\end{bash}
+\end{codeblock}
 
 Note that the line |#!/bin/bash| needs to be the first line in the file. This tells the operating system to run this script using the bash shell. This line is sometimes referred to as the `she-bang' line by Unix programmers. We'll see next week how to set this for a Python program.
 

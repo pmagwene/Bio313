@@ -3,7 +3,7 @@
 
 If \Mtx{A} is an $n \times p$ matrix, and the singular value decomposition of \Mtx{A} is given by $\Mtx{A} = \Mtx{U} \Mtx{S} \Mtx{V}^T$, the columns of the  matrix $\Mtx{V}^T$ are the eigenvectors of the square matrix $\Mtx{A}^T \Mtx{A}$ (sometimes refered to  as the minor product of \Mtx{A}). The singular values of \Mtx{A} are equal to the square roots of the eigenvalues of $\Mtx{A}^T \Mtx{A}$. 
 
-The \texttt{svd()} function computes the singular value decomposition of an arbitrary rectangular matrix. Below I demonstrate the use of the \texttt{svd()} function and confirm the relationships described above:
+The \verb|svd()| function computes the singular value decomposition of an arbitrary rectangular matrix. Below I demonstrate the use of the \verb|svd()| function and confirm the relationships described above:
 
 \begin{R}
 > A <- matrix(c(2,1,2,3),nrow=2)
@@ -16,7 +16,8 @@ The \texttt{svd()} function computes the singular value decomposition of an arbi
            [,1]       [,2]
 [1,] -0.6618026 -0.7496782
 [2,] -0.7496782  0.6618026
-> a.svd$d  # R uses the notation A = u d v' rather than A = u s v' 
+# R uses the notation A = u d v' rather than A = u s v' 
+> a.svd$d  
 [1] 4.1306486 0.9683709
 > all.equal(A, a.svd$u %*% diag(a.svd$d) %*% t(a.svd$v)) 
 [1] TRUE
@@ -42,12 +43,11 @@ As we discussed in lecture, the eigenvectors of square matrix, \Mtx{A}, point in
 To illustrate the construction of biplots we'll use the same iris data set we used last week to introduce PCA. The built-in R function is |biplot()|. We'll also use the |prcomp()| function to do PCA rather than |princomp()|. |prcomp()| uses SVD of the mean-centered data matrix to do the PCA.
 
 \begin{R}
-
-> iris.vars <- subset(iris, select=-Species) # leave out the Species variable
-> # ?prcomp # read the docs on prcomp and how it differs from princomp
+# leave out the Species variable
+> iris.vars <- subset(iris, select=-Species) 
+# read the prcomp docs and note differnces from princomp
 > iris.pca <- prcomp(iris.vars)
 > summary(iris.pca)
-
 
 Importance of components:
                           PC1     PC2    PC3     PC4
@@ -55,9 +55,7 @@ Standard deviation     2.0563 0.49262 0.2797 0.15439
 Proportion of Variance 0.9246 0.05307 0.0171 0.00521
 Cumulative Proportion  0.9246 0.97769 0.9948 1.00000
 
-
-> iris.pca$rotation  # equivalent to 'loadings' of princomp
-
+> iris.pca$rotation  # eqvlt to 'loadings' of princomp
 
                      PC1         PC2         PC3        PC4
 Sepal.Length  0.36138659 -0.65658877  0.58202985  0.3154872
@@ -65,25 +63,23 @@ Sepal.Width  -0.08452251 -0.73016143 -0.59791083 -0.3197231
 Petal.Length  0.85667061  0.17337266 -0.07623608 -0.4798390
 Petal.Width   0.35828920  0.07548102 -0.54583143  0.7536574
 
-
-> plot(iris.pca$x)  # 'x' is equivalent to 'scores' of princomp
+> plot(iris.pca$x)  # eqvlt to 'scores' of princomp
 > biplot(iris.pca, scale=1)
-> biplot(iris.pca, scale=1, cex=c(0.75,1)) # plot the scores(rows) with slightly smaller font size
-> biplot(iris.pca, scale=0, cex=c(0.75,1)) # change the biplot scaling - how does this differ?
-
+# plot the scores(rows) with slightly smaller font size
+> biplot(iris.pca, scale=1, cex=c(0.75,1)) 
+# change the biplot scaling - how does this differ?
+> biplot(iris.pca, scale=0, cex=c(0.75,1)) 
 \end{R}
 
-\bigskip
-
 \begin{assignment}
-Using R, apply PCA (on the covariances) to the \texttt{yeast-subnetwork} data set from week three. Create biplots in the first two principal components using both $\alpha=0$ and $\alpha=1$ (i.e. the |scale| argument to biplot). In your biplots change the labels for the observations to integers using the \texttt{xlabs} argument to \texttt{biplot()} and make the font size for the observations half the size of the varaiable labels.  An obvious pattern emerges in the biplot with respect to the gene MEP2. What is this pattern? What subset of conditions is most closely related to the vector representing MEP2?
+Using R, apply PCA (on the covariances) to the \verb|yeast-subnetwork| data set from week three. Create biplots in the first two principal components using both $\alpha=0$ and $\alpha=1$ (i.e. the |scale| argument to biplot). In your biplots change the labels for the observations to integers using the \verb|xlabs| argument to \verb|biplot()| and make the font size for the observations half the size of the varaiable labels.  An obvious pattern emerges in the biplot with respect to the gene MEP2. What is this pattern? What subset of conditions is most closely related to the vector representing MEP2?
 \end{assignment}
 
 
 
 \section{SVD in Python}
 
-Like the |eig()| function, the |svd()| function is found in the |numpy.linalg| module.
+Like the \verb|eig()| function, the \verb|svd()| function is found in the |numpy.linalg| module.
 
 \begin{python}
 >>> import numpy as np, numpy.linalg as la
@@ -112,8 +108,8 @@ array([[ 2.,  2.],
 True
 >>> AtA = np.dot(transpose(A),A)
 >>> eu, ev = la.eig(AtA)
->>> eu
-array([  0.93774225,  17.06225775]) # eigenvalues not sorted
+>>> eu  # eigenvalues are unsorted
+array([  0.93774225,  17.06225775])
 >>> S**2
 array([ 17.06225775,   0.93774225])
 \end{python}
@@ -186,8 +182,8 @@ Having created that function we can now put it to use to visualization our seria
 >>> s1 = yeast[u1sort] # yeast data with rows sorted by u1
 
 # now create a figure showing original and new ordering
->>> fig = yd.draw_yeast_matrices([yeast, s1],['Original ordering',
-                                             'SVD re-ordering of rows'])
+>>> fig = yd.draw_yeast_matrices([yeast, s1],
+            ['Original ordering', 'SVD re-ordering of rows'])
 >>> fig.show()
 
 # let's repeat it where we sort both rows and cols
@@ -224,12 +220,12 @@ This matrix data is shown below in a slightly different form that emphasizes the
 
 \begin{figure}[ht!]
 \begin{center}
-% \subcaptionbox{The `zero' matrix.}[0.4\linewidth]{%
-% \includegraphics[height=1.5in]{zero.jpg}% 
-% }
-% \subcaptionbox{The three vector types in the `zero' matrix.}[0.4\linewidth]{%
-% \includegraphics[height=1.5in]{zero-vecs.jpg}% 
-% }
+\subcaptionbox{The `zero' matrix.}[0.4\linewidth]{%
+\includegraphics[height=1in]{./figures/hands-on7/zero.jpg}% 
+}
+\subcaptionbox{The three vector types in the `zero' matrix.}[0.4\linewidth]{%
+\includegraphics[height=1in]{./figures/hands-on7/zero-vecs.jpg}% 
+}
 \end{center}
 \end{figure}
 
@@ -293,7 +289,7 @@ The Python Imaging Library (PIL) is a package of routines for manipulating image
 
 The PIL package provide a more general set of image manipulation features than does R.  In the exercises below we will use the PIL package in combination with |numpy| apply SVD to a more complicated image.
 
-Download the module of helper functions \texttt{imagehelper.py} from the course wiki and place it somewhere in your \texttt{PYTHONPATH}. Also, download the JPEG image \texttt{chesterbw.jpg} and place it in a convenient directory such as |c:/temp| or |~/temp|. {\color{red} \bfseries I very strongly recommend you use IPython with the --pylab option to run the following code.}
+Download the module of helper functions \verb|imagehelper.py| from the course wiki and place it somewhere in your \verb|PYTHONPATH|. Also, download the JPEG image \verb|chesterbw.jpg| and place it in a convenient directory such as \verb|c:/temp| or \verb|~/temp|. {\color{red} \bfseries I very strongly recommend you use IPython with the --pylab option to run the following code.}
 
 \begin{python}
 >>> import numpy as np, numpy.linalg as la
@@ -356,7 +352,7 @@ The Python Image Library has lots of useful functions for manipulating image dat
 \begin{assignment}
 \small
 
-Write a function (|svd_img()|) in Python that automates the creation of a lower dimensional approximation of a grayscale image using SVD.  Test your function on various images using a variety of approximating dimensions (e.g. 5,10, 25, 50, 100, 250 on the \texttt{chesterbw.jpg} image).  Your function should take as input a floating point array representing the original image and an integer specifying the approximating dimension (i.e. function will be called as |svd_img(imgarray,dim)|). Your function should return two objects: 1) an array representing the approximated image; and 2) an array representing the difference between the original and approximating images.
+Write a function (|svd_img()|) in Python that automates the creation of a lower dimensional approximation of a grayscale image using SVD.  Test your function on various images using a variety of approximating dimensions (e.g. 5,10, 25, 50, 100, 250 on the \verb|chesterbw.jpg| image).  Your function should take as input a floating point array representing the original image and an integer specifying the approximating dimension (i.e. function will be \verb|svd_img(imgarray,dim)|). Your function should return two objects: 1) an array representing the approximated image; and 2) an array representing the difference between the original and approximating images.
 
 In addition to your code consider the following questions:
 

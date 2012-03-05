@@ -164,9 +164,9 @@ Once you've confirmed that |blastp| works on your system check out the PDF docum
 
 If you're on Windows you can download a prebuilt binary of Biopython from the \href{http://biopython.org/wiki/Download}{Biopython website}. For OS X you can install Biopython from source relatively easily, assuming you've previously installed setuptools which includes the |easy_install| program:
 %
-\begin{Code}
+\begin{bash}
 $ sudo easy_install -f http://biopython.org/DIST/ biopython
-\end{Code}
+\end{bash}
 
 
 \subsection{Testing the bioinformatics tools}
@@ -177,10 +177,10 @@ Download the |fungal-ras.fas| file from the class website. This file includes pr
 
 Let's run Clustalw and MAFFT to align the Ras sequences:
 %
-\begin{Code}
+\begin{bash}
 $ clustalw2 -infile=fungal-ras.fas
 $ mafft --auto fungal-ras.fas > fungal-ras-mafft.fas
-\end{Code}
+\end{bash}
 %
 The commands above should produce the following files: |fungal-ras.aln| and |fungal-ras.dnd| (Clustalw) and |fungal-ras-mafft.fas| (MAFFT).  To visualize the alignments there are a variety of different multiple alignment viewers. One such program is \href{http://www.jalview.org/}{Jalview}, a free cross platform, multiple alignment viewer/editor written in Java.  Take a look at both the clustalw and mafft alignments using Jalview.
 
@@ -191,21 +191,21 @@ To test out HMMER and Pfam download the |Rme1.fas| file from the class website. 
 
 The first thing you'll need to do is run |Pfam-A.hmm| through the |hmmpress| program which prepares the HMM database for fast scanning by creating binary files. This might take a few minutes depending on the speed of your machine.
 
-\begin{Code}
+\begin{bash}
 $ hmmpress Pfam-A.hmm
-\end{Code}
+\end{bash}
 
 This will create a number of additional files in the same directory as |Pfam-A.hmm|. We can now use |hmmscan| to search for known protein domains included in the Pfam database.
 
-\begin{Code}
+\begin{bash}
 $ hmmscan Pfam-A.hmm Rme1.fas | less
-\end{Code}
+\end{bash}
 
 The default output from |hmmscan| is designed to be human readable. For outputs that are easier to parse computationally use the |--tblout| or |--domtblout| options to save output in a tabular format.
 
-\begin{Code}
+\begin{bash}
 $ hmmscan --domtblout Rme1-output.txt -o /dev/null Pfam-A.hmm Rme1.fas    
-\end{Code}
+\end{bash}
 
 This call produces a file |Rme1-output.txt| that contains a space delimited text file summarizing the per-domain output. The |-o| option redirects the main human-readable output (in this case to the `bit-bucket', /dev/null). You can then manipulate the tabular output in |Rme1-output.txt| using standard Unix tools like |awk|. 
 

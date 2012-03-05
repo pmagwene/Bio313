@@ -1,12 +1,8 @@
 
 
-\usepackage[svgnames]{xcolor}
-
-\usepackage[listings]{tcolorbox}
-\usepackage{listings}
 \lstMakeShortInline|
 
-\definecolor{boxfill}{gray}{0.95}
+\definecolor{boxfill}{gray}{0.98}
 \definecolor{boxframe}{named}{gray}
 
 \lstset{%
@@ -24,12 +20,6 @@ stringstyle=\color{DarkRed},
 %commentstyle=\color{Olive}\itshape,
 commentstyle=\color{gray!90}\itshape,
 }
-
-
-
-%\definecolor{boxframe}{rgb}{0.6,0,0}
-%\definecolor{boxfill}{rgb}{1,.95,.95}
-
 
 
 \lstnewenvironment{codeblock}[1][]
@@ -69,29 +59,10 @@ language=#1}}
 
 % Assignment box environment
 
-\usepackage{fancybox}
-\usepackage{fancyvrb}
-
-%\tcbset{before={\par\medskip\pagebreak[0]\noindent},
-%        after={\par\medskip}}
-
 \usepackage{chngcntr}  % provides \counterwithin
-% \newcounter{assign_num}
-% \counterwithin*{assign_num}{chapter}
-% \setcounter{assign_num}{1}
-% \newenvironment{assignment}{%
-% \tcolorbox[colback=red!5,colframe=red!75!black,fonttitle=\sffamily\bfseries,title={Assignment \thechapter.\arabic{assign_num}\stepcounter{assign_num}}]}%
-% {\endtcolorbox}
-
 \newcounter{assignnum}
 \counterwithin{assignnum}{chapter}
 \setcounter{assignnum}{1}
 \newenvironment{assignment}{%
-\tcolorbox[colback=red!5,colframe=red!75!black,fonttitle=\sffamily\bfseries,title={Assignment \stepcounter{assignnum}\theassignnum}]}%
+\tcolorbox[colback=DarkRed!5,colframe=DarkRed!50,fonttitle=\sffamily\bfseries,title={Assignment \stepcounter{assignnum}\theassignnum},fontupper=\small,fontlower=\small,boxrule=0.1pt,left=2mm,right=2mm]}%
 {\endtcolorbox}
-
-
-% \newenvironment{assignment}%
-% {\begin{Sbox}\begin{minipage}{0.95\columnwidth}%
-% \textbf{Assignment \arabic{assign_num}\stepcounter{assign_num}}:}% 
-% {\end{minipage}\end{Sbox}\shadowbox{\TheSbox}}

@@ -1,40 +1,55 @@
-\documentclass[9pt,paper=a5,landscape,noonelinecaption,tablecaptionabove,twocolumn,bigheadings,pagesize,oneside]{scrbook}
-\KOMAoptions{BCOR=0mm,DIV=25}
+\documentclass[9pt,twocolumn,oneside,bigheadings,tablecaptionabove]{scrbook}
+\usepackage{scrpage2}
 
 
-%% Formatting options
-%\input{layoutpreamble.tex}
-%\input{stylepreamble.tex}
+\input{layoutpreamble.tex}
 \input{fontpreamble.tex}
 \input{packages.tex}
 \input{codepreamble.tex}
 \input{macros.tex}
 
+
+
 \usepackage[colorlinks=true,citecolor=blue,linkcolor=black]{hyperref}
 \usepackage[capitalize]{cleveref} % should always be loaded after hyperref
+ 
 
-%% Title Page Formatting
-%\input{titlepage.tex}
+
+\title{Bio 313\\Scientific Computing for Biologists}
+\subtitle{Fall 2011}
+\author{Paul M. Magwene}
+
 
 
 
 
 %% Document
 \begin{document}
-\pagestyle{empty} 
-%\mytitlepage
+\maketitle
+\clearpage
 
-\newpage
+
+\clearscrheadfoot
+\pagestyle{scrheadings}
 
 \tableofcontents
+\clearpage
 
+
+\clearscrheadfoot
+\setheadcolor{DarkRed!3}
+%\chead{\tikzhead}
+\ihead{\tikzhead\headmark}
+\ohead{\pagemark}
+\setkomafont{pagehead}{\normalfont\sffamily}
+\setkomafont{pagenumber}{\normalfont\sffamily}
+\pagestyle{scrheadings}
+\renewcommand*{\chapterpagestyle}{scrheadings}
+ 
 
 \chapter{Getting your feet wet with R and Python}
 \input{hands-on1.tex}
 
-% \begin{assignment}
-%     Does it work?
-% \end{mybox}
 
 \chapter{Data structures and functions in R and Python}
 \input{hands-on2.tex}
