@@ -2,9 +2,9 @@
 
 \section{Hierarchical Clustering in R}
 
-The function \texttt{hclust()} provides a simple mechanism for carrying out standard hierarchical clustering in R. The \texttt{method} argument determines the group distance function used (single linkage, complete linkage, average, etc.).
+The function |hclust()| provides a simple mechanism for carrying out standard hierarchical clustering in R. The |method| argument determines the group distance function used (single linkage, complete linkage, average, etc.).
 
-The input to \texttt{hclust()} is a dissimilarity matrix. The function \texttt{dist()} provides some of the basic dissimilarity measures (e.g. Euclidean, Manhattan, Canberra; see method argument of \texttt{dist()}) but you can convert an arbitrary square matrix to a distance object by applying the \texttt{as.dist()} function to the matrix.
+The input to |hclust()| is a dissimilarity matrix. The function |dist()| provides some of the basic dissimilarity measures (e.g. Euclidean, Manhattan, Canberra; see method argument of |dist()|) but you can convert an arbitrary square matrix to a distance object by applying the |as.dist()| function to the matrix.
 
 \begin{R}
 > iris.data <- subset(iris, select=-Species) 
@@ -38,7 +38,7 @@ Fancy formatting of dendrogram plots in R is awkward. You need to use the \textt
 > plot(iris.dend)
 \end{R}
 
-The \texttt{heatmap()} function combines a false color image of a matrix with a dendrogram. Here's we apply it to the yeast-subnetwork data set from previous weeks.
+The |heatmap()| function combines a false color image of a matrix with a dendrogram. Here's we apply it to the yeast-subnetwork data set from previous weeks.
 
 \begin{R}
 > yeast <- read.delim('yeast-subnetwork-clean.txt')

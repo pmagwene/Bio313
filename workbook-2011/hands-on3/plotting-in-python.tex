@@ -201,7 +201,7 @@ add a red dot to represent the city of Durham, NC. Save this code as
 \lstinline!mapex.py! and run it from the command line
 (\lstinline!python mapex.py!).
 
-\begin{python}
+\begin{codeblock}[python]
 # Derived from: Tosi, Sandro. Plotting Geographical Data using Basemap
 # url: http://www.packtpub.com/article/plotting-geographical-data-using-basemap
 
@@ -237,7 +237,8 @@ pyplot.text(mcoordx+36000, mcoordy-18000, 'Durham')
 
 # finally show the file
 pyplot.show()    
-\end{python}
+\end{codeblock}
+%
 In our second example let's assume you've been studying the population
 genetics of the beautiful and rare North Carolina Blue Snouter (mammals
 of the order Rhinogradentia; see Stümpke 1967. The snouters: form and
@@ -247,7 +248,7 @@ sampling locations. Download the file \lstinline!nc-sites.txt! from the
 course wiki, and place it in the same directory as the following module
 (\lstinline!mapex2.py!).
 
-\begin{python}
+\begin{codeblock}[python]
 # mapex2.py
 
 import numpy as np
@@ -273,7 +274,8 @@ for row in sites:
     pyplot.plot(x,y, 'b+', markersize=8,markeredgewidth=2) 
 
 pyplot.show()    
-\end{python}
+\end{codeblock}
+%
 The \lstinline!mapex2.py! code will produce a figure like the one below.
 
 \begin{figure}[htbp]

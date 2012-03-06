@@ -275,7 +275,7 @@ $ grep "telomere" out.txt | wc -l
 \end{bash}
 NOTE: the numbers of matches may change somewhat between releases of the curated yeast genome.  If the numbers you get above or below are \emph{slightly} different from what is shown here don't worry.
 
-We can get a little fancier if we use the ``extended'' |grep| syntax (specified using the |-E| option).  Here's how we can search for lines that match on any of a set of terms (the vertical bar \verb+|+ indicates an ``OR" operator):
+We can get a little fancier if we use the ``extended'' |grep| syntax (specified using the |-E| option).  Here's how we can search for lines that match on any of a set of terms (the vertical bar \verb+|+ indicates an ``OR'' operator):
 \begin{bash}
 $ grep -E "tRNA|rRNA|snRNA|snoRNA" out.txt | wc -l
      409
@@ -287,7 +287,7 @@ $ grep "chr01" out.txt | grep "gene" | wc -l
     121
 \end{bash}
 
-Note how we piped two |grep| commands together to get the equivalent of AND (``chr01'' AND ``gene''). However, there's a very subtle problem with this command as constructed. We search on the word ``gene", but ``gene'' is also a substring of ``psuedogene'' and hence ``pseudogene'' features also generate matches.  What we really want is whole word matches. We can do that as follows:
+Note how we piped two |grep| commands together to get the equivalent of AND (``chr01'' AND ``gene''). However, there's a very subtle problem with this command as constructed. We search on the word ``gene'' but ``gene'' is also a substring of ``psuedogene'' and hence ``pseudogene'' features also generate matches.  What we really want is whole word matches. We can do that as follows:
 \begin{bash}
 $ grep "\<chr01\>" out.txt | grep "\<gene\>" | wc -l
      117
@@ -318,9 +318,9 @@ One simple thing we can do with awk is to use it to re-order fields in a structu
 awk '{print $2, $1, $4, $5}' out.txt | less
 \end{bash}
 
-In the command above the the dollar signs followed by numbers refer to the fields of the file. With it's default setting |awk| operates line by line, so you can interpret the above statement as saying: ``for each line, print the fields 2, 1, 4 and 5".
+In the command above the the dollar signs followed by numbers refer to the fields of the file. With it's default setting |awk| operates line by line, so you can interpret the above statement as saying: ``for each line, print the fields 2, 1, 4 and 5''.
 
-The basic syntax of |awk| is often depicted in the form |pattern {action}|. The above command only specified an action, so it was applied to every line.  By contrast, in the example below we specify a pattern.  The pattern can be read as -- ``if the 3rd field is 'chromosome'". For all lines that match that pattern the correspoding action is applied; in this case ``print fields 1 and 5" (the chromosome name and its length):
+The basic syntax of |awk| is often depicted in the form |pattern {action}|. The above command only specified an action, so it was applied to every line.  By contrast, in the example below we specify a pattern.  The pattern can be read as -- ``if the 3rd field is 'chromosome'". For all lines that match that pattern the correspoding action is applied; in this case ``print fields 1 and 5'' (the chromosome name and its length):
 
 \begin{bash}
 awk '$3=="chromosome" {print $1, $5}' saccharomyces_cerevisiae.gff 
@@ -333,7 +333,7 @@ $ awk '$3 == "gene" && ($5 - $4) < 300 {print $0 }' \
      446
 \end{bash}
 
-|&&| is the AND operator. Read this as ``if the 3rd fields is 'gene' AND the the 5th field minus the 4th field is less than 300."
+|&&| is the AND operator. Read this as ``if the 3rd fields is 'gene' AND the the 5th field minus the 4th field is less than 300.''
 
 In this last example we added one more condition -- we looked for the word `Dubious' in the 9th field. The results indicate that a significant proportion of these small genes are classified as `Dubious'.
 
@@ -366,7 +366,7 @@ for (chr in clen) {
 }
 \end{codeblock}
 
-In the example above we create two arrays -- |clen| and |ngenes| -- to keep track of the chromosome lengths and number of genes on each chromosome. Arrays can be indexed by either integers or strings; when there indxed by strings we can think of them like Python dictionaries. We have two patterns -- whether the 3rd field equals 1) ``chromosome" or 2) ``gene". The final pattern, labeled |END|, says what to do once we've processed all the lines in the file.  To run this script do the following:
+In the example above we create two arrays -- |clen| and |ngenes| -- to keep track of the chromosome lengths and number of genes on each chromosome. Arrays can be indexed by either integers or strings; when there indxed by strings we can think of them like Python dictionaries. We have two patterns -- whether the 3rd field equals 1) ``chromosome'' or 2) ``gene''. The final pattern, labeled |END|, says what to do once we've processed all the lines in the file.  To run this script do the following:
 
 \begin{bash}
 $ awk -f gcount.awk saccharomyces_cerevisiae.gff
@@ -539,9 +539,9 @@ $ ./genome_reporter.sh
 \end{bash} 
 Assuming you don't have any errors the script will download the GFF file from the Saccharomyces Genome Database, save it with the date prefixed to the file name, and then generate a short report listing some useful summaries generated from the file.
 
-Most of the bottom half of the script should be easy to understand; it simply shows a bunch of |echo| and |awk| commands that you might have typed at the command line. In the top portion of the script we create a set of variables to hold the names of the files we'll be using. One new feature we haven't seen before is the use of the dollar sign (|$|) to dereference variable names.  For example, the variable |FILENAME| is constructed by creating a string by joining together the strings held in the variables |TODAY| and |BASEFILE| (and separated by a dash |-|). Depending on the date on which the script is run it generates a different set of file names, as specified by the variables |TODAY|, |BASEFILE|, and |REPORT|.  The bottom half of the script is setup to generate the appropriate output given those changing variables. 
+Most of the bottom half of the script should be easy to understand; it simply shows a bunch of |echo| and |awk| commands that you might have typed at the command line. In the top portion of the script we create a set of variables to hold the names of the files we'll be using. One new feature we haven't seen before is the use of the dollar sign (\verb|$|) to dereference variable names.  For example, the variable |FILENAME| is constructed by creating a string by joining together the strings held in the variables |TODAY| and |BASEFILE| (and separated by a dash |-|). Depending on the date on which the script is run it generates a different set of file names, as specified by the variables |TODAY|, |BASEFILE|, and |REPORT|.  The bottom half of the script is setup to generate the appropriate output given those changing variables. 
 
-One other feature to take note of is the |if-then-fi| conditional statement. The portion in the square brackets (|[ ! -e $FILENAME ]|) asks whether the file for that date already exists. If so it doesn't bother downloading the file again, for efficiency reasons.
+One other feature to take note of is the |if-then-fi| conditional statement. The portion in the square brackets (\verb|[ ! -e $FILENAME ]|) asks whether the file for that date already exists. If so it doesn't bother downloading the file again, for efficiency reasons.
 
 Like regular expressions, |bash| scripting can be quite involved. We'll create some additional |bash| scripts next class sessions and I'll provide some web links on the course wiki if you want to learn more about working with |bash|.
 

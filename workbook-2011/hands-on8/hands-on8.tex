@@ -102,7 +102,7 @@ The definition of |group.symbols| and the use of the |pch| argument require a li
 
 If you'd like to see a function that prints out all the standard symbols type |?points| and check out the |pchShow| function defined in the example at the bottom of the documentation page.  To see this example in action type |example(points)|. After typing |example(points)| you can call the |pchShow| function directly (that's how I generated the figure).
 
-The |group.symbols <- ...| line constructs a vector of length $n$ (where $n$ is the length of the |iris$Species| vector) where each element of the |group.symbols| vector has the value 1, 2 or 3 according to which species the corresponding specimen represents.  A simpler example might make this clearer:
+The |group.symbols <- ...| line constructs a vector of length $n$ (where $n$ is the length of the \lstinline|iris$Species| vector) where each element of the |group.symbols| vector has the value 1, 2 or 3 according to which species the corresponding specimen represents.  A simpler example might make this clearer:
 
 \begin{R}
 > sexes = as.factor(c('M','F','F','M','F'))
