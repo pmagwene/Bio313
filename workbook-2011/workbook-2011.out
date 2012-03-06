@@ -1,0 +1,136 @@
+\BOOKMARK [0][-]{chapter.1}{Getting your feet wet with R and Python}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Getting Acquainted with R}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{Starting the default R GUI}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{R Studio}{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.3}{Accessing the Help System on R}{section.1.1}% 5
+\BOOKMARK [2][-]{subsection.1.1.4}{Navigating Directories in R}{section.1.1}% 6
+\BOOKMARK [2][-]{subsection.1.1.5}{Using R as a Calculator}{section.1.1}% 7
+\BOOKMARK [2][-]{subsection.1.1.6}{Comparison Operators}{section.1.1}% 8
+\BOOKMARK [2][-]{subsection.1.1.7}{Working with Vectors in R}{section.1.1}% 9
+\BOOKMARK [2][-]{subsection.1.1.8}{Some Useful Functions}{section.1.1}% 10
+\BOOKMARK [2][-]{subsection.1.1.9}{Function Arguments in R}{section.1.1}% 11
+\BOOKMARK [2][-]{subsection.1.1.10}{Simple Input in R}{section.1.1}% 12
+\BOOKMARK [2][-]{subsection.1.1.11}{Using !scan\(\)! to input data}{section.1.1}% 13
+\BOOKMARK [2][-]{subsection.1.1.12}{Using !read.table\(\)! to input data}{section.1.1}% 14
+\BOOKMARK [2][-]{subsection.1.1.13}{Basic Statistical Functions in R}{section.1.1}% 15
+\BOOKMARK [2][-]{subsection.1.1.14}{Simple Plots in R}{section.1.1}% 16
+\BOOKMARK [1][-]{section.1.2}{Getting Acquainted with Python}{chapter.1}% 17
+\BOOKMARK [2][-]{subsection.1.2.1}{Starting the Python interpretter}{section.1.2}% 18
+\BOOKMARK [2][-]{subsection.1.2.2}{Accessing the Documentation in Python}{section.1.2}% 19
+\BOOKMARK [2][-]{subsection.1.2.3}{Using Python as a Calculator}{section.1.2}% 20
+\BOOKMARK [2][-]{subsection.1.2.4}{Comparison Operators in Python}{section.1.2}% 21
+\BOOKMARK [2][-]{subsection.1.2.5}{More Data Types in Python}{section.1.2}% 22
+\BOOKMARK [2][-]{subsection.1.2.6}{Simple data structures in Python: Lists}{section.1.2}% 23
+\BOOKMARK [2][-]{subsection.1.2.7}{Using NumPy arrays}{section.1.2}% 24
+\BOOKMARK [2][-]{subsection.1.2.8}{Simple Plots in Python}{section.1.2}% 25
+\BOOKMARK [1][-]{section.1.3}{Introduction to Literate Programming}{chapter.1}% 26
+\BOOKMARK [2][-]{subsection.1.3.1}{Sweave for R}{section.1.3}% 27
+\BOOKMARK [2][-]{subsection.1.3.2}{Pweave for literate programming in Python}{section.1.3}% 28
+\BOOKMARK [0][-]{chapter.2}{Data structures and functions in R and Python}{}% 29
+\BOOKMARK [1][-]{section.2.1}{Vector Operations in R}{chapter.2}% 30
+\BOOKMARK [1][-]{section.2.2}{Vector Operations in Python}{chapter.2}% 31
+\BOOKMARK [1][-]{section.2.3}{Writing Functions in R}{chapter.2}% 32
+\BOOKMARK [2][-]{subsection.2.3.1}{Putting R functions in Scripts}{section.2.3}% 33
+\BOOKMARK [1][-]{section.2.4}{Writing Functions in Python}{chapter.2}% 34
+\BOOKMARK [2][-]{subsection.2.4.1}{Putting Python functions in Modules}{section.2.4}% 35
+\BOOKMARK [1][-]{section.2.5}{Basic statistical functions in R}{chapter.2}% 36
+\BOOKMARK [2][-]{subsection.2.5.1}{Dealing with Data Subsets in R}{section.2.5}% 37
+\BOOKMARK [2][-]{subsection.2.5.2}{Exploring Univariate Distributions in R}{section.2.5}% 38
+\BOOKMARK [2][-]{subsection.2.5.3}{Simple t-tests in R}{section.2.5}% 39
+\BOOKMARK [2][-]{subsection.2.5.4}{Exploring Bivariate Distributions in R}{section.2.5}% 40
+\BOOKMARK [0][-]{chapter.3}{Matrices and matrix operations in R and Python}{}% 41
+\BOOKMARK [1][-]{section.3.1}{Matrices in R}{chapter.3}% 42
+\BOOKMARK [2][-]{subsection.3.1.1}{Creating matrices in R}{section.3.1}% 43
+\BOOKMARK [2][-]{subsection.3.1.2}{Matrices in Python}{section.3.1}% 44
+\BOOKMARK [1][-]{section.3.2}{Descriptive statistics as matrix functions}{chapter.3}% 45
+\BOOKMARK [2][-]{subsection.3.2.1}{Mean vector and matrix}{section.3.2}% 46
+\BOOKMARK [2][-]{subsection.3.2.2}{Deviation matrix}{section.3.2}% 47
+\BOOKMARK [2][-]{subsection.3.2.3}{Covariance matrix}{section.3.2}% 48
+\BOOKMARK [2][-]{subsection.3.2.4}{Correlation matrix}{section.3.2}% 49
+\BOOKMARK [2][-]{subsection.3.2.5}{Concentration matrix and Partial Correlations}{section.3.2}% 50
+\BOOKMARK [1][-]{section.3.3}{Visualizing Multivariate data in R}{chapter.3}% 51
+\BOOKMARK [2][-]{subsection.3.3.1}{Scatter plot matrix}{section.3.3}% 52
+\BOOKMARK [2][-]{subsection.3.3.2}{3D Scatter Plots}{section.3.3}% 53
+\BOOKMARK [2][-]{subsection.3.3.3}{Colored grid plots}{section.3.3}% 54
+\BOOKMARK [1][-]{section.3.4}{Plotting in Python}{chapter.3}% 55
+\BOOKMARK [2][-]{subsection.3.4.1}{Basic plots using matplotib}{section.3.4}% 56
+\BOOKMARK [2][-]{subsection.3.4.2}{3D Plots}{section.3.4}% 57
+\BOOKMARK [1][-]{section.3.5}{Plotting Geographic Data using Basemap}{chapter.3}% 58
+\BOOKMARK [2][-]{subsection.3.5.1}{Using Basemap}{section.3.5}% 59
+\BOOKMARK [0][-]{chapter.4}{Regression models in R}{}% 60
+\BOOKMARK [1][-]{section.4.1}{Bivariate Linear Regression in R revisited}{chapter.4}% 61
+\BOOKMARK [1][-]{section.4.2}{Multiple Regression in R}{chapter.4}% 62
+\BOOKMARK [1][-]{section.4.3}{Logistic Regression in R}{chapter.4}% 63
+\BOOKMARK [2][-]{subsection.4.3.1}{Bumpus' Sparrow Data}{section.4.3}% 64
+\BOOKMARK [2][-]{subsection.4.3.2}{Using logistic regression to analyze the Bumpus data}{section.4.3}% 65
+\BOOKMARK [2][-]{subsection.4.3.3}{LOESS Models}{section.4.3}% 66
+\BOOKMARK [0][-]{chapter.5}{Eigenanalysis and PCA}{}% 67
+\BOOKMARK [1][-]{section.5.1}{Eigenanalysis in R}{chapter.5}% 68
+\BOOKMARK [1][-]{section.5.2}{Eigenanalysis in Python}{chapter.5}% 69
+\BOOKMARK [1][-]{section.5.3}{Principal Components Analysis in R}{chapter.5}% 70
+\BOOKMARK [1][-]{section.5.4}{Principal Components Analysis in Python}{chapter.5}% 71
+\BOOKMARK [0][-]{chapter.6}{Singular value decomposition}{}% 72
+\BOOKMARK [1][-]{section.6.1}{SVD in R}{chapter.6}% 73
+\BOOKMARK [1][-]{section.6.2}{Creating Biplots in R}{chapter.6}% 74
+\BOOKMARK [1][-]{section.6.3}{SVD in Python}{chapter.6}% 75
+\BOOKMARK [2][-]{subsection.6.3.1}{`Seriating' samples using SVD}{section.6.3}% 76
+\BOOKMARK [2][-]{subsection.6.3.2}{Data compression and noise filtering using SVD}{section.6.3}% 77
+\BOOKMARK [2][-]{subsection.6.3.3}{Image Approximation Using SVD in Python}{section.6.3}% 78
+\BOOKMARK [0][-]{chapter.7}{Discriminant Analysis}{}% 79
+\BOOKMARK [1][-]{section.7.1}{Discriminant Analysis in R}{chapter.7}% 80
+\BOOKMARK [2][-]{subsection.7.1.1}{Shorthand Formulae in R}{section.7.1}% 81
+\BOOKMARK [2][-]{subsection.7.1.2}{Fine Tuning Your Plot}{section.7.1}% 82
+\BOOKMARK [2][-]{subsection.7.1.3}{Calculating the Within and Between Group Covariance Matrices}{section.7.1}% 83
+\BOOKMARK [0][-]{chapter.8}{Hierarchical clustering, minimum spanning trees, and multidimensional scaling}{}% 84
+\BOOKMARK [1][-]{section.8.1}{Hierarchical Clustering in R}{chapter.8}% 85
+\BOOKMARK [2][-]{subsection.8.1.1}{Neighbor joining in R}{section.8.1}% 86
+\BOOKMARK [1][-]{section.8.2}{Multidimensional scaling in R}{chapter.8}% 87
+\BOOKMARK [2][-]{subsection.8.2.1}{Metric MDS}{section.8.2}% 88
+\BOOKMARK [1][-]{section.8.3}{Minimum Spanning Tree in R}{chapter.8}% 89
+\BOOKMARK [2][-]{subsection.8.3.1}{Non-metric MDS}{section.8.3}% 90
+\BOOKMARK [0][-]{chapter.9}{Clustering via K-means and Gaussian mixture modeling}{}% 91
+\BOOKMARK [1][-]{section.9.1}{K-means Clustering in R}{chapter.9}% 92
+\BOOKMARK [2][-]{subsection.9.1.1}{Applying K-means to the iris data set}{section.9.1}% 93
+\BOOKMARK [1][-]{section.9.2}{Gaussian Mixture Models in R}{chapter.9}% 94
+\BOOKMARK [2][-]{subsection.9.2.1}{Installing mixtools}{section.9.2}% 95
+\BOOKMARK [2][-]{subsection.9.2.2}{Using mixtools}{section.9.2}% 96
+\BOOKMARK [2][-]{subsection.9.2.3}{Installing MCLUST}{section.9.2}% 97
+\BOOKMARK [2][-]{subsection.9.2.4}{Using MCLUST}{section.9.2}% 98
+\BOOKMARK [2][-]{subsection.9.2.5}{Mixture Models for the Iris data set}{section.9.2}% 99
+\BOOKMARK [2][-]{subsection.9.2.6}{More details on MCLUST}{section.9.2}% 100
+\BOOKMARK [0][-]{chapter.10}{Building a Bioinformatics Pipeline, Part I}{}% 101
+\BOOKMARK [1][-]{section.10.1}{Overview}{chapter.10}% 102
+\BOOKMARK [1][-]{section.10.2}{Unix Tools and Concepts}{chapter.10}% 103
+\BOOKMARK [2][-]{subsection.10.2.1}{The Unix command line}{section.10.2}% 104
+\BOOKMARK [2][-]{subsection.10.2.2}{Using curl to retrieve files from the net}{section.10.2}% 105
+\BOOKMARK [2][-]{subsection.10.2.3}{The GFF3 File Format}{section.10.2}% 106
+\BOOKMARK [1][-]{section.10.3}{Tools for manipulating text}{chapter.10}% 107
+\BOOKMARK [2][-]{subsection.10.3.1}{head and tail}{section.10.3}% 108
+\BOOKMARK [2][-]{subsection.10.3.2}{less}{section.10.3}% 109
+\BOOKMARK [2][-]{subsection.10.3.3}{echo}{section.10.3}% 110
+\BOOKMARK [2][-]{subsection.10.3.4}{cat}{section.10.3}% 111
+\BOOKMARK [2][-]{subsection.10.3.5}{wc}{section.10.3}% 112
+\BOOKMARK [2][-]{subsection.10.3.6}{cut}{section.10.3}% 113
+\BOOKMARK [2][-]{subsection.10.3.7}{sort}{section.10.3}% 114
+\BOOKMARK [2][-]{subsection.10.3.8}{grep}{section.10.3}% 115
+\BOOKMARK [2][-]{subsection.10.3.9}{tr}{section.10.3}% 116
+\BOOKMARK [2][-]{subsection.10.3.10}{awk}{section.10.3}% 117
+\BOOKMARK [1][-]{section.10.4}{Tieing it all together with bash}{chapter.10}% 118
+\BOOKMARK [0][-]{chapter.11}{Building a Bioinformatics Pipeline, Part II}{}% 119
+\BOOKMARK [1][-]{section.11.1}{Bioinformatics tools}{chapter.11}% 120
+\BOOKMARK [2][-]{subsection.11.1.1}{Installing the tools}{section.11.1}% 121
+\BOOKMARK [2][-]{subsection.11.1.2}{Testing the bioinformatics tools}{section.11.1}% 122
+\BOOKMARK [1][-]{section.11.2}{The Pipelines}{chapter.11}% 123
+\BOOKMARK [2][-]{subsection.11.2.1}{Pipeline I}{section.11.2}% 124
+\BOOKMARK [2][-]{subsection.11.2.2}{Pipeline II}{section.11.2}% 125
+\BOOKMARK [0][-]{chapter.12}{Building a Bioinformatics Pipeline, Part III}{}% 126
+\BOOKMARK [1][-]{section.12.1}{Overview}{chapter.12}% 127
+\BOOKMARK [1][-]{section.12.2}{The Pipeline}{chapter.12}% 128
+\BOOKMARK [2][-]{subsection.12.2.1}{Reading in a single sequence from a FASTA file}{section.12.2}% 129
+\BOOKMARK [2][-]{subsection.12.2.2}{Translating nucleotide sequence to a protein sequence}{section.12.2}% 130
+\BOOKMARK [2][-]{subsection.12.2.3}{BLAST searches via the NCBI server}{section.12.2}% 131
+\BOOKMARK [2][-]{subsection.12.2.4}{Getting records from Swiss-Prot}{section.12.2}% 132
+\BOOKMARK [2][-]{subsection.12.2.5}{Multiple sequence alignment via MAFFT}{section.12.2}% 133
+\BOOKMARK [2][-]{subsection.12.2.6}{Searching for protein domains using HMMER and Pfam}{section.12.2}% 134
+\BOOKMARK [2][-]{subsection.12.2.7}{Putting it all together}{section.12.2}% 135
+\BOOKMARK [1][-]{section.12.3}{The pipeline.py module}{chapter.12}% 136

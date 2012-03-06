@@ -3,14 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>hands-on11.tex</string>
+	<string>workbook-2011.tex</string>
 	<key>documents</key>
 	<array>
 		<dict>
 			<key>filename</key>
 			<string>workbook-2011.tex</string>
 			<key>lastUsed</key>
-			<date>2012-03-05T23:00:48Z</date>
+			<date>2012-03-06T03:29:27Z</date>
+			<key>selected</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>children</key>
@@ -19,37 +21,37 @@
 					<key>filename</key>
 					<string>layoutpreamble.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-05T22:47:39Z</date>
+					<date>2012-03-06T03:14:59Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>fontpreamble.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-05T22:48:55Z</date>
+					<date>2012-03-06T02:03:39Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>codepreamble.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-05T22:58:35Z</date>
+					<date>2012-03-06T02:03:35Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>stylepreamble.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-05T22:48:36Z</date>
+					<date>2012-03-06T02:03:34Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>macros.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-05T22:58:39Z</date>
+					<date>2012-03-06T02:03:31Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>packages.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-05T22:50:58Z</date>
+					<date>2012-03-06T02:03:34Z</date>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -61,34 +63,28 @@
 			<key>filename</key>
 			<string>titlepage.tex</string>
 			<key>lastUsed</key>
-			<date>2012-03-04T01:17:54Z</date>
+			<date>2012-03-06T03:14:52Z</date>
 		</dict>
 		<dict>
 			<key>children</key>
 			<array>
 				<dict>
 					<key>filename</key>
-					<string>hands-on1.tex</string>
+					<string>hands-on1/hands-on1.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-05T16:36:49Z</date>
+					<date>2012-03-06T02:03:36Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
-					<string>acquainted-R.tex</string>
-					<key>lastUsed</key>
-					<date>2012-03-05T21:55:13Z</date>
+					<string>hands-on1/acquainted-python.tex</string>
 				</dict>
 				<dict>
 					<key>filename</key>
-					<string>acquainted-python.tex</string>
-					<key>lastUsed</key>
-					<date>2012-03-04T04:30:33Z</date>
+					<string>hands-on1/acquainted-R.tex</string>
 				</dict>
 				<dict>
 					<key>filename</key>
-					<string>intro-litprogramming.tex</string>
-					<key>lastUsed</key>
-					<date>2012-03-04T04:59:53Z</date>
+					<string>hands-on1/intro-litprogramming.tex</string>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -101,33 +97,25 @@
 			<array>
 				<dict>
 					<key>filename</key>
-					<string>hands-on2.tex</string>
-					<key>lastUsed</key>
-					<date>2012-03-05T22:44:47Z</date>
+					<string>hands-on2/basic-stats-in-R.tex</string>
 				</dict>
 				<dict>
 					<key>filename</key>
-					<string>vector-operations-RandPython.tex</string>
-					<key>lastUsed</key>
-					<date>2012-03-04T04:30:29Z</date>
+					<string>hands-on2/functions-in-python.tex</string>
 				</dict>
 				<dict>
 					<key>filename</key>
-					<string>functions-in-R.tex</string>
-					<key>lastUsed</key>
-					<date>2012-03-04T05:00:44Z</date>
+					<string>hands-on2/functions-in-R.tex</string>
 				</dict>
 				<dict>
 					<key>filename</key>
-					<string>functions-in-python.tex</string>
+					<string>hands-on2/hands-on2.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-05T22:44:38Z</date>
+					<date>2012-03-06T02:03:36Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
-					<string>basic-stats-in-R.tex</string>
-					<key>lastUsed</key>
-					<date>2012-03-05T22:46:14Z</date>
+					<string>hands-on2/vector-operations-RandPython.tex</string>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -140,39 +128,29 @@
 			<array>
 				<dict>
 					<key>filename</key>
-					<string>hands-on3.tex</string>
+					<string>hands-on3/hands-on3.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T03:17:03Z</date>
+					<date>2012-03-06T03:27:42Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
-					<string>matrices-in-R.tex</string>
-					<key>lastUsed</key>
-					<date>2012-03-04T03:17:05Z</date>
+					<string>hands-on3/matrices-in-python.tex</string>
 				</dict>
 				<dict>
 					<key>filename</key>
-					<string>matrices-in-python.tex</string>
-					<key>lastUsed</key>
-					<date>2012-03-04T03:04:29Z</date>
+					<string>hands-on3/matrices-in-R.tex</string>
 				</dict>
 				<dict>
 					<key>filename</key>
-					<string>matrix-stats.tex</string>
-					<key>lastUsed</key>
-					<date>2012-03-04T04:29:41Z</date>
+					<string>hands-on3/matrix-stats.tex</string>
 				</dict>
 				<dict>
 					<key>filename</key>
-					<string>visualizing-multivariate-R.tex</string>
-					<key>lastUsed</key>
-					<date>2012-03-04T04:29:45Z</date>
+					<string>hands-on3/plotting-in-python.tex</string>
 				</dict>
 				<dict>
 					<key>filename</key>
-					<string>plotting-in-python.tex</string>
-					<key>lastUsed</key>
-					<date>2012-03-04T05:07:30Z</date>
+					<string>hands-on3/visualizing-multivariate-R.tex</string>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -185,9 +163,7 @@
 			<array>
 				<dict>
 					<key>filename</key>
-					<string>hands-on4.tex</string>
-					<key>lastUsed</key>
-					<date>2012-03-04T05:04:26Z</date>
+					<string>hands-on4/hands-on4.tex</string>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -200,33 +176,25 @@
 			<array>
 				<dict>
 					<key>filename</key>
-					<string>hands-on5.tex</string>
+					<string>hands-on5/hands-on5.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T05:18:26Z</date>
+					<date>2012-03-06T03:28:24Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
-					<string>eigenanalysis-in-R.tex</string>
-					<key>lastUsed</key>
-					<date>2012-03-04T05:19:52Z</date>
+					<string>hands-on5/eigenanalysis-in-python.tex</string>
 				</dict>
 				<dict>
 					<key>filename</key>
-					<string>eigenanalysis-in-python.tex</string>
-					<key>lastUsed</key>
-					<date>2012-03-04T05:20:06Z</date>
+					<string>hands-on5/eigenanalysis-in-R.tex</string>
 				</dict>
 				<dict>
 					<key>filename</key>
-					<string>pca-in-R.tex</string>
-					<key>lastUsed</key>
-					<date>2012-03-05T21:58:17Z</date>
+					<string>hands-on5/pca-in-python.tex</string>
 				</dict>
 				<dict>
 					<key>filename</key>
-					<string>pca-in-python.tex</string>
-					<key>lastUsed</key>
-					<date>2012-03-05T16:06:06Z</date>
+					<string>hands-on5/pca-in-R.tex</string>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -247,9 +215,7 @@
 			<array>
 				<dict>
 					<key>filename</key>
-					<string>hands-on7.tex</string>
-					<key>lastUsed</key>
-					<date>2012-03-05T16:32:25Z</date>
+					<string>hands-on7/hands-on7.tex</string>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -262,9 +228,9 @@
 			<array>
 				<dict>
 					<key>filename</key>
-					<string>hands-on8.tex</string>
+					<string>hands-on8/hands-on8.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-05T23:03:30Z</date>
+					<date>2012-03-06T02:03:35Z</date>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -277,9 +243,7 @@
 			<array>
 				<dict>
 					<key>filename</key>
-					<string>hands-on9.tex</string>
-					<key>lastUsed</key>
-					<date>2012-03-04T05:35:15Z</date>
+					<string>hands-on9/hands-on9.tex</string>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -292,9 +256,7 @@
 			<array>
 				<dict>
 					<key>filename</key>
-					<string>hands-on10.tex</string>
-					<key>lastUsed</key>
-					<date>2012-03-05T23:00:57Z</date>
+					<string>hands-on10/hands-on10.tex</string>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -307,11 +269,7 @@
 			<array>
 				<dict>
 					<key>filename</key>
-					<string>hands-on11.tex</string>
-					<key>lastUsed</key>
-					<date>2012-03-05T23:07:01Z</date>
-					<key>selected</key>
-					<true/>
+					<string>hands-on11/hands-on11.tex</string>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -324,9 +282,7 @@
 			<array>
 				<dict>
 					<key>filename</key>
-					<string>hands-on12.tex</string>
-					<key>lastUsed</key>
-					<date>2012-03-05T23:07:01Z</date>
+					<string>hands-on12/hands-on12.tex</string>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -339,9 +295,9 @@
 			<array>
 				<dict>
 					<key>filename</key>
-					<string>hands-on13.tex</string>
+					<string>hands-on13/hands-on13.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T05:47:26Z</date>
+					<date>2012-03-06T03:29:27Z</date>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -354,554 +310,28 @@
 	<integer>200</integer>
 	<key>metaData</key>
 	<dict>
-		<key>acquainted-R.tex</key>
+		<key>hands-on13/hands-on13.tex</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>45</integer>
 				<key>line</key>
-				<integer>158</integer>
+				<integer>552</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>133</integer>
+			<integer>509</integer>
 		</dict>
-		<key>acquainted-python.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>65</integer>
-				<key>line</key>
-				<integer>432</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>302</integer>
-		</dict>
-		<key>basic-stats-in-R.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>10</integer>
-				<key>line</key>
-				<integer>107</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>74</integer>
-		</dict>
-		<key>codepreamble.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>28</integer>
-				<key>line</key>
-				<integer>66</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>21</integer>
-		</dict>
-		<key>eigenanalysis-in-R.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>6</integer>
-				<key>line</key>
-				<integer>81</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>78</integer>
-		</dict>
-		<key>eigenanalysis-in-python.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>90</integer>
-				<key>line</key>
-				<integer>36</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>36</integer>
-		</dict>
-		<key>fontpreamble.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>6</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>functions-in-R.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>94</integer>
-			</dict>
-			<key>columnSelection</key>
-			<false/>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>67</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>22</integer>
-				<key>line</key>
-				<integer>94</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>94</integer>
-			</dict>
-		</dict>
-		<key>functions-in-python.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>86</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>69</integer>
-		</dict>
-		<key>hands-on1.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>hands-on10.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>129</integer>
-				<key>line</key>
-				<integer>203</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>181</integer>
-		</dict>
-		<key>hands-on11.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>22</integer>
-				<key>line</key>
-				<integer>349</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>424</integer>
-		</dict>
-		<key>hands-on12.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>9</integer>
-				<key>line</key>
-				<integer>168</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>243</integer>
-		</dict>
-		<key>hands-on13.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>12</integer>
-				<key>line</key>
-				<integer>536</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>462</integer>
-		</dict>
-		<key>hands-on2.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>9</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>hands-on3.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
-			<key>columnSelection</key>
-			<false/>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>1</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
-		</dict>
-		<key>hands-on4.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>13</integer>
-				<key>line</key>
-				<integer>178</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>159</integer>
-		</dict>
-		<key>hands-on5.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>6</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>hands-on7.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>25</integer>
-				<key>line</key>
-				<integer>226</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>211</integer>
-		</dict>
-		<key>hands-on8.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>116</integer>
-				<key>line</key>
-				<integer>234</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>162</integer>
-		</dict>
-		<key>hands-on9.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>11</integer>
-				<key>line</key>
-				<integer>124</integer>
-			</dict>
-			<key>columnSelection</key>
-			<false/>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>94</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>4</integer>
-				<key>line</key>
-				<integer>124</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>11</integer>
-				<key>line</key>
-				<integer>124</integer>
-			</dict>
-		</dict>
-		<key>intro-litprogramming.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>49</integer>
-				<key>line</key>
-				<integer>177</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>159</integer>
-		</dict>
-		<key>layoutpreamble.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>1</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>macros.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>21</integer>
-				<key>line</key>
-				<integer>33</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>matrices-in-R.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>231</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>193</integer>
-		</dict>
-		<key>matrices-in-python.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>11</integer>
-				<key>line</key>
-				<integer>129</integer>
-			</dict>
-			<key>columnSelection</key>
-			<false/>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>5</integer>
-				<key>line</key>
-				<integer>129</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>11</integer>
-				<key>line</key>
-				<integer>129</integer>
-			</dict>
-		</dict>
-		<key>matrix-stats.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>16</integer>
-				<key>line</key>
-				<integer>68</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>74</integer>
-		</dict>
-		<key>packages.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>12</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>pca-in-R.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>55</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>pca-in-python.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>99</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>55</integer>
-		</dict>
-		<key>plotting-in-python.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>38</integer>
-				<key>line</key>
-				<integer>280</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>244</integer>
-		</dict>
-		<key>stylepreamble.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>26</integer>
-				<key>line</key>
-				<integer>6</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>titlepage.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>4</integer>
-				<key>line</key>
-				<integer>16</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>vector-operations-RandPython.tex</key>
+		<key>hands-on3/hands-on3.tex</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
 				<integer>7</integer>
 				<key>line</key>
-				<integer>16</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>visualizing-multivariate-R.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>6</integer>
-				<key>line</key>
-				<integer>69</integer>
+				<integer>1</integer>
 			</dict>
 			<key>columnSelection</key>
 			<false/>
@@ -912,16 +342,90 @@
 			<key>selectFrom</key>
 			<dict>
 				<key>column</key>
-				<integer>5</integer>
+				<integer>19</integer>
 				<key>line</key>
-				<integer>69</integer>
+				<integer>1</integer>
 			</dict>
 			<key>selectTo</key>
 			<dict>
 				<key>column</key>
-				<integer>6</integer>
+				<integer>7</integer>
 				<key>line</key>
-				<integer>69</integer>
+				<integer>1</integer>
+			</dict>
+		</dict>
+		<key>hands-on5/hands-on5.tex</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>6</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>layoutpreamble.tex</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>12</integer>
+				<key>line</key>
+				<integer>1</integer>
+			</dict>
+			<key>columnSelection</key>
+			<false/>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>26</integer>
+				<key>line</key>
+				<integer>9</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>12</integer>
+				<key>line</key>
+				<integer>1</integer>
+			</dict>
+		</dict>
+		<key>titlepage.tex</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>19</integer>
+				<key>line</key>
+				<integer>12</integer>
+			</dict>
+			<key>columnSelection</key>
+			<false/>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>14</integer>
+				<key>line</key>
+				<integer>12</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>21</integer>
+				<key>line</key>
+				<integer>12</integer>
 			</dict>
 		</dict>
 		<key>workbook-2011.tex</key>
@@ -929,9 +433,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>23</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>39</integer>
+				<integer>17</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -942,41 +446,11 @@
 	<key>openDocuments</key>
 	<array>
 		<string>workbook-2011.tex</string>
-		<string>hands-on7.tex</string>
-		<string>hands-on8.tex</string>
-		<string>hands-on9.tex</string>
-		<string>hands-on10.tex</string>
-		<string>hands-on11.tex</string>
+		<string>hands-on5/hands-on5.tex</string>
+		<string>hands-on3/hands-on3.tex</string>
+		<string>hands-on13/hands-on13.tex</string>
 		<string>layoutpreamble.tex</string>
-		<string>codepreamble.tex</string>
-		<string>hands-on12.tex</string>
-		<string>hands-on13.tex</string>
-		<string>packages.tex</string>
-		<string>stylepreamble.tex</string>
-		<string>hands-on1.tex</string>
-		<string>hands-on2.tex</string>
-		<string>basic-stats-in-R.tex</string>
-		<string>hands-on5.tex</string>
-		<string>eigenanalysis-in-R.tex</string>
-		<string>eigenanalysis-in-python.tex</string>
-		<string>pca-in-R.tex</string>
-		<string>pca-in-python.tex</string>
-		<string>hands-on4.tex</string>
-		<string>hands-on3.tex</string>
-		<string>visualizing-multivariate-R.tex</string>
-		<string>vector-operations-RandPython.tex</string>
-		<string>plotting-in-python.tex</string>
-		<string>matrices-in-R.tex</string>
-		<string>matrices-in-python.tex</string>
-		<string>matrix-stats.tex</string>
-		<string>functions-in-R.tex</string>
-		<string>functions-in-python.tex</string>
-		<string>acquainted-python.tex</string>
-		<string>macros.tex</string>
-		<string>acquainted-R.tex</string>
-		<string>intro-litprogramming.tex</string>
 		<string>titlepage.tex</string>
-		<string>fontpreamble.tex</string>
 	</array>
 	<key>shellVariables</key>
 	<array>
@@ -992,6 +466,6 @@
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{861, 26}, {1052, 1151}}</string>
+	<string>{{484, 27}, {1052, 1151}}</string>
 </dict>
 </plist>
