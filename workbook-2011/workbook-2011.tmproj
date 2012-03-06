@@ -10,7 +10,7 @@
 			<key>filename</key>
 			<string>workbook-2011.tex</string>
 			<key>lastUsed</key>
-			<date>2012-03-06T03:29:27Z</date>
+			<date>2012-03-06T17:04:25Z</date>
 			<key>selected</key>
 			<true/>
 		</dict>
@@ -21,7 +21,7 @@
 					<key>filename</key>
 					<string>layoutpreamble.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-06T03:14:59Z</date>
+					<date>2012-03-06T16:19:23Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -33,7 +33,7 @@
 					<key>filename</key>
 					<string>codepreamble.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-06T02:03:35Z</date>
+					<date>2012-03-06T16:55:32Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -72,7 +72,7 @@
 					<key>filename</key>
 					<string>hands-on1/hands-on1.tex</string>
 					<key>lastUsed</key>
-					<date>2012-03-06T02:03:36Z</date>
+					<date>2012-03-06T16:58:06Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -85,6 +85,8 @@
 				<dict>
 					<key>filename</key>
 					<string>hands-on1/intro-litprogramming.tex</string>
+					<key>lastUsed</key>
+					<date>2012-03-06T16:59:04Z</date>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -257,6 +259,8 @@
 				<dict>
 					<key>filename</key>
 					<string>hands-on10/hands-on10.tex</string>
+					<key>lastUsed</key>
+					<date>2012-03-06T16:42:09Z</date>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -270,6 +274,8 @@
 				<dict>
 					<key>filename</key>
 					<string>hands-on11/hands-on11.tex</string>
+					<key>lastUsed</key>
+					<date>2012-03-06T16:54:00Z</date>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -283,6 +289,8 @@
 				<dict>
 					<key>filename</key>
 					<string>hands-on12/hands-on12.tex</string>
+					<key>lastUsed</key>
+					<date>2012-03-06T17:04:25Z</date>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -310,6 +318,90 @@
 	<integer>200</integer>
 	<key>metaData</key>
 	<dict>
+		<key>codepreamble.tex</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>20</integer>
+				<key>line</key>
+				<integer>51</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>23</integer>
+		</dict>
+		<key>hands-on1/hands-on1.tex</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>9</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>hands-on1/intro-litprogramming.tex</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>22</integer>
+				<key>line</key>
+				<integer>149</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>114</integer>
+		</dict>
+		<key>hands-on10/hands-on10.tex</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>28</integer>
+				<key>line</key>
+				<integer>27</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>42</integer>
+		</dict>
+		<key>hands-on11/hands-on11.tex</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>12</integer>
+				<key>line</key>
+				<integer>457</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>379</integer>
+		</dict>
+		<key>hands-on12/hands-on12.tex</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>9</integer>
+				<key>line</key>
+				<integer>281</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>360</integer>
+		</dict>
 		<key>hands-on13/hands-on13.tex</key>
 		<dict>
 			<key>caret</key>
@@ -373,30 +465,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>12</integer>
+				<integer>32</integer>
 				<key>line</key>
-				<integer>1</integer>
+				<integer>14</integer>
 			</dict>
-			<key>columnSelection</key>
-			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>26</integer>
-				<key>line</key>
-				<integer>9</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>12</integer>
-				<key>line</key>
-				<integer>1</integer>
-			</dict>
 		</dict>
 		<key>titlepage.tex</key>
 		<dict>
@@ -433,9 +509,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>28</integer>
 				<key>line</key>
-				<integer>17</integer>
+				<integer>14</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -446,10 +522,16 @@
 	<key>openDocuments</key>
 	<array>
 		<string>workbook-2011.tex</string>
+		<string>hands-on1/hands-on1.tex</string>
+		<string>hands-on1/intro-litprogramming.tex</string>
+		<string>hands-on10/hands-on10.tex</string>
 		<string>hands-on5/hands-on5.tex</string>
 		<string>hands-on3/hands-on3.tex</string>
 		<string>hands-on13/hands-on13.tex</string>
 		<string>layoutpreamble.tex</string>
+		<string>hands-on12/hands-on12.tex</string>
+		<string>hands-on11/hands-on11.tex</string>
+		<string>codepreamble.tex</string>
 		<string>titlepage.tex</string>
 	</array>
 	<key>shellVariables</key>
@@ -466,6 +548,6 @@
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{484, 27}, {1052, 1151}}</string>
+	<string>{{723, 2}, {1052, 1151}}</string>
 </dict>
 </plist>

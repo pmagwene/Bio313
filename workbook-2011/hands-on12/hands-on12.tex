@@ -8,9 +8,9 @@ In last weeks class we worked through some examples that illustrated how standar
 
 For the purposes of these exercises we will install all of our software tools into a directory called |tmp| in your home directory (you might already have such a directory).
 %
-\begin{bash}
+\begin{code}
 $ mkdir ~/tmp
-\end{bash}
+\end{code}
 %
 Recall that the tilde (|~|) is Unix shorthand for your home directory (|/Users/pmagwene| in my case).
 
@@ -25,25 +25,25 @@ Clustalw is a popular progressive multiple sequence alignment program.  There ar
 
 Use the |curl| command to download the source code for Clustalw as I demonstrate below:
 
-\begin{bash}
+\begin{code}
 $ cd ~/tmp
 $ curl -O ftp://ftp.ebi.ac.uk/pub/software/clustalw2/2.1/clustalw-2.1.tar.gz 
-\end{bash}
+\end{code}
 %
 Once you have the clustalw source code decompress the tarball and make the programs as follows:
 %
-\begin{bash}
+\begin{code}
 $ tar xvzf clustalw-2.1.tar.gz 
 $ cd clustalw-2.1/
-$ ./configure  # configures the source code for your operating system
+$ ./configure   # configures the source for your OS
 $ make  # compiles the code files
-$ sudo make install # puts the binary executables in standard directories
+$ sudo make install # puts the executables in std places
                     # you don't need sudo on cygwin
-\end{bash}
+\end{code}
 %
 The command |sudo make install| will install the clustalw binaries you just built into the |/usr/local/bin| directory. |sudo| let's you run this command with `superuser' (i.e. admin) privileges.  Assuming everything compiled without errors you can check that the program installed correctly as follows:
 
-\begin{bash}
+\begin{code}
 $ which clustalw2
 /usr/local/bin/clustalw2
 
@@ -54,7 +54,7 @@ $ clustalw2
 ******************************************************
  
      ... output truncated ...
-\end{bash}
+\end{code}
 
 
 \subsubsection{MAFFT}
@@ -63,24 +63,24 @@ MAFFT is another multiple sequence alignment program. It's relatively fast and a
 
 There are pre-compiled MAFFT binaries available on the MAFFT website. However, again let's build this program from source. First, we grab the latest version of the source code (as of 10 Nov 2011):
 
-\begin{Code}
+\begin{code}
 $ cd ~/tmp; curl -O http://mafft.cbrc.jp/alignment/software/mafft-6.864-with-extensions-src.tgz
-\end{Code}
+\end{code}
 %
 Notice how I put two commands on the same line by separating them with a semi-colon. We then unpack the tarball and build the source as follows:
 %
-\begin{Code}
+\begin{code}
 $ cd mafft-6.864-with-extensions/core
 $ make clean
 $ make 
 $ sudo make install
-\end{Code}
+\end{code}
 %
 Building MAFFT was almost exactly the same as building Clustalw, except we didn't need to use the |configure| command in this case.
 
 Once you've built and installed MAFFT check the installation location and confirm that the binary is working:
 %
-\begin{bash}
+\begin{code}
 $ which mafft
 /usr/local/bin/mafft
 $ mafft  # type ctrl-c to exit from the interactive prompt
@@ -93,22 +93,22 @@ $ mafft  # type ctrl-c to exit from the interactive prompt
         NAR 30:3059-3066, NAR 33:511-518
         http://mafft.cbrc.jp/alignment/software/
 ---------------------------------------------------
-\end{bash}
+\end{code}
 
 \subsubsection{HMMER}
 
 HMMER is an implementation of a profile Hidden Markov Model (HMM) for protein sequence analysis. You can read up on HMMER at the \href{http://hmmer.janelia.org/}{HMMER website}. We will use it here for finding protein domains in sequences in conjuction with the PFAM database. By now, the steps needed to download and build programs from source are familiar to you:
 %
-\begin{bash}
+\begin{code}
 $ cd ~/tmp
 $ curl -O http://selab.janelia.org/software/hmmer3/3.0/hmmer-3.0.tar.gz    
 $ tar xzvf hmmer-3.0.tar.gz
 $ cd hmmer-3.0
 $ ./configure
 $ make
-$ make check # optional, not every source package includes such a call
+$ make check # optional, not included with all source
 $ sudo make install
-\end{bash}
+\end{code}
 %
 After compiling from source as above the binaries will be placed in |/usr/local/bin|.
 
@@ -116,15 +116,15 @@ After compiling from source as above the binaries will be placed in |/usr/local/
 
 We will be using the Pfam database (Release 25) in conjunction with HMMER to search for known protein domains in our sequences of interest. Since the the Pfam HMM libraries are large I'll try and provide a couple of thumb drives with the necessary library. If you're using this document outside of class you can download the necessay library as follows:
 
-\begin{bash}
+\begin{code}
 $ curl -O ftp://ftp.sanger.ac.uk/pub/databases/Pfam/releases/Pfam25.0/Pfam-A.hmm.gz
-\end{bash}
+\end{code}
 
  This is a large file (185MB) and decompresses to an even larger file (approx. 986MB). Make sure you have adequate disk space. Unzip it as follows:
 
-\begin{bash}
+\begin{code}
 $ gunzip Pfam-A.hmm.gz 
-\end{bash}
+\end{code}
 
 
 \subsubsection{Install the BLAST+ suite}
@@ -145,17 +145,19 @@ To confirm that the binary works on your system do the following:
 $ ./ncbi-blast-2.2.25+/bin/blastp -help    
 \end{bash}
 
-If you're on a Mac and get an error like the one shown below, try downloading and installing a slightly older version of the BLAST+ tools from \url{ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.2.23/}.
+If you're on a Mac and get an error like the one shown below, try downloading and installing a slightly older version of the BLAST+ tools from \href{ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.2.23/}{BLAST 2.2.23}.
 
-\begin{bash}
-dyld: lazy symbol binding failed: Symbol not found: __ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_i
+\begin{code}
+dyld: lazy symbol binding failed: Symbol not found:
+... output truncated ...
   Referenced from: /Users/pmagwene/tmp/./ncbi-blast-2.2.24+/bin/blastp
   Expected in: flat namespace
 
-dyld: Symbol not found: __ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_i
+dyld: Symbol not found: 
+... output truncated ....
   Referenced from: /Users/pmagwene/tmp/./ncbi-blast-2.2.24+/bin/blastp
   Expected in: flat namespace
-\end{bash}
+\end{code}
 
 Once you've confirmed that |blastp| works on your system check out the PDF documentation in the directory |~/tmp/ncbi-blast-2.2.25+/doc/| (or wherever you unzipped the file).
 
@@ -164,9 +166,9 @@ Once you've confirmed that |blastp| works on your system check out the PDF docum
 
 If you're on Windows you can download a prebuilt binary of Biopython from the \href{http://biopython.org/wiki/Download}{Biopython website}. For OS X you can install Biopython from source relatively easily, assuming you've previously installed setuptools which includes the |easy_install| program:
 %
-\begin{bash}
+\begin{code}
 $ sudo easy_install -f http://biopython.org/DIST/ biopython
-\end{bash}
+\end{code}
 
 
 \subsection{Testing the bioinformatics tools}
@@ -177,10 +179,10 @@ Download the |fungal-ras.fas| file from the class website. This file includes pr
 
 Let's run Clustalw and MAFFT to align the Ras sequences:
 %
-\begin{bash}
+\begin{code}
 $ clustalw2 -infile=fungal-ras.fas
 $ mafft --auto fungal-ras.fas > fungal-ras-mafft.fas
-\end{bash}
+\end{code}
 %
 The commands above should produce the following files: |fungal-ras.aln| and |fungal-ras.dnd| (Clustalw) and |fungal-ras-mafft.fas| (MAFFT).  To visualize the alignments there are a variety of different multiple alignment viewers. One such program is \href{http://www.jalview.org/}{Jalview}, a free cross platform, multiple alignment viewer/editor written in Java.  Take a look at both the clustalw and mafft alignments using Jalview.
 
@@ -191,21 +193,21 @@ To test out HMMER and Pfam download the |Rme1.fas| file from the class website. 
 
 The first thing you'll need to do is run |Pfam-A.hmm| through the |hmmpress| program which prepares the HMM database for fast scanning by creating binary files. This might take a few minutes depending on the speed of your machine.
 
-\begin{bash}
+\begin{code}
 $ hmmpress Pfam-A.hmm
-\end{bash}
+\end{code}
 
 This will create a number of additional files in the same directory as |Pfam-A.hmm|. We can now use |hmmscan| to search for known protein domains included in the Pfam database.
 
-\begin{bash}
+\begin{code}
 $ hmmscan Pfam-A.hmm Rme1.fas | less
-\end{bash}
+\end{code}
 
 The default output from |hmmscan| is designed to be human readable. For outputs that are easier to parse computationally use the |--tblout| or |--domtblout| options to save output in a tabular format.
 
-\begin{bash}
+\begin{code}
 $ hmmscan --domtblout Rme1-output.txt -o /dev/null Pfam-A.hmm Rme1.fas    
-\end{bash}
+\end{code}
 
 This call produces a file |Rme1-output.txt| that contains a space delimited text file summarizing the per-domain output. The |-o| option redirects the main human-readable output (in this case to the `bit-bucket', /dev/null). You can then manipulate the tabular output in |Rme1-output.txt| using standard Unix tools like |awk|. 
 
@@ -217,16 +219,16 @@ See pp.\,24-26  of the \href{ftp://selab.janelia.org/pub/software/hmmer3/3.0/Use
 Let's use |blastp| to query the NCBI BLAST servers for proteins with sequence homology to Rme1.
 
 
-\begin{bash}
+\begin{code}
 $ cd ncbi-blast-2.2.25+/bin
 $ ./blastp -db refseq_protein -evalue 2e-10 -remote < ~/tmp/Rme1.fas > ~/tmp/rme1-blast.out
-\end{bash}
+\end{code}
 
 This runs a remote BLAST search with an E-value cutoff of $2^{-10}$. It might take a little while because it will access the NCBI servers to run the search. Note the use of both an input redirection operator as well as an output redirection operator.  If you want the output in HTML format for easy reading run it as follows and open the resulting file |rme1-blastout.html| in  your web browser:
 
-\begin{bash}
+\begin{code}
 $ ./blastp -db refseq_protein -evalue 2e-10 -remote -html < ~/tmp/Rme1.fas > ~/tmp/rme1-blast.html
-\end{bash}
+\end{code}
 
 If all of the commands above worked (produced no errors, generated valid output) then you're ready to move on to implementing the pipelines.
 
@@ -256,7 +258,7 @@ BLASTP=$HOME/tmp/ncbi-blast-2.2.25+/bin/blastp
 HMMSCAN=/usr/local/bin/hmmscan  # change as appropriate
 PFAMDB=$HOME/tmp/Pfam-A.hmm
 
-progname="$0" # the name of the program, we won't use this for anything
+progname="$0" # the name of the program (unused here)
 fastafile="$1" # the input fasta file
 outfile="$2" # the output file for the report
 
@@ -275,15 +277,15 @@ As we've seen before, the `she-bang' line simply instructs the operating system 
 
 Once you've entered and saved the code for |pipeline1.sh| you need to make it executable:
 
-\begin{bash}
+\begin{code}
 $ chmod +x pipeline1.sh
-\end{bash}
+\end{code}
 
 You can then execute the code as follows:
 
-\begin{bash}
+\begin{code}
 $ ./pipeline1.sh Rme1.fas Rme1-report.out
-\end{bash}
+\end{code}
 
 
 \begin{assignment}
@@ -326,10 +328,10 @@ for rec in recs:
 \end{codeblock}
 
 After saving the above code as |aatranslate.py|, make it executable by using |chmod +x|.  This script takes a set of FASTA nucleotide sequences from from |stdin| and translates them, sending the output to |stdout|.  This small script uses a number of classes and functions from the Biopython library that we'll discuss in greater detail in the next class session. Test your function as shown below. Notice how we use |cat| to pipe the fasta file to |aatranslate.py|.
-\begin{Code}
+\begin{code}
 $ less unknowns.fas # confirm that the unknowns are nucleotid seqs, q to quit
 $ cat unknowns.fas | ./aatranslate.py | less
-\end{Code}
+\end{code}
 
 
 
@@ -351,7 +353,7 @@ E_WRONG_ARGS=85
 nexpargs=4
 args=$#
 
-# check that we got the expected number of arguments to the script
+#  did we get the expected number of args to the script?
 if [[ $args -ne $nexpargs ]]
 then
     echo
@@ -378,20 +380,20 @@ echo "Running hmmscan"
 
 After setting the script to be executable you can run it like so:
 
-\begin{Code}
+\begin{code}
 $ ./pipeline2.sh unknowns.fas unknowns-trans.fas unknowns-align.fas unknowns-report.txt
-\end{Code}
+\end{code}
 
 This will produce three files, one containing the translated amino acid sequences, the second giving the multiple alignment of those amino acid sequences, and the third with the PFAM output. Use less or a text editor to take a look at the generated files.
 
 At the beginning of this script we added a little bit of error checking code to insure that the correct number of arguments were provided on the command line.  If no arguments or the wrong number of arguments are provided the script gives the user a little usage information and exits gracefully. Try running the script as:
-\begin{Code}
+\begin{code}
 $ ./pipeline2.sh    
-\end{Code}
+\end{code}
 Compare this to what happens when you run |pipeline1.sh| without the arguments:
-\begin{Code}
+\begin{code}
 $ ./pipeline1.sh    
-\end{Code}
+\end{code}
 
 \begin{assignment}
     Submit your |unknowns-report.txt| file via email.

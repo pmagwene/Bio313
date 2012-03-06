@@ -31,12 +31,12 @@ Type those lines into a text editor and save the document with the name
 Let's break down the various pieces of the document. The first two lines
 and the last line represent LaTeX~commands.
 
-\begin{Code}{tex}
+\begin{code}{tex}
 \documentclass{article}
 \begin{document}
     ....
 \end{document}
-\end{Code}
+\end{code}
 For simple Sweave documents that's all the LaTeX you need to learn.
 However, learning a little bit more about the document preparation
 system gives you the option of producing very nicely formatted output as
@@ -98,7 +98,7 @@ everything behind the scenes and pop up a nice PDF.
 Let's get a little bit fancier and show how we can create graphics and
 use some LaTeX formatting features to produce a nicer document.
 
-\begin{Code}{latex}
+\begin{codeblock}[tex]
 \documentclass[letterpaper]{article}
 \usepackage[margin=0.75in]{geometry}
 
@@ -130,7 +130,7 @@ hist(z)
 @
 
 \end{document}    
-\end{Code}
+\end{codeblock}
 %
 Notice how we put an argument, |fig=TRUE| within the second
 code chunk delimiter. This will tell Sweave to automatically imbed a
@@ -147,7 +147,7 @@ Sweave availabe at
 Pweave uses almost exactly the same syntax as Sweave to delimit code and
 document chunks. Here's a simple Pweave document.
 
-\begin{Code}{latex}
+\begin{codeblock}[tex]
 \documentclass[letterpaper]{article}
 \usepackage[margin=0.75in]{geometry}
 \usepackage{graphicx} % unlike Sweave, Pweave doesn't
@@ -187,7 +187,7 @@ pylab.hist(z)
 @
 
 \end{document}
-\end{Code}
+\end{codeblock}
 %
 Note that the second code chunk, we wrote |fig=True| in the
 Pweave document, whereas we wrote |fig=TRUE| for the Sweave

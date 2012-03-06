@@ -8,6 +8,16 @@ Over the next three class sessions we're going to explore ways to create such a 
 
 \section{Unix Tools and Concepts}
 
+\subsubsection{The Unix philosophy}
+
+Doug McIlroy who invented the concept of the Unix `pipe' (discussed below) summarized the Unix philosphy as follows:
+
+\begin{quote}
+``This is the Unix philosophy: Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.''
+\end{quote}
+
+This is not some rigid set of specifications, but rather an approach to writing simple programs that can be tied together in useful ways to accomplish larger, more complex tasks. Most of the standard Unix commands are written with this philosophy in mind. The scripts you will develop over the next three class session will follow the same philosophy (and take advantage of other software tools that also use the Unix approach).
+
 \subsection{The Unix command line}
 
 A Unix/Linux command line environment is the de-facto standard for building bioinformatics pipelines. While the command line may not be particularly user friendly, various aspects of how Unix is designed make it very powerful fo constructing analysis pipelines.  We'll review some of those design aspects here.
@@ -64,16 +74,6 @@ Here's a few efficiency tips to keep in mind when working in the bash shell:
 \end{itemize}
 
 
-\subsubsection{The Unix philosophy}
-
-Doug McIlroy who invented the concept of the Unix `pipe' (discussed below) summarized the Unix philosphy as follows:
-
-\begin{quote}
-``This is the Unix philosophy: Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.''
-\end{quote}
-
-This is not some rigid set of specifications, but rather an approach to writing simple programs that can be tied together in useful ways to accomplish larger, more complex tasks. Most of the standard Unix commands are written with this philosophy in mind. The scripts you will develop over the next three class session will follow the same philosophy (and take advantage of other software tools that also use the Unix approach).
-
 
 \subsubsection{Everything is a file or a process}
 
@@ -95,26 +95,25 @@ Because Unix treats everything as a file or process, it's easy to change the sou
 
 We'll give a few example of redirection and pipes using the commands |ls| (list directory contents), and |grep| (find lines matching a pattern):
 
-\begin{bash}
+\begin{tinycode}[bash]
 $ ls -l
 total 4184
--rw-r--r--     1 pmagwene  staff     1722 Mar 11  2009 #newfile3.lyx#
 drwx------+   43 pmagwene  staff     1462 Nov 13 18:14 Desktop
 drwx------+   20 pmagwene  staff      680 Sep 23 12:32 Documents
 ... output truncated ...
 $ ls -l > ex1.out # redirect output to file
-\end{bash}
+\end{tinycode}[bash]
 
 In the example above we redirected the output of the |ls -l| command to a file named |ex1.out|.  Open the file to confirm this.  Now we'll `pipe' the output of |ls| to the |grep| command.
 
-\begin{bash}
+\begin{tinycode}[bash]
 $ ls -l | grep 'Nov'
 drwx------+   43 pmagwene  staff     1462 Nov 13 18:14 Desktop
 drwx------+ 1285 pmagwene  staff    43690 Nov 13 18:48 Downloads
 drwx------+   14 pmagwene  staff      476 Nov 10 11:51 Pictures
 -rw-r--r--     1 pmagwene  staff     1427 Nov 14 14:13 ex1.out
 -rw-r--r--     1 pmagwene  staff   604976 Nov  1 12:21 rolland-etal-2000-cAMP.pdf
-\end{bash}
+\end{tinycode}
 
 In this example we used grep to show all the lines of the |ls| output that have the string 'Nov' in them.
 
@@ -408,23 +407,26 @@ for (chr in clen) {
 
 Here we introduced the |BEGIN| pattern. This pattern is carried out before any lines of the file are processed.  By default, this new script will count genes like our previous script did, but if you specify the variable |ftype| using the |-v| option on the command line it will count the specified feature type:
 
-\begin{bash}
+\begin{code}[]
 # count pseudogenes
-$ awk -f fcount.awk  -v ftype="pseudogene" saccharomyces_cerevisiae.gff 
+$ awk -f fcount.awk  -v ftype="pseudogene" \ 
+    saccharomyces_cerevisiae.gff 
 
 # counts ARS sequences (origins of replication)
-$ awk -f fcount.awk  -v ftype="ARS" saccharomyces_cerevisiae.gff
+$ awk -f fcount.awk  -v ftype="ARS" \
+    saccharomyces_cerevisiae.gff
 
 # count tRNA genes
-$ awk -f fcount.awk  -v ftype="tRNA" saccharomyces_cerevisiae.gff
-\end{bash}
+$ awk -f fcount.awk  -v ftype="tRNA" \
+    saccharomyces_cerevisiae.gff
+\end{code}
 
 As a final example of using |awk|, let's say you wanted to look for all gene features that include reference to a particular gene family in the attribute field (column 9 of the GFF file). You could do something like this:
 
-\begin{bash}
+\begin{code}
 $ awk 'match($9,"FLO") && $3 == "gene" { print $0 }' \ 
   saccharomyces_cerevisiae.gff  | less
-\end{bash}
+\end{code}
 
 This works, but the output is a bit ugly because of how the attribute field is specified. Let's write a simple awk |function| that nicely formats the output, with each of the attributes appearing as a subline. Save the following script as |attribs.awk|.
 
@@ -453,10 +455,10 @@ NF >= 9 {
 The awk function |gsub()| globally substitutes one string for another. In this case it's replacing HTML type encoding of spaces, commas, semi-colons, etc. with more human friendly versions of the same.
 
 We can use our |attribs.awk| script as follows:
-\begin{bash}
+\begin{code}
 $ awk 'match($9,"FLO") && $3 == "gene" { print $0 }'  \
   saccharomyces_cerevisiae.gff  | awk -f attribs.awk | less
-\end{bash}
+\end{code}
 
 This produces output that is much nicer for a human reader to interpret, though less easy to parse computationally.
 

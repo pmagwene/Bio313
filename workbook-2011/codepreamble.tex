@@ -42,7 +42,14 @@ breakautoindent=false,
 language=#1}}
 {}
 
-\lstnewenvironment{Code}
+\lstnewenvironment{tinycode}[1][]
+{\lstset{backgroundcolor=\color{boxfill},
+basicstyle={\ttfamily \footnotesize},
+language=#1}}
+{}
+
+
+\lstnewenvironment{code}
 {}{}
 
 \lstnewenvironment{python}
