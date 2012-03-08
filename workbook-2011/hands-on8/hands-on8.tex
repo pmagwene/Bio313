@@ -7,7 +7,7 @@ The function \texttt{lda()}, found in the R library \texttt{MASS}, carries out l
 
 \begin{R}
 > library(MASS) #load the MASS package
-> z <- lda(Species ~ Sepal.Length + Sepal.Width + Petal.Length + Petal.Width,
+> z <-lda(Species ~ Sepal.Length + Sepal.Width + Petal.Length + Petal.Width,
 +           iris, prior=c(1,1,1)/3)
 > z
 Call:
@@ -72,7 +72,7 @@ You can also create a plot to look at group variation along just the first canon
 The plot call on the object returned by |lda()| allows some additional customization of the plot, but the extent of graphical tuning is limited:
 
 \begin{R}
-> plot(z, abbrev=T, xlab='CV1', ylab='CV2') # change the x- and y-axis labels
+> plot(z, abbrev=T, xlab='CV1', ylab='CV2') # change the x- and y- labels
 \end{R}
 
 If you want to do any more fine tuning of the plot you'll have to calculate the CV scores from the coefficients and reconstruct the plot to your liking. Below I give an example of how to do that:
@@ -85,7 +85,7 @@ If you want to do any more fine tuning of the plot you'll have to calculate the 
 > iris.cv <- iris.mtx %*% z$scaling # gives scores in the CV space
 > dim(iris.cv)
 [1] 150   2
-> group.symbols <- (1:3)[iris$Species] # specify the symbols to use for each group
+> group.symbols <- (1:3)[iris$Species] # specify the symbols for each group
 > plot(iris.cv, pch=group.symbols, asp=1, xlab="CV1", ylab="CV2")
 \end{R}
 
@@ -94,7 +94,7 @@ The definition of |group.symbols| and the use of the |pch| argument require a li
 \begin{figure}
 \begin{center}
 
-\includegraphics[height=0.8\columnwidth]{./figures/hands-on8/pch-symbols}
+\includegraphics[width=0.5\columnwidth]{./figures/hands-on8/pch-symbols}
 
 \end{center}
 \caption{Standard R symbols, and their corresponding integer values, accessible via the \texttt{pch} argument to plot.}
@@ -117,7 +117,7 @@ Here I created a simple example involving five specimens where each specimens wa
 
 \begin{R}
 > group.symbols = c("a","b","c")[iris$Species]
-> plot(iris.cv, pch=group.symbols, cex = 0.75, asp=1, xlab="CV1", ylab="CV2")
+> plot(iris.cv, pch=group.symbols, cex=0.75, asp=1, xlab="CV1", ylab="CV2")
 \end{R}
 
 This draws each specimen with the label ``a", ``b", or ``c" depending on which species it is assigned to. Notice that in the last example I used the |cex| argument to make the symbols smaller than normal.  
@@ -125,7 +125,7 @@ This draws each specimen with the label ``a", ``b", or ``c" depending on which s
 What if i wanted to also plot the group means in the canonical variate space?  The following example shows how to do that:
 
 \begin{R}
-> group.symbols = c(0,2,4)[iris$Species] # I decided to go back to plotting symbols 
+> group.symbols = c(0,2,4)[iris$Species] # I switched back to symbols 
 > group.colors = c('red','darkorange','blue')[iris$Species] # I also want to use colors 
 > cv1.means <- tapply(iris.cv[,1], iris$Species, mean)
 > cv1.means
@@ -135,7 +135,8 @@ What if i wanted to also plot the group means in the canonical variate space?  T
 > cv2.means
     setosa versicolor  virginica 
   6.876606   5.933573   7.174239 
-> plot(iris.cv, pch=group.symbols, cex = 0.75, asp=1, xlab="CV1", ylab="CV2", col=group.colors)
+> plot(iris.cv, pch=group.symbols, cex=0.75, asp=1, 
++       xlab="CV1", ylab="CV2", col=group.colors)
 > points(cv1.means, cv2.means, pch=16, cex=1.5, col='black')
 \end{R}
 
@@ -155,7 +156,7 @@ To calculate these confidence regions you could look up the appropriate value of
 > mean.radii = sqrt(chi2/group.lengths)
 > pop.radii = rep(sqrt(chi2),3)
 > help.search("circle")  # I don't remember off hand how to draw circles so let's look it up
-> library(tripack) # I decided to use the circles function in the 'tripack' package
+> library(tripack) # Let's use the circles function in the 'tripack' package
 > circles(cv1.means, cv2.means, pop.radii,lty='dashed') 
 > circles(cv1.means, cv2.means, mean.radii,lty='dotted')
 \end{R}
@@ -174,16 +175,14 @@ Let's put the finishing touch on our plots by adding some color coded rug plots 
 \end{R}
 
 
-If you did everything right (and I cut and pasted correctly!) you should get a plot that looks like Figure~2.
+If you did everything right (and I cut and pasted correctly!) you should get a plot that looks like \cref{fig:cva}.
 
 \begin{figure}
 \begin{center}
-\includegraphics[height=0.8\columnwidth]{./figures/hands-on8/iris-cva-fancy}
+\includegraphics[height=0.5\columnwidth]{./figures/hands-on8/iris-cva-fancy}
 \end{center}
-\caption{Ordination of iris specimens in the space of the first two canonical variates.  The dashed circles surrounding each species distribution give the approximate 95\% tolerance regions for the population distributions. See text for details on the construction of this plot.}
-\end{figure}
-
-If I was going to be repeatedly generate these types of plots I would wrap up the key steps discussed above into a convenient function.
+\caption{Ordination of iris specimens in the space of the first two canonical variates.  The dashed circles surrounding each species distribution give the approximate 95\% tolerance regions for the population distributions. See text for details on the construction of this plot.} \label{fig:cva}.
+\end{figure} If I was going to be repeatedly generate these types of plots I would wrap up the key steps discussed above into a convenient function.
 
 
 \subsection{Calculating the Within and Between Group Covariance Matrices}

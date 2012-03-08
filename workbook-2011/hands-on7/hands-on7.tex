@@ -119,7 +119,7 @@ array([ 17.06225775,   0.93774225])
 
 The term `seriation' refers to the process of finding an ordering of objects or variables such that they follow a natural ordering with respect to some criteria (e.g. time, similarity, etc.). One way to think about this problem is in terms of ordering objects on a line (i.e. a 1D approximation).  Since we've learned that SVD can be used to provide optimal approximations (in the least squares sense) it seems natural to apply the technique to the problem of seriation. We'll illustrate this application by seriating both experimental conditions (samples) and variables (genes) for the yeast expression data set we've been working with.  There's some support for the assertion that seriation by SVD is a better method for re-ordering data matrices for heat maps than the more commonly used hierarchical clustering methods that you see in many microarray papers (Wilkinson, L. and M. Friendly. The History of the Cluster Heat Map. The American Statistician. May 1, 2009, 63(2): 179-184. \href{http://dx.doi.org/10.1198/tas.2009.0033}{doi link}) 
 
-{\color{red} \bfseries I very strongly recommend you use IPython with the --pylab option to run the following code.}
+{\color{DarkRed} I very strongly recommend you use IPython with the |--pylab| option to run the following code.}
 
 \begin{python}
 >>> from matplotlib import pyplot
@@ -285,11 +285,11 @@ As you can see from the images you created the approximation based on the approx
 
 \subsection{Image Approximation Using SVD in Python}
 
-The Python Imaging Library (PIL) is a package of routines for manipulating image data in Python. If you're using the Enthought build of Python this was included in your installation. If building packages from scratch you can find the PIL at \href{http://www.pythonware.com/products/pil/}{http://www.pythonware.com/products/pil/} or pre-built binaries for OS X can be found at \href{http://www.pythonmac.org/packages/}{http://www.pythonmac.org/packages/}. Documentation on PIL is available \href{http://www.pythonware.com/library/pil/handbook/index.htm}{here}.
+The Python Imaging Library (PIL) is a package of routines for manipulating image data in Python. If you're using the Enthought build of Python this was included in your installation. If building packages from scratch you can find the PIL at the \href{http://www.pythonware.com/products/pil/}{PIL home page}. Documentation on PIL is available \href{http://www.pythonware.com/library/pil/handbook/index.htm}{here}.
 
 The PIL package provide a more general set of image manipulation features than does R.  In the exercises below we will use the PIL package in combination with |numpy| apply SVD to a more complicated image.
 
-Download the module of helper functions \verb|imagehelper.py| from the course wiki and place it somewhere in your \verb|PYTHONPATH|. Also, download the JPEG image \verb|chesterbw.jpg| and place it in a convenient directory such as \verb|c:/temp| or \verb|~/temp|. {\color{red} \bfseries I very strongly recommend you use IPython with the --pylab option to run the following code.}
+Download the module of helper functions \verb|imagehelper.py| from the course wiki and place it somewhere in your \verb|PYTHONPATH|. Also, download the JPEG image \verb|chesterbw.jpg| and place it in a convenient directory such as \verb|c:/temp| or \verb|~/temp|. {\color{DarkRed} I very strongly recommend you use IPython with the |--pylab| option to run the following code.}
 
 \begin{python}
 >>> import numpy as np, numpy.linalg as la

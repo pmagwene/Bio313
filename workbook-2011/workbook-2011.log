@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.2.24)  6 MAR 2012 12:04
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.2.24)  8 MAR 2012 18:00
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -49,11 +49,11 @@ Package tocbasic Info: omitting babel extension for `lof'
 Package tocbasic Info: omitting babel extension for `lot'
 (tocbasic)             because of feature `nobabel' available
 (tocbasic)             for `lot' on input line 119.
-Package scrbook Info: You've used obsolete option `9pt'.
-(scrbook)             \KOMAExecuteOptions{fontsize=9pt} will be
+Package scrbook Info: You've used obsolete option `10pt'.
+(scrbook)             \KOMAExecuteOptions{fontsize=10pt} will be
 (scrbook)             used instead.
-(scrbook)             You may simply replace `9pt'
-(scrbook)             by `fontsize=9pt'.
+(scrbook)             You may simply replace `10pt'
+(scrbook)             by `fontsize=10pt'.
 Class scrbook Info: You've used standard option `oneside'.
 (scrbook)           This is correct!
 (scrbook)           Internally I'm using `twoside=false'.
@@ -80,10 +80,11 @@ Class scrbook Warning: You've used obsolete option `tablecaptionabove'.
 ading'.
 
 Class scrbook Info: Switching compatibility level to `first'.
-Class scrbook Info: File `size9.clo' used to setup font sizes on input line 134
-8.
-(/usr/local/texlive/2011/texmf-dist/tex/latex/extsizes/size9.clo
-File: size9.clo 1999/11/11 v1.4a NON-Standard LaTeX file (size option)
+Class scrbook Info: File `scrsize10pt.clo' used to setup font sizes on input li
+ne 1348.
+(/usr/local/texlive/2011/texmf-dist/tex/latex/koma-script/scrsize10pt.clo
+File: scrsize10pt.clo 2011/06/16 v3.09a KOMA-Script font size class option (10p
+t)
 )
 (/usr/local/texlive/2011/texmf-dist/tex/latex/koma-script/typearea.sty
 Package: typearea 2011/06/16 v3.09a KOMA-Script package (type area)
@@ -103,28 +104,22 @@ Package typearea Info: You've used standard option `oneside'.
 \ta@hblk=\skip42
 \ta@vblk=\skip43
 \ta@temp=\skip44
-
-Package typearea Warning: DIV for 9.0pt and used papersize
-(typearea)                not defined!
-(typearea)                Using DIV=1.
-
-DIV calculation for typearea with good linewidth.
 Package typearea Info: These are the values describing the layout:
-(typearea)             DIV  = 6
+(typearea)             DIV  = 8
 (typearea)             BCOR = 0.0pt
 (typearea)             \paperwidth      = 597.50793pt
-(typearea)              \textwidth      = 298.75397pt
-(typearea)              DIV departure   = 2%
-(typearea)              \evensidemargin = 77.107pt
-(typearea)              \oddsidemargin  = 77.107pt
+(typearea)              \textwidth      = 373.44246pt
+(typearea)              DIV departure   = -4%
+(typearea)              \evensidemargin = 39.76274pt
+(typearea)              \oddsidemargin  = 39.76274pt
 (typearea)             \paperheight     = 845.04694pt
-(typearea)              \textheight     = 425.09988pt
-(typearea)              \topmargin      = 38.4587pt
-(typearea)              \headheight     = 13.68748pt
-(typearea)              \headsep        = 16.42499pt
-(typearea)              \topskip        = 9.0pt
-(typearea)              \footskip       = 38.32498pt
-(typearea)              \baselineskip   = 10.95pt
+(typearea)              \textheight     = 538.0pt
+(typearea)              \topmargin      = 0.36087pt
+(typearea)              \headheight     = 15.0pt
+(typearea)              \headsep        = 18.0pt
+(typearea)              \topskip        = 10.0pt
+(typearea)              \footskip       = 42.0pt
+(typearea)              \baselineskip   = 12.0pt
 (typearea)              on input line 1139.
 )
 \c@part=\count80
@@ -1005,6 +1000,7 @@ Now handling font encoding PD1 ...
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 3925.
+Package hyperref Info: Option `breaklinks' set `true' on input line 3925.
 Package hyperref Info: Option `linktocpage' set `true' on input line 3925.
 Package hyperref Info: Hyper figures OFF on input line 4046.
 Package hyperref Info: Link nesting OFF on input line 4051.
@@ -1093,38 +1089,38 @@ Package scrpage2 Warning: seems you are using a very small headheight.
 * paper: a5paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: landscape 
-* h-part:(L,W,R)=(14.45377pt, 568.60034pt, 14.45377pt)
-* v-part:(T,H,B)=(36.135pt, 366.8983pt, 18.06749pt)
-* \paperwidth=597.50787pt
-* \paperheight=421.10078pt
-* \textwidth=568.60034pt
-* \textheight=366.8983pt
-* \oddsidemargin=-57.81622pt
-* \evensidemargin=-57.81622pt
+* modes: 
+* h-part:(L,W,R)=(18.06749pt, 377.73836pt, 25.29494pt)
+* v-part:(T,H,B)=(36.135pt, 543.30539pt, 18.06749pt)
+* \paperwidth=421.10078pt
+* \paperheight=597.50787pt
+* \textwidth=377.73836pt
+* \textheight=543.30539pt
+* \oddsidemargin=-54.2025pt
+* \evensidemargin=-54.2025pt
 * \topmargin=-65.04254pt
 * \headheight=10.84006pt
 * \headsep=18.06749pt
-* \topskip=9.0pt
+* \topskip=10.0pt
 * \footskip=0.0pt
-* \marginparwidth=99.58466pt
+* \marginparwidth=74.68849pt
 * \marginparsep=12.8401pt
 * \columnsep=10.0pt
-* \skip\footins=8.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
-* \@twocolumntrue
+* \@twocolumnfalse
 * \@twosidefalse
 * \@mparswitchfalse
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \longleftarrow on input line 22.
-LaTeX Info: Redefining \longrightarrow on input line 22.
-LaTeX Info: Redefining \Longleftarrow on input line 22.
-LaTeX Info: Redefining \Longrightarrow on input line 22.
-LaTeX Info: Redefining \microtypecontext on input line 22.
+LaTeX Info: Redefining \longleftarrow on input line 23.
+LaTeX Info: Redefining \longrightarrow on input line 23.
+LaTeX Info: Redefining \Longleftarrow on input line 23.
+LaTeX Info: Redefining \Longrightarrow on input line 23.
+LaTeX Info: Redefining \microtypecontext on input line 23.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1169,12 +1165,12 @@ Package caption Info: End \AtBeginDocument code.
 
 
 Package tabfigures Warning: There is no \figureversion to support tabular figur
-es on input line 22.
+es on input line 23.
 
 ABD: EveryShipout initializing macros
 \c@lstlisting=\count160
 \AtBeginShipoutBox=\box45
-Package hyperref Info: Link coloring ON on input line 22.
+Package hyperref Info: Link coloring ON on input line 23.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
@@ -1184,9 +1180,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count161
 )
-LaTeX Info: Redefining \ref on input line 22.
-LaTeX Info: Redefining \pageref on input line 22.
-LaTeX Info: Redefining \nameref on input line 22.
+LaTeX Info: Redefining \ref on input line 23.
+LaTeX Info: Redefining \pageref on input line 23.
+LaTeX Info: Redefining \nameref on input line 23.
 
 (./workbook-2011.out) (./workbook-2011.out)
 \@outlinefile=\write5
@@ -1196,33 +1192,29 @@ LaTeX Info: Redefining \nameref on input line 22.
 
 Package geometry Warning: `a5paper': not available in `\newgeometry'; skipped.
 
-
-Package geometry Warning: `landscape': not available in `\newgeometry'; skipped
-.
-
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a5paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: landscape 
-* h-part:(L,W,R)=(14.45377pt, 568.60034pt, 14.45377pt)
-* v-part:(T,H,B)=(36.135pt, 366.8983pt, 18.06749pt)
-* \paperwidth=597.50787pt
-* \paperheight=421.10078pt
-* \textwidth=568.60034pt
-* \textheight=366.8983pt
+* modes: 
+* h-part:(L,W,R)=(14.45377pt, 392.19325pt, 14.45377pt)
+* v-part:(T,H,B)=(36.135pt, 543.30539pt, 18.06749pt)
+* \paperwidth=421.10078pt
+* \paperheight=597.50787pt
+* \textwidth=392.19325pt
+* \textheight=543.30539pt
 * \oddsidemargin=-57.81622pt
 * \evensidemargin=-57.81622pt
 * \topmargin=-65.04254pt
 * \headheight=10.84006pt
 * \headsep=18.06749pt
-* \topskip=9.0pt
+* \topskip=10.0pt
 * \footskip=0.0pt
-* \marginparwidth=99.58466pt
+* \marginparwidth=74.68849pt
 * \marginparsep=12.8401pt
 * \columnsep=10.0pt
-* \skip\footins=8.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -1234,35 +1226,214 @@ Package geometry Warning: `landscape': not available in `\newgeometry'; skipped
 
 (/Users/pmagwene/Library/texmf/tex/latex/lucida/t1hls.fd
 File: t1hls.fd 2005/09/15 font definitions for T1/hls (WaS/PCTeX/TUG)
-) [1
+)
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[1
 
 
 {/Users/pmagwene/Library/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.
-map}]
-(./workbook-2011.toc (/Users/pmagwene/Library/texmf/tex/latex/lucida/t1hlst.fd
+map}] (./workbook-2011.toc
+(/Users/pmagwene/Library/texmf/tex/latex/lucida/t1hlst.fd
 File: t1hlst.fd 2005/09/15 font definitions for T1/hlst (WaS/PCTeX/TUG)
-) [2
+)
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
 
 
+[2
 
-] [3] [4] [5]
-Overfull \hbox (2.24405pt too wide) detected at line 185
- [][]\T1/hlh/m/n/9 100[][]
+
+]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[3]
+Overfull \hbox (2.46594pt too wide) detected at line 136
+ [][]\T1/hlh/m/n/10 100[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 137
+ [][]\T1/hlh/m/n/10 100[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 138
+ [][]\T1/hlh/m/n/10 100[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 139
+ [][]\T1/hlh/m/n/10 100[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 140
+ [][]\T1/hlh/m/n/10 101[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 141
+ [][]\T1/hlh/m/n/10 101[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 142
+ [][]\T1/hlh/m/n/10 101[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 143
+ [][]\T1/hlh/m/n/10 102[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 144
+ [][]\T1/hlh/m/n/10 102[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 145
+ [][]\T1/hlh/m/n/10 102[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 146
+ [][]\T1/hlh/m/n/10 103[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 147
+ [][]\T1/hlh/m/n/10 104[][]
+ []
+
+
+Overfull \hbox (0.12971pt too wide) detected at line 148
+\T1/hlh/m/n/10 10.3.10 
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 148
+ [][]\T1/hlh/m/n/10 104[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 149
+ [][]\T1/hlh/m/n/10 107[][]
+ []
+
+
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[4]
+Overfull \hbox (2.87093pt too wide) detected at line 150
+ [][]\T1/hlh/b/n/10 110[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 151
+ [][]\T1/hlh/m/n/10 110[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 152
+ [][]\T1/hlh/m/n/10 110[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 160
+ [][]\T1/hlh/m/n/10 114[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 164
+ [][]\T1/hlh/m/n/10 115[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 165
+ [][]\T1/hlh/m/n/10 115[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 166
+ [][]\T1/hlh/m/n/10 116[][]
+ []
+
+
+Overfull \hbox (2.87093pt too wide) detected at line 169
+ [][]\T1/hlh/b/n/10 119[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 170
+ [][]\T1/hlh/m/n/10 119[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 171
+ [][]\T1/hlh/m/n/10 119[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 173
+ [][]\T1/hlh/m/n/10 120[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 176
+ [][]\T1/hlh/m/n/10 122[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 178
+ [][]\T1/hlh/m/n/10 124[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 179
+ [][]\T1/hlh/m/n/10 126[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 180
+ [][]\T1/hlh/m/n/10 128[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 181
+ [][]\T1/hlh/m/n/10 129[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 182
+ [][]\T1/hlh/m/n/10 129[][]
+ []
+
+
+Overfull \hbox (2.46594pt too wide) detected at line 185
+ [][]\T1/hlh/m/n/10 131[][]
  []
 
 )
 \tf@toc=\write6
 \openout6 = `workbook-2011.toc'.
 
- [6]
+
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[5]
 Package scrkbase Info: You've told me to redefine the font selection of the
 (scrkbase)             element `pagehead' that is an alias of element
-(scrkbase)             `pageheadfoot' on input line 51.
+(scrkbase)             `pageheadfoot' on input line 52.
 
 
 Package scrkbase Warning: `pagehead' is only an alias of `pageheadfoot'.
 (scrkbase)                Font of page foot may also be changed on input line 5
-1.
+2.
 
 Chapter 1.
 
@@ -1281,33 +1452,96 @@ File: lstlang2.sty 2004/09/05 1.3 listings language file
 )
 (/usr/local/texlive/2011/texmf-dist/tex/latex/listings/lstlang3.sty
 File: lstlang3.sty 2004/09/05 1.3 listings language file
-) [7
+)
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
 
+
+[6
 
 
 ]
-[8] [9] [10]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\lstinline' on input line 408.
+
+[7]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[8]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[9]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[10]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
 
 [11]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\lstinline' on input line 444.
+(hyperref)                removing `\lstinline' on input line 407.
 
-[12]) (./hands-on1/acquainted-python.tex [13]
+
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[12]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\lstinline' on input line 443.
+
+
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[13]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[14]) (./hands-on1/acquainted-python.tex
 (/usr/local/texlive/2011/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (/usr/local/texlive/2011/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/listings/lstlang1.sty
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[15] (/usr/local/texlive/2011/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
-) [14]
-[15] [16] [17] [18]) (./hands-on1/intro-litprogramming.tex
-(/usr/local/texlive/2011/texmf-dist/tex/latex/listings/lstlang1.sty
+)
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[16]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[17]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[18]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[19]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[20]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[21]) (./hands-on1/intro-litprogramming.tex
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[22] (/usr/local/texlive/2011/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (/usr/local/texlive/2011/texmf-dist/tex/latex/listings/lstlang2.sty
@@ -1341,53 +1575,160 @@ File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 Package Listings Warning: Text dropped after begin of listing on input line 34.
 
 
-[19] [20])) [21]
+
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[23]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[24]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[25]))
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[26]
 Chapter 2.
 (./hands-on2/hands-on2.tex (./hands-on2/vector-operations-RandPython.tex
-[22
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
 
-]) (./hands-on2/functions-in-R.tex [23]
+
+[27
+
+]) (./hands-on2/functions-in-R.tex
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[28]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[29]
 Package Listings Info: Deleted | as a short reference for \lstinline on input l
-ine 95.
+ine 96.
 Package Listings Info: Made | a short reference for \lstinline on input line 10
-1.
-)
-(./hands-on2/functions-in-python.tex [24]) (./hands-on2/basic-stats-in-R.tex
-[25] [26] [27]
-<./figures/hands-on2/boxplot-labeled.pdf, id=1645, 481.77739pt x 426.27676pt>
+2.
+) (./hands-on2/functions-in-python.tex
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[30]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[31]) (./hands-on2/basic-stats-in-R.tex
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[32]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[33]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[34]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[35]
+<./figures/hands-on2/boxplot-labeled.pdf, id=1684, 481.77739pt x 426.27676pt>
 File: ./figures/hands-on2/boxplot-labeled.pdf Graphic file (type pdf)
 
 <use ./figures/hands-on2/boxplot-labeled.pdf>
 Package pdftex.def Info: ./figures/hands-on2/boxplot-labeled.pdf used on input 
-line 232.
-(pdftex.def)             Requested size: 139.65009pt x 123.56505pt.
- [28 <./figures/hands-on2/boxplot-labeled.pdf>]
-<./figures/hands-on2/beanplot-labeled.pdf, id=1717, 486.4025pt x 430.90178pt>
+line 228.
+(pdftex.def)             Requested size: 188.86917pt x 167.11235pt.
+
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[36 <./figures/hands-on2/boxplot-labeled.pdf>]
+<./figures/hands-on2/beanplot-labeled.pdf, id=1747, 486.4025pt x 430.90178pt>
 File: ./figures/hands-on2/beanplot-labeled.pdf Graphic file (type pdf)
 
 <use ./figures/hands-on2/beanplot-labeled.pdf>
 Package pdftex.def Info: ./figures/hands-on2/beanplot-labeled.pdf used on input
- line 272.
-(pdftex.def)             Requested size: 139.65009pt x 123.71564pt.
- [29 <./figures/hands-on2/beanplot-labeled.pdf>]
-Underfull \hbox (badness 4686) in paragraph at lines 377--380
-[]\T1/hlh/m/n/8 (+20) Carry out two-sample t-tests con-trast-ing [][][][] and
- []
+ line 268.
+(pdftex.def)             Requested size: 188.86917pt x 167.32118pt.
 
-[30])) [31]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[37 <./figures/hands-on2/beanplot-labeled.pdf>]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[38]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[39]))
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[40]
 Chapter 3.
-(./hands-on3/hands-on3.tex (./hands-on3/matrices-in-R.tex [32
+(./hands-on3/hands-on3.tex (./hands-on3/matrices-in-R.tex
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
 
-] [33])
-(./hands-on3/matrices-in-python.tex [34]
-Overfull \hbox (3.22444pt too wide) in paragraph at lines 84--88
-\T1/hlh/m/n/9 (-20) ar-ray ba-sics see the Numpy doc-u-men-ta-tion at [][]http:
-//docs.scipy.org/doc/[][]. 
- []
 
-[35]) (./hands-on3/matrix-stats.tex [36])
-(./hands-on3/visualizing-multivariate-R.tex [37])
-(./hands-on3/plotting-in-python.tex [38] [39] [40]
+[41
+
+]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[42]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[43]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[44]) (./hands-on3/matrices-in-python.tex
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[45]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[46]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[47]) (./hands-on3/matrix-stats.tex
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[48]) (./hands-on3/visualizing-multivariate-R.tex
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[49]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[50]) (./hands-on3/plotting-in-python.tex
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[51]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[52]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[53]
 
 Package Listings Warning: Text dropped after begin of listing on input line 181
 .
@@ -1400,209 +1741,480 @@ Package Listings Warning: Text dropped after begin of listing on input line 188
 Package Listings Warning: Text dropped after begin of listing on input line 194
 .
 
-[41] <./figures/hands-on3/mapfig.pdf, id=2310, 467.94934pt x 228.19272pt>
+
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[54]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[55] <./figures/hands-on3/mapfig.pdf, id=2371, 467.94934pt x 228.19272pt>
 File: ./figures/hands-on3/mapfig.pdf Graphic file (type pdf)
 
 <use ./figures/hands-on3/mapfig.pdf>
-Package pdftex.def Info: ./figures/hands-on3/mapfig.pdf used on input line 281.
+Package pdftex.def Info: ./figures/hands-on3/mapfig.pdf used on input line 283.
 
-(pdftex.def)             Requested size: 167.5818pt x 81.72102pt.
-)) [42 <./figures/hands-on3/mapfig.pdf>]
+(pdftex.def)             Requested size: 226.64531pt x 110.52359pt.
+))
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[56 <./figures/hands-on3/mapfig.pdf>]
 Chapter 4.
-(./hands-on4/hands-on4.tex [43
+(./hands-on4/hands-on4.tex
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
 
-] [44]
+
+[57
+
+]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[58]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[59]
 Package Listings Info: Deleted | as a short reference for \lstinline on input l
 ine 176.
 Package Listings Info: Made | a short reference for \lstinline on input line 18
 1.
- [45]) [46
 
-]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[60])
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[61]
 Chapter 5.
-(./hands-on5/hands-on5.tex (./hands-on5/eigenanalysis-in-R.tex [47
+(./hands-on5/hands-on5.tex (./hands-on5/eigenanalysis-in-R.tex
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
 
-]
-<./figures/hands-on5/eigen-transform.pdf, id=2497, 505.89pt x 505.89pt>
+
+[62
+
+] <./figures/hands-on5/eigen-transform.pdf, id=2543, 505.89pt x 505.89pt>
 File: ./figures/hands-on5/eigen-transform.pdf Graphic file (type pdf)
 
 <use ./figures/hands-on5/eigen-transform.pdf>
 Package pdftex.def Info: ./figures/hands-on5/eigen-transform.pdf used on input 
 line 100.
-(pdftex.def)             Requested size: 223.44098pt x 223.44139pt.
+(pdftex.def)             Requested size: 188.86917pt x 188.86688pt.
 
-<./figures/hands-on5/eigen-ECplot.pdf, id=2499, 505.89pt x 505.89pt>
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[63] <./figures/hands-on5/eigen-ECplot.pdf, id=2586, 505.89pt x 505.89pt>
 File: ./figures/hands-on5/eigen-ECplot.pdf Graphic file (type pdf)
 
 <use ./figures/hands-on5/eigen-ECplot.pdf>
 Package pdftex.def Info: ./figures/hands-on5/eigen-ECplot.pdf used on input lin
 e 114.
-(pdftex.def)             Requested size: 223.44098pt x 223.44139pt.
- [48 <./figures/hands-on5/eigen-transform.pdf>]) (./hands-on5/eigenanalysis-in-
-python.tex [49 <./figures/hands-on5/eigen-ECplot.pdf>]
-Overfull \hbox (6.50266pt too wide) in paragraph at lines 60--67
-\T1/hlh/m/n/9 (-20) Sort-ing and search-ing[][]), [][][][][][] (([][]Numpy: In-
-dex-ing Rou-tines[][]), and []
- []
+(pdftex.def)             Requested size: 188.86917pt x 188.86688pt.
+)
+(./hands-on5/eigenanalysis-in-python.tex
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
 
-) (./hands-on5/pca-in-R.tex [50]
-<./figures/hands-on5/iris-all-pca.pdf, id=2793, 505.89pt x 505.89pt>
+
+[64 <./figures/hands-on5/eigen-transform.pdf>]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[65 <./figures/hands-on5/eigen-ECplot.pdf>]) (./hands-on5/pca-in-R.tex
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[66] <./figures/hands-on5/iris-all-pca.pdf, id=2839, 505.89pt x 505.89pt>
 File: ./figures/hands-on5/iris-all-pca.pdf Graphic file (type pdf)
 
 <use ./figures/hands-on5/iris-all-pca.pdf>
 Package pdftex.def Info: ./figures/hands-on5/iris-all-pca.pdf used on input lin
 e 102.
-(pdftex.def)             Requested size: 223.44098pt x 223.44139pt.
-) (./hands-on5/pca-in-python.tex
-[51] [52 <./figures/hands-on5/iris-all-pca.pdf>])) [53]
-Chapter 6.
-(./hands-on7/hands-on7.tex [54
+(pdftex.def)             Requested size: 188.86917pt x 188.86688pt.
 
-] [55] [56]
-<./figures/hands-on7/zero.jpg, id=3185, 150.5625pt x 250.9375pt>
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[67]) (./hands-on5/pca-in-python.tex
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[68 <./figures/hands-on5/iris-all-pca.pdf>]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[69]))
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[70]
+Chapter 6.
+(./hands-on7/hands-on7.tex
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[71
+
+]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[72]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[73]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[74] <./figures/hands-on7/zero.jpg, id=3233, 150.5625pt x 250.9375pt>
 File: ./figures/hands-on7/zero.jpg Graphic file (type jpg)
 
 <use ./figures/hands-on7/zero.jpg>
 Package pdftex.def Info: ./figures/hands-on7/zero.jpg used on input line 225.
 (pdftex.def)             Requested size: 43.36104pt x 72.26999pt.
 
-<./figures/hands-on7/zero-vecs.jpg, id=3186, 93.4692pt x 172.0026pt>
+<./figures/hands-on7/zero-vecs.jpg, id=3234, 93.4692pt x 172.0026pt>
 File: ./figures/hands-on7/zero-vecs.jpg Graphic file (type jpg)
 
 <use ./figures/hands-on7/zero-vecs.jpg>
 Package pdftex.def Info: ./figures/hands-on7/zero-vecs.jpg used on input line 2
 28.
 (pdftex.def)             Requested size: 39.27248pt x 72.26999pt.
- [57 <./figures/hands-on7/zero.jpg> <./figures/hands-on7/zero-vecs.jpg>]
-Overfull \hbox (34.96239pt too wide) in paragraph at lines 288--289
-\T1/hlh/m/n/9 (-20) pre-built bi-na-ries for OS X can be found at [][]http://ww
-w.pythonmac.org/packages/[][].
+
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[75]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[76 <./figures/hands-on7/zero.jpg> <./figures/hands-on7/zero-vecs.jpg>]
+Overfull \hbox (0.26854pt too wide) in paragraph at lines 292--293
+\T1/hlh/m/n/10 (-20) place it some-where in your []\T1/hlst/m/n/10 PYTHONPATH\T
+1/hlh/m/n/10 (-20) . Also, down-load the JPEG im-age []\T1/hlst/m/n/10 chesterb
+w.jpg
  []
 
-[58]) [59] [60
 
-]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[77]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[78])
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[79]
 Chapter 7.
-(./hands-on8/hands-on8.tex [61
+(./hands-on8/hands-on8.tex
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[80
 
 ]
-<./figures/hands-on8/pch-symbols.pdf, id=3350, 438.10771pt x 393.6409pt>
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[81] <./figures/hands-on8/pch-symbols.pdf, id=3442, 438.10771pt x 393.6409pt>
 File: ./figures/hands-on8/pch-symbols.pdf Graphic file (type pdf)
 
 <use ./figures/hands-on8/pch-symbols.pdf>
 Package pdftex.def Info: ./figures/hands-on8/pch-symbols.pdf used on input line
  97.
-(pdftex.def)             Requested size: 248.6878pt x 223.44098pt.
- [62] [63 <./figures/hands-on8/pch-symbols.pdf>]
-<./figures/hands-on8/iris-cva-fancy.pdf, id=3549, 484.03246pt x 478.92969pt>
+(pdftex.def)             Requested size: 188.86917pt x 169.70074pt.
+
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[82 <./figures/hands-on8/pch-symbols.pdf>]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[83]
+<./figures/hands-on8/iris-cva-fancy.pdf, id=3635, 484.03246pt x 478.92969pt>
 File: ./figures/hands-on8/iris-cva-fancy.pdf Graphic file (type pdf)
 
 <use ./figures/hands-on8/iris-cva-fancy.pdf>
 Package pdftex.def Info: ./figures/hands-on8/iris-cva-fancy.pdf used on input l
-ine 181.
-(pdftex.def)             Requested size: 225.81873pt x 223.44098pt.
- [64 <./figures/hands-on8/iris-cva-fancy.pdf>]) [65]
+ine 182.
+(pdftex.def)             Requested size: 190.87683pt x 188.86917pt.
+
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[84 <./figures/hands-on8/iris-cva-fancy.pdf>])
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[85]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[86]
 Chapter 8.
 (./hands-on9/hands-on9.tex
-Overfull \hbox (11.1127pt too wide) in paragraph at lines 19--20
-[]\T1/hlh/m/n/9 (-20) Other func-tions of in-ter-ested re-lated to den-dro-gram
-s in-clude \T1/hlst/m/n/9 cuttree()
- []
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
 
-[66
+
+[87
 
 ]
-Overfull \hbox (18.23978pt too wide) in paragraph at lines 95--96
-[]\T1/hlh/m/n/9 (-20) You can down-load the code at [][]http://personality-proj
-ect.org/r/useful.r[][]
- []
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
 
-[67]) [68
 
-]
+[88]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[89])
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[90]
 Chapter 9.
-(./hands-on10/hands-on10.tex [69
+(./hands-on10/hands-on10.tex
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
 
-] [70] [71]) [72
+
+[91
 
 ]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[92]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[93]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[94])
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[95]
 Chapter 10.
-(./hands-on11/hands-on11.tex [73
+(./hands-on11/hands-on11.tex
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
 
-] [74] [75]
-Overfull \hbox (2.3967pt too wide) in paragraph at lines 144--145
-\T1/hlh/m/n/9 (-20) in-for-ma-tion on us-ing curl: [][]$\T1/hlst/m/n/9 http : /
- / curl . haxx . se / docs / manual . html$[][]\T1/hlh/m/n/9 (-20) . 
- []
 
-[76] [77] [78]
-(/usr/local/texlive/2011/texmf-dist/tex/latex/listings/lstlang1.sty
+[96
+
+]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[97]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[98]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[99]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[100]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[101]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[102]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[103]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[104] (/usr/local/texlive/2011/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (/usr/local/texlive/2011/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
-) [79]
+)
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
 
-Package Listings Warning: Text dropped after begin of listing on input line 410
+
+[105]
+
+Package Listings Warning: Text dropped after begin of listing on input line 409
 .
 
-[80] [81] [82]) [83
 
-]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[106]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[107]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[108])
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[109]
 Chapter 11.
-(./hands-on12/hands-on12.tex [84
+(./hands-on12/hands-on12.tex
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
 
-] [85] [86] [87] [88] [89]) [90]
+
+[110
+
+]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[111]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[112]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[113]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[114]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[115]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[116]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[117])
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[118]
 Chapter 12.
-(./hands-on13/hands-on13.tex [91
+(./hands-on13/hands-on13.tex
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[119
 
 ]
-Overfull \hbox (58.58214pt too wide) in paragraph at lines 94--95
-[][][][] 
- []
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
 
-[92] [93] [94]
-Overfull \hbox (3.23001pt too wide) in paragraph at lines 263--264
-[]\T1/hlh/m/n/9 (-20) This code in-tro-duces an-other con-cept we'll call the \
-T1/hlh/m/it/9 (-20) Producer-Consumer
- []
 
-[95] [96] [97] [98] [99] [100] (./hands-on13/pipeline.py [101] [102]))
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 100.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 100.
- [103
+[120]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
 
-]
-(./workbook-2011.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 100.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 100.
+
+[121]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[122]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[123]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[124]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[125]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[126]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[127]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[128]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[129]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[130]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[131] (./hands-on13/pipeline.py
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[132]
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[133]))
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 101.
+
+Overfull \vbox (1.57695pt too high) has occurred while \output is active []
+
+
+[134]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 101.
+ (./workbook-2011.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 101.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 101.
 Package rerunfilecheck Info: File `workbook-2011.out' has not changed.
 (rerunfilecheck)             Checksum: 11545822ECDD7698D30BD92CC551183E;10426.
  ) 
 Here is how much of TeX's memory you used:
- 32029 strings out of 493629
- 539177 string characters out of 3143323
- 1016889 words of memory out of 3000000
- 31100 multiletter control sequences out of 15000+200000
- 52246 words of font info for 267 fonts, out of 3000000 for 9000
+ 32140 strings out of 493629
+ 541471 string characters out of 3143323
+ 918952 words of memory out of 3000000
+ 31174 multiletter control sequences out of 15000+200000
+ 56900 words of font info for 287 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 68i,18n,71p,1154b,2562s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 68i,18n,71p,1167b,2554s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
-live/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></Users/pmagwene/
-Library/texmf/fonts/type1/bh/lucida/lbd.pfb></Users/pmagwene/Library/texmf/font
-s/type1/bh/lucida/lbi.pfb></Users/pmagwene/Library/texmf/fonts/type1/bh/lucida/
-lbme.pfb></Users/pmagwene/Library/texmf/fonts/type1/bh/lucida/lbmo.pfb></Users/
-pmagwene/Library/texmf/fonts/type1/bh/lucida/lbms.pfb></Users/pmagwene/Library/
-texmf/fonts/type1/bh/lucida/lbr.pfb></Users/pmagwene/Library/texmf/fonts/type1/
-bh/lucida/lsd.pfb></Users/pmagwene/Library/texmf/fonts/type1/bh/lucida/lsr.pfb>
-</Users/pmagwene/Library/texmf/fonts/type1/bh/lucida/lstb.pfb></Users/pmagwene/
-Library/texmf/fonts/type1/bh/lucida/lsto.pfb></Users/pmagwene/Library/texmf/fon
-ts/type1/bh/lucida/lstr.pfb>
-Output written on workbook-2011.pdf (103 pages, 1300937 bytes).
+exlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></Users/pmagwene
+/Library/texmf/fonts/type1/bh/lucida/lbd.pfb></Users/pmagwene/Library/texmf/fon
+ts/type1/bh/lucida/lbi.pfb></Users/pmagwene/Library/texmf/fonts/type1/bh/lucida
+/lbme.pfb></Users/pmagwene/Library/texmf/fonts/type1/bh/lucida/lbmo.pfb></Users
+/pmagwene/Library/texmf/fonts/type1/bh/lucida/lbms.pfb></Users/pmagwene/Library
+/texmf/fonts/type1/bh/lucida/lbr.pfb></Users/pmagwene/Library/texmf/fonts/type1
+/bh/lucida/lsd.pfb></Users/pmagwene/Library/texmf/fonts/type1/bh/lucida/lsr.pfb
+></Users/pmagwene/Library/texmf/fonts/type1/bh/lucida/lstb.pfb></Users/pmagwene
+/Library/texmf/fonts/type1/bh/lucida/lsto.pfb></Users/pmagwene/Library/texmf/fo
+nts/type1/bh/lucida/lstr.pfb>
+Output written on workbook-2011.pdf (134 pages, 1309826 bytes).
 PDF statistics:
- 5693 PDF objects out of 6186 (max. 8388607)
- 5396 compressed objects within 54 object streams
- 3378 named destinations out of 3580 (max. 500000)
- 39551 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 5816 PDF objects out of 6186 (max. 8388607)
+ 5487 compressed objects within 55 object streams
+ 3398 named destinations out of 3580 (max. 500000)
+ 40575 words of extra memory for PDF output out of 42996 (max. 10000000)
 

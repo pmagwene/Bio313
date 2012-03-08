@@ -7,8 +7,8 @@
 
 \lstset{%
 aboveskip=1ex,
-xleftmargin=0.5em,
-xrightmargin=3pt,
+xleftmargin=0.25em,
+xrightmargin=0.25em,
 breaklines=true,
 basicstyle={\ttfamily \small},
 breakatwhitespace=false,
@@ -50,7 +50,8 @@ language=#1}}
 
 
 \lstnewenvironment{code}
-{}{}
+{\lstset{backgroundcolor=\color{boxfill}}}
+{}
 
 \lstnewenvironment{python}
 {\lstset{language=python,backgroundcolor=\color{boxfill}}}

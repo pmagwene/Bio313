@@ -217,19 +217,18 @@ See pp.\,24-26  of the \href{ftp://selab.janelia.org/pub/software/hmmer3/3.0/Use
 \subsubsection{Testing the BLAST+ tools}
 
 Let's use |blastp| to query the NCBI BLAST servers for proteins with sequence homology to Rme1.
-
-
+%
 \begin{code}
 $ cd ncbi-blast-2.2.25+/bin
 $ ./blastp -db refseq_protein -evalue 2e-10 -remote < ~/tmp/Rme1.fas > ~/tmp/rme1-blast.out
 \end{code}
-
+%
 This runs a remote BLAST search with an E-value cutoff of $2^{-10}$. It might take a little while because it will access the NCBI servers to run the search. Note the use of both an input redirection operator as well as an output redirection operator.  If you want the output in HTML format for easy reading run it as follows and open the resulting file |rme1-blastout.html| in  your web browser:
-
+%
 \begin{code}
 $ ./blastp -db refseq_protein -evalue 2e-10 -remote -html < ~/tmp/Rme1.fas > ~/tmp/rme1-blast.html
 \end{code}
-
+%
 If all of the commands above worked (produced no errors, generated valid output) then you're ready to move on to implementing the pipelines.
 
 
@@ -296,7 +295,7 @@ $ ./pipeline1.sh Rme1.fas Rme1-report.out
 
 Our second pipeline will do the following:
 
-\begin{enumerate}
+\begin{enumerate}[noitemsep]
 \item Translate a nucleotide FASTA file to amino acid sequences
 \item Perform a multiple alignment of the amino acid sequences using MAFFT
 \item Place the translated output and multiple sequence alignments in separate files
@@ -316,20 +315,18 @@ from Bio.SeqRecord import SeqRecord
 from Bio.Data.CodonTable import TranslationError
 
 recs = SeqIO.parse(sys.stdin, "fasta")
-
 for rec in recs:
     try:
         newrec = SeqRecord(rec.seq.translate(), id=rec.id+"_translated",
-                                description=rec.description + ' (translated)')
+                           description=rec.description + ' (translated)')
         print newrec.format("fasta")
     except TranslationError:
         print rec.format("fasta")
-
 \end{codeblock}
 
 After saving the above code as |aatranslate.py|, make it executable by using |chmod +x|.  This script takes a set of FASTA nucleotide sequences from from |stdin| and translates them, sending the output to |stdout|.  This small script uses a number of classes and functions from the Biopython library that we'll discuss in greater detail in the next class session. Test your function as shown below. Notice how we use |cat| to pipe the fasta file to |aatranslate.py|.
 \begin{code}
-$ less unknowns.fas # confirm that the unknowns are nucleotid seqs, q to quit
+$ less unknowns.fas # confirm that the unknowns are nuc. seqs, q to quit
 $ cat unknowns.fas | ./aatranslate.py | less
 \end{code}
 
@@ -384,12 +381,12 @@ After setting the script to be executable you can run it like so:
 $ ./pipeline2.sh unknowns.fas unknowns-trans.fas unknowns-align.fas unknowns-report.txt
 \end{code}
 
-This will produce three files, one containing the translated amino acid sequences, the second giving the multiple alignment of those amino acid sequences, and the third with the PFAM output. Use less or a text editor to take a look at the generated files.
-
-At the beginning of this script we added a little bit of error checking code to insure that the correct number of arguments were provided on the command line.  If no arguments or the wrong number of arguments are provided the script gives the user a little usage information and exits gracefully. Try running the script as:
+This will produce three files, one containing the translated amino acid sequences, the second giving the multiple alignment of those amino acid sequences, and the third with the PFAM output. Use less or a text editor to take a look at the generated files. At the beginning of this script we added a little bit of error checking code to insure that the correct number of arguments were provided on the command line.  If no arguments or the wrong number of arguments are provided the script gives the user a little usage information and exits gracefully. Try running the script as:
+%
 \begin{code}
 $ ./pipeline2.sh    
 \end{code}
+%
 Compare this to what happens when you run |pipeline1.sh| without the arguments:
 \begin{code}
 $ ./pipeline1.sh    

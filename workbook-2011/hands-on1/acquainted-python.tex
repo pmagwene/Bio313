@@ -152,7 +152,7 @@ In addition to integers and reals (represented as floating points
 numbers), Python knows about complex numbers:
 %
 \begin{python}
->>> 1+2j    # Engineers often use 'j' to represent imaginary numbers
+>>> 1+2j  # Engineers use 'j' to represent imaginary numbers
 (1+2j)
 >>> (1 + 2j) + (0 + 3j)
 (1+5j)
@@ -185,16 +185,14 @@ For example:
 >>> 1/2.0
 0.5    
 >>> cos(0.5)
-
 Traceback (most recent call last):
   File "<pyshell#2>", line 1, in -toplevel-
     cos(0.5)
 NameError: name 'cos' is not defined
->>> import math     # make the math module available
->>> math.cos(0.5) # access the cos() function in the math module
+>>> import math  # make the math module available
+>>> math.cos(0.5) # cos() function in the math module
 0.87758256189037276
->>> pi      # pi isn't defined in the default namespace
-
+>>> pi   # pi isn't defined in the default namespace
 Traceback (most recent call last):
   File "<pyshell#5>", line 1, in -toplevel-
     pi
@@ -314,9 +312,10 @@ larger list. The following code illustrates this concept:
 [2, 3, 4, 5, 6, 7]
 >>> y[2:-1] # the slice
 [2, 3, 4, 5, 6, 7, 8]
->>> y[-1:0] # how come this didn't work? see the next example...
+>>> y[-1:0] # how come this didn't work? 
 []
->>> y[-1:0:-2]  # slice from last to first, stepping backwards by 2
+# slice from last to first, stepping backwards by 2
+>>> y[-1:0:-2]  
 [9, 7, 5, 3, 1]
 \end{python}
 
@@ -436,18 +435,14 @@ namespace if you're using the IPython PyLab or QtConsole configurations. Here ar
 \begin{python}
 >>> from pylab import * # only necessary if not using pylab
 >>> import numpy as np # use a shorter alias
-
-# load the turtle data using the numpy.loadtxt function (see ?np.loadtxt)
-# we skipped the first row (header) and the first column (info about sex)
-# we'll see how to deal with more sophisticated data import next week
-
->>> turt = np.loadtxt('turtles.txt', skiprows=1, usecols=(1,2,3))
+# load the turtle data using the numpy.loadtxt function 
+# skipping the first row (header) and the first column 
+>>> turt = np.loadtxt('turtles.txt', skiprows=1, 
+                      usecols=(1,2,3))
 >>> turt.shape
 (48, 3)
-
 # draw bivariate scatter plot
 >>> scatter(turt[:,0], turt[:,1])
-
 # give the axes some labels and a title for the plot
 >>> xlabel('Length')
 >>> ylabel('Width')

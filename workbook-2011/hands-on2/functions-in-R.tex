@@ -18,7 +18,8 @@ the interpreter and then put it to use:
 %
 \begin{R}
 > myfunc <- function(x,y){
-+   x^2 + y^2     # don't type the '+' symbols, these show continuation lines
++ # don't type the '+' symbols, these show continuation lines
++   x^2 + y^2 
 + }
 
 > a <- 1:5
@@ -62,7 +63,7 @@ veclength <- function(x) {
 }
 
 unitvector <- function(x) {
-  # Given a numeric vector, returns a unit vector in the same direction
+  # Return a unit vector in the same direction as x
   x/veclength(x)
 }
 \end{R}

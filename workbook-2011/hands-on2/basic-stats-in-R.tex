@@ -18,9 +18,7 @@ operations. Consider the data set \lstinline!turtles.txt!:
   # output truncated
 > names(turtles)
 [1] "sex"    "length" "width"  "height"
->
 > # Now we'll apply the subset() function
->
 > turt.sub <- subset(turtles, select = -sex)
 > names(turt.sub)
 [1] "length" "width"  "height"
@@ -56,12 +54,10 @@ criteria. For example:
 > female.turts <- subset(turtles, sex == "f", select = -sex)
 > dim(female.turts)
 [1] 24  3
-
 # same for male turtles
 > male.turts <- subset(turtles, sex == "m", select = -sex)
 > dim(male.turts)
 [1] 24  3
-
 # gives only females with length > 125, all variables
 > big.females <- subset(turtles, sex == "f" & length > 125)    
 \end{R}

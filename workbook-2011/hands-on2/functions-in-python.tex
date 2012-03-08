@@ -80,13 +80,13 @@ Paths\textbar{}setting-paths{]}{]}.
 import numpy
 
 def veclength(x):
-    """Given a numeric vector, returns length of that vector""" 
+    """Calculate length of a vector x.""" 
     x = numpy.array(x)
     return numpy.sqrt(numpy.dot(x,x))
 
 
 def unitvector(x):
-    """Given a numeric vector, returns a unit vector in the same direction"""
+    """Return a unit vector in the same direction as x."""
     x = numpy.array(x)
     return x/veclength(x)
 \end{python}
@@ -100,11 +100,12 @@ To access your function use an \lstinline!import! statement:
 Help on function veclength in module vecgeom:
 
 veclength(x)
-    Given a numeric vector, returns length of that vector
+    Calculate length of a vector x.
 
 >>> vecgeom.veclength(x)
 6.164414002968976
->>> from vecgeom import * # import all functions from the vecgeom module
+# import all fxns from the vecgeom module
+>>> from vecgeom import * 
 >>> print vecgeom.unitvector(x)
 [-0.48666426 -0.48666426 -0.16222142 -0.16222142  0.          0.   
      0.16222142  0.32444284  0.32444284  0.48666426]

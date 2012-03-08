@@ -1,4 +1,4 @@
-\documentclass[9pt,oneside,bigheadings,tablecaptionabove]{scrbook}
+\documentclass[10pt,oneside,bigheadings,tablecaptionabove]{scrbook}
 \usepackage{scrpage2}
 
 \input{layoutpreamble.tex}
@@ -13,6 +13,7 @@
 \usepackage[colorlinks=true,
             citecolor=blue,
             linkcolor=black,
+            breaklinks=true,
             linktocpage]{hyperref}
 
 \usepackage[capitalize]{cleveref} % should always be loaded after hyperref
@@ -25,7 +26,7 @@
 
 \clearscrheadfoot
 \pagestyle{scrheadings}
-\newgeometry{twocolumn=false,a5paper,landscape,
+\newgeometry{twocolumn=false,a5paper,%landscape,
             top=0.5in,
             headheight=0.15in,
             headsep=0.25in,

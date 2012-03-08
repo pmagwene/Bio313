@@ -338,8 +338,7 @@ $ awk '$3 == "gene" && ($5 - $4) < 300 {print $0 }' \
 In this last example we added one more condition -- we looked for the word `Dubious' in the 9th field. The results indicate that a significant proportion of these small genes are classified as `Dubious'.
 
 \begin{bash}
-$ awk '$3 == "gene" && ($5 - $4) < 300 && match($9, "Dubious") {print $0 }' \
-    saccharomyces_cerevisiae.gff | wc -l
+$ awk '$3 == "gene" && ($5 - $4) < 300 && match($9, "Dubious") {print $0 }' saccharomyces_cerevisiae.gff | wc -l
      163
 \end{bash}
 
@@ -409,16 +408,13 @@ Here we introduced the |BEGIN| pattern. This pattern is carried out before any l
 
 \begin{code}[]
 # count pseudogenes
-$ awk -f fcount.awk  -v ftype="pseudogene" \ 
-    saccharomyces_cerevisiae.gff 
+$ awk -f fcount.awk  -v ftype="pseudogene" saccharomyces_cerevisiae.gff 
 
 # counts ARS sequences (origins of replication)
-$ awk -f fcount.awk  -v ftype="ARS" \
-    saccharomyces_cerevisiae.gff
+$ awk -f fcount.awk  -v ftype="ARS" saccharomyces_cerevisiae.gff
 
 # count tRNA genes
-$ awk -f fcount.awk  -v ftype="tRNA" \
-    saccharomyces_cerevisiae.gff
+$ awk -f fcount.awk  -v ftype="tRNA" saccharomyces_cerevisiae.gff
 \end{code}
 
 As a final example of using |awk|, let's say you wanted to look for all gene features that include reference to a particular gene family in the attribute field (column 9 of the GFF file). You could do something like this:
