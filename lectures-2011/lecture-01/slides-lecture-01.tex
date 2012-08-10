@@ -5,19 +5,19 @@
 %===========================================================
 % Title Info
 \title{Scientific Computing for Biologists}
-\subtitle{Biology 723\\
-Fall 2012\\
+\subtitle{Biology 313\\
+Fall 2010\\
 Tue 2:50-5:20
 }
 
 \author[P. Magwene]{Instructor: Paul M. Magwene}
 
-\institute[Bio 723]{
+\institute[Bio 313]{
 Email: paul.magwene@duke.edu\\
 Phone: 613-8159
 }
 
-\date{28 August 2012}
+\date{30 August 2011}
 
 \begin{document}
 %===========================================================
@@ -107,24 +107,6 @@ November 29 & Building Bioinformatics Pipelines III; Polishing the interface and
 \end{frame}
 %===========================================================
 
-%===========================================================
-\begin{frame}
-  \frametitle{Course Goals}
-
-\begin{itemize}
-
-\item Goal 1
-
-\item Goal 2
-
-\item Goal 3
-
-\end{itemize}
-
-\end{frame}
-%===========================================================
-
-
 
 
 %===========================================================
@@ -133,14 +115,14 @@ November 29 & Building Bioinformatics Pipelines III; Polishing the interface and
 
 \begin{itemize}
 
-\item Matloff, N. 2011. The Art of R Programming. 
+\item Janert, P. K. 2010. Data Analysis with Open Source Tools. O'Reilly, Cambridge.
 
 \item Downey, A.\ B., J.\ Elkner, and C.\ Meyers. How to think like a computer scientist: learning with Python. 
 \begin{itemize}
 	\item Available at \texttt{http://www.ibiblio.org/obp/thinkCSpy/}
 \end{itemize}
 
-\item Wickens, T.\ D. 1995. The geometry of multivariate statistics. 
+\item Wickens, T.\ D. 1995. The geometry of multivariate statistics. Lawrence Earlbaum Associates, New Jersey. 
 
 \end{itemize}
 
@@ -1201,6 +1183,86 @@ How literate programming can help to ensure your research is reproducible:
  \item Analyses can easily checked for correctness and reproduced from your literate code.
  \item Your literate code can serve as a template for future analyses, saving you time and the trouble of remembering all the gory details.
 \end{itemize}
+
+\end{frame}
+%===========================================================
+
+%===========================================================
+\begin{frame}
+  \frametitle{Tools for literate programming in R and Python}
+
+How literate programming can help to ensure your research is reproducible:
+
+\begin{itemize}
+
+ \item R -- Sweave; works together with \LaTeX\ to produce output.
+ \item Python -- Pweave; patterned after Sweave. Can produce \LaTeX\ output but also produce a text-based format called `reStructuredText' which can be converted to HTML or other formats
+\end{itemize}
+\end{frame}
+%===========================================================
+
+%===========================================================
+\begin{frame}[fragile]
+  \frametitle{Tools for literate programming in R and Python}
+
+Both Sweave and Pweave using a simple markup syntax called `noweb', where you weave your code into your description by putting it between \verb~<<>>=~ and \verb~@~ blocks.
+
+\smallskip
+Example:
+
+\begin{Code}{r}
+
+Here are some trivial R examples that will help to
+illustrate how Sweave works:
+
+<<>>=
+z <- 1:10
+mean(z)
+summary(z)
+z[z > 5]
+@
+
+The above text was a code block woven into my 
+description. It gets evaluated and integrated into 
+the output. Cool, eh?    
+\end{Code}
+
+
+\end{frame}
+%===========================================================
+
+%===========================================================
+\begin{frame}
+  \frametitle{Sweave output}
+
+Output produced by Sweave and \LaTeX\ for the code on the previous slide:
+
+
+\begin{center}
+\fcolorbox{black}{bg}{%
+\begin{minipage}{.8\textwidth}
+\includegraphics[width=\textwidth,trim=0in 5in 0in 0in,clip=true]{sweave-ex1.pdf}
+\end{minipage}}
+\end{center}
+
+
+\end{frame}
+%===========================================================
+
+
+%===========================================================
+\begin{frame}
+  \frametitle{Fancier pgfSweave output}
+
+There's a new package called pgfSweave that produce even nicer output (code highlighting, better figure formatting):
+
+\begin{center}
+\fcolorbox{black}{bg}{%
+\begin{minipage}{.75\textwidth}
+\includegraphics[width=\textwidth]{sweave-ex2.pdf}
+\end{minipage}}
+\end{center}
+
 
 \end{frame}
 %===========================================================
