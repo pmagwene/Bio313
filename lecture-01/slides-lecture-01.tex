@@ -35,9 +35,8 @@ Phone: 613-8159
 			\item Goals of course
 			\item Structure of lectures
 			\item Grading
-			\item Survey of previous training
 		\end{itemize}
-		\item Introduction to R and Python
+		\item Introduction to R
 		\begin{itemize}
 			\item Advantages of R and Python
 			\item R and Python Resources
@@ -61,7 +60,6 @@ Phone: 613-8159
 			\item Typically 60-75 minutes
 			\item Emphasize the mathematical basis of the methods/approaches from both a geometric and algebraic basis
 			\item Discuss algorithms underlying the methods
-			\item Highlight available R/Python libraries
 		\end{itemize}
 		
 	\item Hands-on
@@ -69,6 +67,7 @@ Phone: 613-8159
 			\begin{itemize}
 				\item Walk through some examples
 				\item Apply the techniques and concepts to real data
+				\item Highlight available R/Python libraries
 			\end{itemize}
 	
 \end{itemize}
@@ -85,20 +84,21 @@ Phone: 613-8159
 \renewcommand{\arraystretch}{1.1}
 \begin{tabular}{rp{3.5in}}
 \multicolumn{1}{c}{{\sl Date}} & \multicolumn{1}{c}{{\sl Topic}} \\
-August 30 & Introduction; Getting Acquainted with R and Python, Literate Programming \\
-September 6 & Data as Vectors and Exploratory Data Analysis; vector operations, dot product, correlation, regression as projection, univariate visualizations\\
-September 13 & Linear Algebra Review I; Descriptive statistics as matrix operations, multivariate visualizations \\
-September 20 & Linear Algebra Review II; Regression models \\
-September 27 & Eigenvectors and Eigenvalues; Principal Components Analysis \\
-October 4 & Singular Value Decomposition, Biplots, and Correspondence Analysis\\
-October 11 & \multicolumn{1}{c}{{\sc Fall Break}} \\
-October 18 & Discriminant analysis and Canonical Variate Analysis\\
-November 25 & Analyses based on Similarity/Distance I; Hierarchical and K-means clustering\\
-November 1 & Analyses based on Similarity/Distance II; Multidimensional scaling\\
-November 8 & Randomization and Monte Carlo Methods; Jackknife, Bootstrap\\
-November 15 & Building Bioinformatics Pipelines I; Pipes, redirection, subprocesses \\
-November 22 & Building Bioinformatics Pipelines II; Putting the concepts to work \\ 
-November 29 & Building Bioinformatics Pipelines III; Polishing the interface and generating publication quality graphics \\ 
+August 28 & Introduction; Getting Acquainted with R \\
+September 4 & Data as vectors; Vector operations: dot product, correlation, regression as projection \\
+September 11 & Linear Algebra Review I; Descriptive statistics as matrix operations, multivariate visualizations \\
+September 18 & Linear Algebra Review II; Regression models \\
+September 25 & Eigenvectors and Eigenvalues; Principal Components Analysis \\
+October 2 & Singular Value Decomposition, Biplots, and Correspondence Analysis\\
+October 9 & Discriminant analysis and Canonical Variate Analysis\\
+October 16 & \multicolumn{1}{c}{{\sc \alert{Fall Break}}} \\
+October 23 & Analyses based on Similarity/Distance I; Hierarchical and K-means clustering\\
+October 30 & Analyses based on Similarity/Distance II; Multidimensional scaling\\
+November 6 & Randomization and Monte Carlo Methods; Jackknife, Bootstrap, and Permutation Tests\\
+November 13 & Building Simulations in Python\\ 
+November 20 & Building Bioinformatics Pipelines I; Pipes, redirection, subprocesses \\
+November 27 & Building Bioinformatics Pipelines II; Putting the concepts to work \\ 
+
 
 \end{tabular}
 
@@ -111,15 +111,16 @@ November 29 & Building Bioinformatics Pipelines III; Polishing the interface and
 \begin{frame}
   \frametitle{Course Goals}
 
-\begin{itemize}
+\begin{enumerate}
 
-\item Goal 1
+\item Introduce multivariate statistics from a geometric perspective, emphasizing the geometry of vector spaces. 
 
-\item Goal 2
+\item Develop a good working knowledge of R (a statistical computing environment) and Python (a general purpose programming language).
 
-\item Goal 3
+\item Provide the tools and knowledge to conduct reproducible computational and statistical research.
 
-\end{itemize}
+
+\end{enumerate}
 
 \end{frame}
 %===========================================================
@@ -133,6 +134,8 @@ November 29 & Building Bioinformatics Pipelines III; Polishing the interface and
 
 \begin{itemize}
 
+\item Wickens, T.\ D. 1995. The geometry of multivariate statistics. 
+
 \item Matloff, N. 2011. The Art of R Programming. 
 
 \item Downey, A.\ B., J.\ Elkner, and C.\ Meyers. How to think like a computer scientist: learning with Python. 
@@ -140,7 +143,6 @@ November 29 & Building Bioinformatics Pipelines III; Polishing the interface and
 	\item Available at \texttt{http://www.ibiblio.org/obp/thinkCSpy/}
 \end{itemize}
 
-\item Wickens, T.\ D. 1995. The geometry of multivariate statistics. 
 
 \end{itemize}
 
@@ -153,21 +155,18 @@ November 29 & Building Bioinformatics Pipelines III; Polishing the interface and
   \frametitle{Supplementary Texts}
 \begin{itemize}
 
-\item R and Python
-\begin{itemize}
-    \item Jones, O. et al. 2009. Scientific programming and simulation using R. CRC Press.
-	\item Martelli, A. (2006). Python in a nutshell (2nd ed.). O'Reilly. 
-\end{itemize}
+
 \item Statistics
 \begin{itemize}
 	\item Krzanowski, W. J. 2003. Principles of multivariate analysis. Oxford University Press.
 	\item Sokal, R. R. and F. J. Rohlf. 1995. Biometry. W. H. Freeman.
 \end{itemize}
+
 \item Math
 \begin{itemize}
-	\item Hamilton, A. G. 1989. Linear algebra: an introduction with concurrent examples. Cambridge University Press.
-	
+	\item Hamilton, A. G. 1989. Linear algebra: an introduction with concurrent examples. Cambridge University Press.	
 \end{itemize}
+
 \end{itemize}
 
 \end{frame}
@@ -179,8 +178,10 @@ November 29 & Building Bioinformatics Pipelines III; Polishing the interface and
 \begin{itemize}
 \item Problem sets/programming assignments
 \begin{itemize}
-	\item 8-10 over the course of the semester
-	\item Prepared as `literate programming' documents
+	\item 10 homeworks over the course of the semester
+	\item Programming assignments should not be submitted until they produce correct results; I will provide you with scripts/corresponding data to check the correctness of your code
+	\item No credit for late assignments
+	\item Overall grade: assignments are worth one point each, for a total of 10 points for the semester. \alert{Final grades will be assigned based on this scale: 9+ pts = A, 8 = B, 7 = B-, 6 = C, 5 = F}
 \end{itemize}
 
 \end{itemize}
@@ -188,68 +189,14 @@ November 29 & Building Bioinformatics Pipelines III; Polishing the interface and
 \end{frame}
 %===========================================================
 
-%===========================================================
-\begin{frame}
-  \frametitle{Survey on Previous Background}
-\begin{itemize}
 
-\item Programming experience?
-\item Mathematical preparation?
-\begin{itemize}
-	\item Linear algebra
-\begin{itemize}
-	\item Matrix arithmetic - addition, subtraction, multiplication
-	\item Dot product - projection, angle between vectors
-	\item Matrix inverse
-	\item Determinant, rank, subspace
-	\item Eigenvectors/eigenvalues
-\end{itemize}
-\end{itemize}
-\item Statistical preparation?
-\begin{itemize}
-	\item Previous R/S-plus experience
-	\item Class in or self-study of multivariate techniques
-\end{itemize}
-
-\end{itemize}
-
-\end{frame}
-%===========================================================
-
-%===========================================================
-\begin{frame}
-  
-\begin{center}
-\LARGE{Introduction to R and Python}
-\end{center}
-
-\end{frame}
-%===========================================================
-
-%===========================================================
-\begin{frame}
-  \frametitle{Advantages of R and Python}
-\begin{itemize}
-
-\item Both R and Python can be used in an interactive mode
-
-\begin{itemize}
-	\item enter commands/instructions at an interactive prompt for immediate execution
-	\item facilitates exploratory analyses 
-\end{itemize}
-
-\item Large collection of libraries/packages are available for statistical and numerical analysis and visualization
-
-\item Relatively easy to learn
-
-\end{itemize}
-
-\end{frame}
-%===========================================================
 
 %===========================================================
 \begin{frame}
   \frametitle{Why Both R and Python?}
+
+The first half of the course is built around these use of the R programming language; in the second half of the course we will use both R and Python.
+
 \begin{itemize}
 
 \item R is geared toward statistical computing
@@ -277,16 +224,16 @@ November 29 & Building Bioinformatics Pipelines III; Polishing the interface and
 \end{frame}
 %===========================================================
 
+
 %===========================================================
 \begin{frame}
-
+  
 \begin{center}
-\LARGE{R Overview}
-
+\LARGE{Introduction to R}
 \end{center}
+
 \end{frame}
 %===========================================================
-
 
 %===========================================================
 \begin{frame}
@@ -372,163 +319,6 @@ November 29 & Building Bioinformatics Pipelines III; Polishing the interface and
 
 
 
-%===========================================================
-\begin{frame}
-
-\begin{center}
-\LARGE{Python Overview}
-
-\end{center}
-\end{frame}
-%===========================================================
-
-%===========================================================
-\begin{frame}
-  \frametitle{What is Python?}
-\begin{itemize}
-
-\item High-level scripting/programming language
-\begin{itemize}
-	\item simple syntax, easy to learn
-\end{itemize}
-
-\item Supports a variety of programming paradigms
-	\begin{itemize}
-		\item Procedural, object-oriented, some functional programming idioms
-	\end{itemize}
-
-\item Invented by a computer scientist named Guido van Rossum at the Dutch National Research Institute for Mathematics and Computer Science
-
-\item First publicly released in 1991
-
-\item Named after Monty Python's Flying Circus!
-\end{itemize}
-
-\end{frame}
-%===========================================================
-
-
-%===========================================================
-\begin{frame}
-  \frametitle{Advantages of Python}
-\begin{itemize}
-
-\item Active development
-\begin{itemize}
-	\item stable core
-	\item new language features being added
-\end{itemize}
-
-
-\item Extensive standard library
-\begin{itemize}	
-	\item wide range of programming tasks
-\end{itemize}
-
-\item Large user community
-\begin{itemize}
-	\item good support
-	\item extensive set of 3rd party libraries
-\end{itemize}
-
-\item Highly portable
-\begin{itemize}
-	\item available on pretty much any computing platform you're likely to run into
-\end{itemize}
-
-\item Open-source and Free!
-\end{itemize}
-
-\end{frame}
-%===========================================================
-
-%===========================================================
-\begin{frame}
-  \frametitle{Python Resources on the Web}
-\begin{itemize}
-
-\item Homepage
-\begin{itemize}
-	\item \texttt{http://www.python.org}
-\end{itemize}
-
-\item Third party modules and packages
-\begin{itemize}
-	\item The Python Package Index - \texttt{http://www.python.org/pypi}
-\end{itemize}
-
-\item Programming recipes/examples
-\begin{itemize}
-	\item ActiveState Python Cookbook - \texttt{http://aspn.activestate.com/ASPN/Cookbook/Python}
-\end{itemize}
-
-\end{itemize}
-
-\end{frame}
-%===========================================================
-
-%===========================================================
-\begin{frame}
-  \frametitle{Python Resources of Particular Interest}
-\begin{itemize}
-
-\item Numpy and SciPy
-\begin{itemize}
-	\item \texttt{http://www.scipy.org/}
-	\item linear algebra, statistical routines, numerical optimization
-\end{itemize}
-
-\item Matplotlib 
-\begin{itemize}
-	\item \texttt{http://matplotlib.sourceforge.net/}
-	\item 2D plotting library for Python (and now 3D too!)
-\end{itemize}
-
-\item BioPython
-\begin{itemize}
-	\item \texttt{http://biopython.org/}
-	\item Libraries for computational molecular biology
-\end{itemize}
-
-\item SimPy
-\begin{itemize}
-	\item \texttt{http://simpy.sourceforge.net/}
-	\item Discrete event simulation
-\end{itemize}
-
-\item Python Enthought Edition
-\begin{itemize}
-	\item \texttt{http://www.enthought.com/}
-	\item A distribution of Python and related packages (many geared toward scientific/numerical computing) for Windows, OS X, and linux
-\end{itemize}
-
-\end{itemize}
-
-\end{frame}
-%===========================================================
-
-%===========================================================
-\begin{frame}
-  \frametitle{Python Tutorials}
-\begin{itemize}
-
-\item Pilgrim, ``Dive Into Python"
-\begin{itemize}
-	\item \texttt{http://www.diveintopython.org/}
- 	\item for experienced programmers
-\end{itemize}
-
-\item Schuerer et al. `Introduction to Programming Using Python'
-\begin{itemize}
-	\item \texttt{http://www.pasteur.fr/formation/infobio/python/}
-	\item From the Pasteur Inst., aimed at biologists
-\end{itemize}
-
-\end{itemize}
-
-\end{frame}
-%===========================================================
-
 
 %===========================================================
 \begin{frame}
@@ -570,7 +360,7 @@ November 29 & Building Bioinformatics Pipelines III; Polishing the interface and
 \item Statement
 \begin{itemize}
 	\item an instruction that a computer program can execute
-	\item Example: \verb=print "Hello, World!"=
+	\item Example: \verb=print("Hello, World!")=
 \end{itemize}
 
 \item Operators
@@ -916,294 +706,7 @@ $years.in.school
 \end{itemize}
 
 \end{frame}
-%===========================================================
-
-
-
-
-
-
-%===========================================================
-\begin{frame}
-
-\begin{center}
-\LARGE{Basic Data Types, Structures \\ and Operators in Python}
-
-\end{center}
-\end{frame}
-%===========================================================
-
-%===========================================================
-\begin{frame}[fragile]
-  \frametitle{Numeric Data Types in Python}
-\begin{itemize}
-
-\item Floating point values
-\begin{Pcode}
->>> x = 10.0
->>> type(x)
-<type 'float'>
-\end{Pcode}
-
-\item Complex numbers
-\begin{Pcode}
->>> x = 1 + 1j
->>> type(x)
-<type 'complex'>
-\end{Pcode}
-
-\item Integers
-\begin{Pcode}
->>> x = 10
->>> type(x)
-<type 'int'>
-\end{Pcode}
-
-\end{itemize}
-
-\end{frame}
-%===========================================================
-
-%===========================================================
-\begin{frame}[fragile]
-  \frametitle{Additional Data Types in Python}
-\begin{itemize}
-
-\item Boolean(`bool')
-\begin{Pcode}
->>> x = True
->>> type(x)
-<type 'bool'>
->>> y = False
->>> type(y)
-<type 'bool'>
->>> 1 == 2
-False
->>> type(1 == 2)
-<type 'bool'>
-\end{Pcode}
-
-\item Character strings
-\begin{Pcode}
->>> x = 'Hello, world'
->>> y = "Hello, world"
->>> type(x), type(y)
-(<type 'str'>, <type 'str'>)
-\end{Pcode}
-
-\end{itemize}
-
-\end{frame}
-%===========================================================
-
-%===========================================================
-\begin{frame}[fragile]
-  \frametitle{Arithmetic Operators in Python}
-
-
-\begin{Pcode}
->>> 10 + 2 # addition
-12
->>> 10 - 2 # subtraction
-8
->>> 10 * 2 # muliplication
-20
->>> 10 / 2 # division
-5
->>> 11 / 2 # division (surprising answer!)
-5
->>> 11.0 / 2 # division (expected answer)
-5.5
->>> 10 **2 # exponentiation, ^ doesn't work in Python
-100
->>> from math import * # import all the standard math 
-                       # functions like sqrt, sin
->>> sqrt(10)
-3.1622776601683795
->>> 10 ** 0.5
-3.1622776601683795
-\end{Pcode}
-
-\end{frame}
-%===========================================================
-
-
-%===========================================================
-\begin{frame}[fragile]
-  \frametitle{Simple Data Structures in Python: Lists}
-
-Lists are the simplest 'built-in' data structure in Python, and like R lists they
-are ordered collections of arbitrary objects.
-
-\begin{itemize}
-	\item Creating a Python list
-\begin{Pcode}	
->>> x = [2,4,6,8,'fred']
-\end{Pcode}
-
-	\item Python lists have length (possibly zero)
-\begin{Pcode}	
->>> len(x)
-5
-\end{Pcode}
-
-\item Python lists are zero-indexed, this means you can access list elements \texttt{0} $\ldots$ \texttt{len(x)-1}
-
-\begin{Pcode}
->>> x[0]
-2
->>> x[3]
-8
->>> x[5]
-Traceback (most recent call last):
-  File "<pyshell#26>", line 1, in ?
-    x[5]
-IndexError: list index out of range
-\end{Pcode}
-
-\end{itemize}
-
-\end{frame}
-%===========================================================
-
-%===========================================================
-\begin{frame}[fragile]
-  \frametitle{Simple Data Structures in Python: Tuples}
-
-Python `tuples' are like lists, but they are immutable, meaning that they can't be changed once you create them.
-
-\begin{itemize}
-	\item Creating a Python tuple
-\begin{Pcode}	
->>> y = (2,4,6,8,'fred') # rounded parentheses
-\end{Pcode}
-
-	\item Tuples have length (possibly zero) and are zero indexe
-\begin{Pcode}	
->>> len(y)
-5
->>> y[0]
-\end{Pcode}
-
-\item Tuples can't be changed after creation.
-
-\begin{Pcode}
->>> x = [2,4,6,8,'fred'] # create list
->>> y = (2,4,6,8,'fred') # create tuple
->>> x[1] = 'WOW'
->>> x
-[2, 'WOW', 6, 8, 'fred']
->>> y[1] = 'WOW'
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: 'tuple' object does not support item assignment    
-\end{Pcode}
-
-\end{itemize}
-
-\end{frame}
-%===========================================================
-
-
-
-
-%===========================================================
-\begin{frame}[fragile]
-  \frametitle{Simple Data Structures in Python: NumPy arrays}
-
-There is no 'built-in' Python data structure that behaves the same as an R vector.
-
-\begin{itemize}
-
-\item To get similar behavior in Python we use a data structure called an \texttt{array} from
-the package called \texttt{NumPy}. Like R vectors, \texttt{NumPy} arrays are homogenous collections of objects (typically numbers, but they can also hold references to other types of objects).
-
-
-	\item Creating Numeric arrays
-\begin{Pcode}	
->>> from numpy import array 
->>> x = array([2,4,6,8]) # note the inner list
->>> z = array(2,4,6,8) # this won't work (output omitted)
->>> y = array(["bob","fred","joe"])
-\end{Pcode}
-
-\item arrays have length and are indexed in a manner similar to lists.
-\begin{Pcode}	
->>> len(x)
-4
->>> x[2]
-6
-\end{Pcode}
-
-\end{itemize}
-
-\end{frame}
-%===========================================================
-
-%===========================================================
-\begin{frame}[fragile]
-  \frametitle{Arithmetic Operators Work on NumPy arrays}
-
-NumPy arrays work element-by-element, similar to R vectors
-
-\begin{minted}[fontsize=\footnotesize,baselinestretch=0.75]{python}
->>> import numpy
->>> from numpy import array
->>> x = array([2,4,6,8])
->>> y = array([0,1,2,3])
->>> x + y
-array([ 2,  5,  8, 11])
->>> x * y
-array([ 0,  4, 12, 24])
->>> x ** 2
-array([ 4, 16, 36, 64])
->>> from math import *
->>> sqrt(x)
-
-Traceback (most recent call last):
-  File "<pyshell#23>", line 1, in -toplevel-
-    sqrt(x)
-TypeError: only length-1 arrays can be converted to Python scalars.
->>> numpy.sqrt(x) # use sqrt function in the Numeric package
-array([ 1.41421356,  2.,  2.44948974,  2.82842712])
->>> numpy.sqrt(10) 
-3.1622776601683795
-\end{minted}
-
-\end{frame}
-%===========================================================
-
-%===========================================================
-\begin{frame}
-  \frametitle{Literate Programming}
-
-``Literate programming'' is a concept coined by Donald Knuth, a preeminent computer scientist:
-
-\begin{itemize}
-
- \item Programs are useless with descriptions
- \item Descriptions should be literate, not comments in code or typical reference manuals. 
- \item The code in the descriptions should work.
-\end{itemize}
-
-\end{frame}
-%===========================================================
-
-%===========================================================
-\begin{frame}
-  \frametitle{Literate Programming and Reproducible Research}
-
-How literate programming can help to ensure your research is reproducible:
-
-\begin{itemize}
-
- \item The steps of your analyses are explicitly described, both as written text and the code and function calls used.
- \item Analyses can easily checked for correctness and reproduced from your literate code.
- \item Your literate code can serve as a template for future analyses, saving you time and the trouble of remembering all the gory details.
-\end{itemize}
-
-\end{frame}
-%===========================================================
+%=========================================================== 
 
 
 
@@ -1214,7 +717,6 @@ How literate programming can help to ensure your research is reproducible:
 \begin{itemize}
 
  \item Try it out - programming involves experimentation
- \item Don't reinvent the wheel - it's usually worth spending some time finding out if someone has already written code that does what you need.
  \item Practice - learning to program, like learning a foreign language, requires lots of practice.
  \item Persist - many new tools/concepts can be hard to grasp at first. Keep plugging away until you get that `Aha!' moment
 \end{itemize}
