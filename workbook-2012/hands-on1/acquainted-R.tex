@@ -3,16 +3,16 @@
 \subsection{Installing R}
 
 
-\subsection{Starting the default R GUI}
+The R website is at \url{http://www.r-project.org/}. I recommend that you spend a few minutes checking out the resources, documentation, and links on this page.   Download the appropriate R installer for your computer from the Comprehensive R Archive Network (CRAN). A direct link can be found at: \url{http://cran.stat.ucla.edu/}. As of mid August 2012 the latest R release is verison 2.15.1.
 
-Starting R is simple. If you're using Windows simply navigate to the R
-subfolder from the Start Menu. On a Unix/Linux system invoke the program by
-typing |R|. On \OSX start R by clicking the R icon from the Dock or in the
-Applications folder. The \OSX and Windows version of R provide a simple GUI
-interface that simplifies certain tasks. When you start up the R GUI you'll be
-presented with a single window, the R console. The rest of this document will
-assume you're using R under Windows or \OSX.
+The R installer will install appropriate icons under the |Start Menu| (Windows) or |Applications| Folder (OS X). On OS X it will install two icons -- ``R" and ``R64", corresponding to 32-bit and 64-bit versions of the executable.  The 64 bit version, which allows access to much larger amounts of your comptuer's RAM, is suitable for dealing with very large data sets. 
 
+
+\subsection{Starting and R Interactive Session}
+
+ The \OSX and Windows version of R provide a simple GUI
+interface for using R in interactive mode. When you start up the R GUI you'll be
+presented with a single window, the R console. See the your textbook, The Art of R Programming (AoRP) for a discussion of the difference between R's interactive and batch modes.
 
 \subsection{Accessing the Help System on R}
 
@@ -77,6 +77,24 @@ To get a list of the file in your current working directory use the
 The simplest way to use R is as a fancy calculator.
 %
 \begin{R}
+> 10 + 2 # addition
+[1] 12
+> 10 - 2 # subtraction
+[1] 8
+> 10 * 2 # multiplication
+[1] 20
+> 10 / 2 # division
+[1] 5
+> 10 ^ 2 # exponentiation
+[1] 100
+> 10 ** 2 # alternate exponentiation
+[1] 100
+> sqrt(10) # square root
+[1] 3.162278
+> 10 ^ 0.5 # same as square root
+[1] 3.162278
+> exp(1) # exponential function
+[1] 2.718282
 > 3.14 * 2.5^2
 [1] 19.625
 > pi * 2.5^2 # R knows about some constants such as Pi
@@ -167,9 +185,30 @@ above.
 
 \subsection{Working with Vectors in R}
 
+Vectors are the core data structure in R. Vectors store an ordered list of items all of the same type. Learning to compute effectively with vectors and one of the keys to efficient R programming.  Vectors in R always have a length (accessed with the |length()| function) and a type (accessed with the |typeof()| function).  
+
+The simplest way to create a vector at the interactive prompt is to use the |c()| function, which is short hand for `combine' or `concatenate'.
+
+\begin{R}
+> x <- c(2,4,6,8)
+[1] "double"
+> length(x)
+[1] 4
+> y <- c('joe','bob','fred')
+> typeof(y)
+[1] "character"
+> length(y)
+[1] 3
+> z <- c() # empty vector
+> length(z)
+[1] 0
+> typeof(z)
+[1] "NULL"
+\end{R}
+
 \subsubsection{Vector Arithmetic and Comparison}
 
-Remember that in R arithmetic operations work on vectors as well as on
+The basic R arithmetic operations work on vectors as well as on
 single numbers (in fact single numbers \emph{are} vectors).
 %
 \begin{R}
@@ -197,6 +236,7 @@ When vectors are not of the same length R `recycles' the elements of the
 shorter vector to make the lengths conform. In the example above
 |z| was treated as if it was the vector |(1, 4, 7, 11, 1)|.
 
+
 The comparison operators also work on vectors as shown below.
 Comparisons involving vectors return vectors of booleans.
 %
@@ -207,15 +247,35 @@ Comparisons involving vectors return vectors of booleans.
 [1]  TRUE FALSE  TRUE  TRUE  TRUE
 \end{R}
 
+If you try and apply arithmetic operations to non-numeric vectors, R will warn you of the error of your ways:
+%
+\begin{R}
+> w <- c('foo', 'bar', 'baz', 'qux')
+> w**2
+Error in w^2 : non-numeric argument to binary operator
+\end{R}
+%
+Note, however that the comparison operators can work with non-numeric vectors. The results you get will depend on the type of the elements in the vector.
+%
+\begin{R}
+>  w == 'bar'
+[1] FALSE  TRUE FALSE FALSE
+> w < 'cat'
+[1] FALSE  TRUE  TRUE FALSE
+\end{R}
+
 
 \subsubsection{Indexing Vectors}
 
 For a vector of length $n$, we can access the elements by the indices $1
-\ldots n$. Trying to access an element beyond these limits returns a special
+\ldots n$. We say that R vectors (and other data structures like lists) are `one-indexed'. Many other programming languages, such as Python, C, and Java, use zero-indexing where the elements of a data structure are accessed by the indices $0 \ldots n-1$. Indexing errors are a common source of bugs. When moving back and forth between different programming languages keep the appropriate indexing straight!
+
+Trying to access an element beyond these limits returns a special
 constant called |NA| (Not Available) that indicates missing or non-existent
 values.
 %
 \begin{R}
+> x <- c(2, 4, 6, 8, 10)
 > length(x)
 [1] 5
 > x[1]
@@ -293,19 +353,14 @@ this task.
 
 \subsection{Some Useful Functions}
 
-You've already seem a number of functions (e.g. |sin()|,
+You've already seem a number of functions (|c()|, |length()|, |sin()|,
 |log|, |length()|, etc). Functions are called by
 invoking the function name followed by parentheses containing zero or
 more \emph{arguments} to the function. Arguments can include the data
 the function operates on as well as settings for function parameter
 values. We'll discuss function arguments in greater detail below.
 
-\subsubsection{Creating vectors}
-
-An important function that you've used extensively but we've glossed
-over is the |c()| function. This is short for `concatenate' or
-`combine' and as you've seen it combines it's arguments to form a
-vector.
+\subsubsection{Creating longer vectors}
 
 For vectors of more than 10 or so elements it gets tiresome and error
 prone to create vectors using |c()|. For medium length vectors
@@ -323,7 +378,7 @@ Read 16 items
 When you invoke |scan()| without any arguments the function
 will read in a list of values separated by white space (usually spaces
 or tabs). Values are read until |scan()| encounters a blank
-line or the end of file (EOF) signal (platform dependent).
+line or the end of file (EOF) signal (platform dependent). We'll see how to read in data from files below.
 
 Note that we created a variable with the name |test.scores|.
 If you have previous programming experience you might be surprised that
@@ -363,7 +418,7 @@ parameters that the function uses. Some arguments are required, while
 others are optional and are assigned default values if not specified.
 
 Take for example the |log()| function. If you examine the help
-file for the |log()| function you'll see that it takes two
+file for the |log()| function (type |?log| now) you'll see that it takes two
 arguments, refered to as `|x|' and `|base|'. The
 argument |x| represents the numeric vector you pass to the
 function and is a required argument (see what happens when you type
@@ -383,6 +438,14 @@ following examples:
 [1] 0.5
 \end{R}
 
+Because base 2 and base 10 logarithms are fairly commonly used, there are convenient aliases for calling log with these bases.
+%
+\begin{R}
+> log2(8)
+[1] 3
+> log10(100)
+[1] 2    
+\end{R}
 
 
 \subsection{Simple Input in R}
