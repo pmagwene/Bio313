@@ -1,0 +1,102 @@
+\documentclass[10pt,oneside,bigheadings,tablecaptionabove]{scrbook}
+\usepackage{scrpage2}
+
+\input{layoutpreamble.tex}
+\input{fontpreamble.tex}
+\input{packages.tex}
+\input{codepreamble.tex}
+\input{macros.tex}
+\input{titlepage.tex}
+
+
+
+\usepackage[colorlinks=true,
+            citecolor=blue,
+            linkcolor=black,
+            breaklinks=true,
+            linktocpage]{hyperref}
+
+\usepackage[capitalize]{cleveref} % should always be loaded after hyperref
+
+
+%% Document
+\begin{document}
+\savegeometry{oldgeom}
+
+
+\clearscrheadfoot
+\pagestyle{scrheadings}
+\newgeometry{twocolumn=false,a5paper,%landscape,
+            top=0.5in,
+            headheight=0.15in,
+            headsep=0.25in,
+            bottom=0.25in,
+            left=0.2in,
+            right=0.2in,
+            footskip=0in}
+
+\titleLL
+\clearpage
+%\restoregeometry
+\loadgeometry{oldgeom}
+
+
+\tableofcontents
+\clearpage
+
+
+\clearscrheadfoot
+\setheadcolor{DarkRed!3}
+\ihead{\tikzhead\headmark}
+\ohead{\pagemark}
+\setkomafont{pagehead}{\normalfont\sffamily}
+\setkomafont{pagenumber}{\normalfont\sffamily}
+\pagestyle{scrheadings}
+\renewcommand*{\chapterpagestyle}{scrheadings}
+
+
+\chapter{Getting your feet wet with R}
+\input{./hands-on1/hands-on1.tex}
+
+
+% \chapter{Data structures and functions in R and Python}
+% \input{./hands-on2/hands-on2.tex}
+
+% \chapter{Matrices and matrix operations in R and Python}
+% \input{./hands-on3/hands-on3.tex}
+
+% \chapter{Regression models in R}
+% \input{./hands-on4/hands-on4.tex}
+
+% \chapter{Eigenanalysis and PCA}
+% \input{./hands-on5/hands-on5.tex}
+
+% \chapter{Singular value decomposition}
+% \input{./hands-on7/hands-on7.tex}
+
+% \chapter{Discriminant Analysis}
+% \input{./hands-on8/hands-on8.tex}
+
+% \chapter{Hierarchical clustering, minimum spanning trees, and multidimensional scaling}
+% \input{./hands-on9/hands-on9.tex}
+
+% \chapter{Clustering via K-means and Gaussian mixture modeling}
+% \input{./hands-on10/hands-on10.tex}
+
+% \chapter{Building a Bioinformatics Pipeline, Part I}
+% \input{./hands-on11/hands-on11.tex}
+
+% \chapter{Building a Bioinformatics Pipeline, Part II}
+% \input{./hands-on12/hands-on12.tex}
+
+% \chapter{Building a Bioinformatics Pipeline, Part III}
+% \input{./hands-on13/hands-on13.tex}
+
+
+%
+%
+% \bibliography{../researchjournal-refs.bib}
+% \bibliographystyle{cbe}
+
+\end{document}
+

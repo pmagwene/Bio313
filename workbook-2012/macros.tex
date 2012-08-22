@@ -1,0 +1,38 @@
+
+\usepackage{xspace}
+
+% For nice fleur fancybreak
+%\usepackage{pifont} % for Dingbat fonts
+%\renewcommand{\pfbreakdisplay}{%
+%\ding{167}\quad\ding{167}\quad\ding{167}}
+
+%\newcommand{\fleur}{\vspace*{0.75ex}\fancybreak{\pfbreakdisplay}\vspace*{0.75ex}}
+\newcommand{\edot}{\vspace*{0.5ex}\fancybreak{$\cdots$}\vspace*{0.5ex}}
+
+\newcommand{\latin}[1]{\textit{#1}}
+\newcommand{\ktilde}{$\sim$}
+
+
+% Math related
+\newcommand{\Mtx}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\Inv}[1]{\ensuremath{#1^{-1}}}
+
+% Other
+\newcommand{\OSX}{OS\,X\xspace}
+\newcommand{\numpy}{NumPy\xspace}
+
+
+
+\newcommand*\tikzhead{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[yshift=-0.35in] at (current page.north west)
+      {\begin{tikzpicture}[remember picture, overlay]
+        \path[fill=\headcolor] (0,0) rectangle
+          (\paperwidth,0.35in);
+       \end{tikzpicture}
+      };
+   \end{tikzpicture}}
+\newcommand*\headcolor{DarkRed}
+\newcommand*\setheadcolor[1]{\renewcommand*\headcolor{#1}}
+
+

@@ -1,0 +1,27 @@
+
+\definecolor{Dark}{gray}{.2}
+\definecolor{MedDark}{gray}{.4}
+\definecolor{Medium}{gray}{.6}
+\definecolor{Light}{gray}{.8}
+
+\newlength{\tpheight}\setlength{\tpheight}{0.9\textheight}
+\newlength{\txtheight}\setlength{\txtheight}{0.9\tpheight}
+\newlength{\tpwidth}\setlength{\tpwidth}{0.9\textwidth}
+\newlength{\txtwidth}\setlength{\txtwidth}{0.9\tpwidth}
+\newlength{\drop}
+
+\newcommand*{\titleLL}{\begingroup% Lost Languages
+\drop=0.1\txtheight
+\fboxsep 0.5\baselineskip
+\sffamily
+\vspace*{\drop}
+\centering
+{\textcolor{DarkRed}{\Huge Bio 723}}\par
+\vspace{0.5\drop}
+\colorbox{black}{\textcolor{white}{\normalfont\itshape\Large Scientific Computing for Biologists}}\par
+\vspace{\drop}
+{\Large Paul M. Magwene}\par
+\vfill
+{\large Fall 2012}\par
+\vspace*{\drop}
+\endgroup}

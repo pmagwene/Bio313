@@ -1,0 +1,550 @@
+\section{Getting Acquainted with R}
+
+\subsection{Installing R}
+
+
+\subsection{Starting the default R GUI}
+
+Starting R is simple. If you're using Windows simply navigate to the R
+subfolder from the Start Menu. On a Unix/Linux system invoke the program by
+typing |R|. On \OSX start R by clicking the R icon from the Dock or in the
+Applications folder. The \OSX and Windows version of R provide a simple GUI
+interface that simplifies certain tasks. When you start up the R GUI you'll be
+presented with a single window, the R console. The rest of this document will
+assume you're using R under Windows or \OSX.
+
+
+\subsection{Accessing the Help System on R}
+
+R comes with fairly extensive documentation and a simple help system. You can
+access HTML versions of R documentation under the Help menu in the GUI. The
+HTML documentation also includes information on any packages you've installed.
+Take a few minutes to browse through the R HTML documentation.
+
+The help system can be invoked from the console itself using the
+|help| function or the |?| operator.
+%
+\begin{R}
+> help(length)
+> ?length
+> ?log
+\end{R}
+%
+What if you don't know the name of the function you want? You can use
+the |help.search()| function.
+%
+\begin{R}
+> help.search("log")
+\end{R}
+%
+In this case |help.search("log")| returns all the functions with
+the string `log' in them. For more on |help.search| type
+|?help.search|. Other useful help related functions include
+|apropos()| and |example()|.
+
+\subsection{Navigating Directories in R}
+
+When you start the R environment your `working directory' (i.e.~the
+directory on your computer's file system that R currently `sees')
+defaults to a specific directory. On Windows this is usually the same
+directory that R is installed in, on \OSX it is typically your home
+directory. Here are examples showing how you can get information about
+your working directory and change your working directory.
+%
+\begin{R}
+> getwd()
+[1] "/Users/pmagwene"
+> setwd("/Users")
+> getwd()
+[1] "/Users"
+\end{R}
+%
+Note that on Windows you can change your working directory by using the
+|Change dir...| item under the |File| menu, while the corresponding item is found under the |Misc| menu on \OSX.
+
+To get a list of the file in your current working directory use the
+|list.files()| function.
+%
+\begin{R}
+> list.files()
+[1] "Shared" "pmagwene"
+\end{R}
+
+
+
+\subsection{Using R as a Calculator}
+
+The simplest way to use R is as a fancy calculator.
+%
+\begin{R}
+> 3.14 * 2.5^2
+[1] 19.625
+> pi * 2.5^2 # R knows about some constants such as Pi
+[1] 19.63495
+> cos(pi/3)
+[1] 0.5
+> sin(pi/3)
+[1] 0.8660254
+> log(10)
+[1] 2.302585
+> log10(10) # log base 10
+[1] 1
+> log2(10) # log base 2
+[1] 3.321928
+> (10 + 2)/(4-5)
+[1] -12
+> (10 + 2)/4-5 # compare the answer to the above
+[1] -2
+\end{R}
+%
+Be aware that certain operators have precedence over others. For example
+multiplication and division have higher precedence than addition and
+subtraction. Use parentheses to disambiguate potentially confusing
+statements.
+
+\begin{R}
+> sqrt(pi)
+[1] 1.772454
+> sqrt(-1)
+[1] NaN
+Warning message:
+NaNs produced in: sqrt(-1)
+> sqrt(-1+0i)
+[1] 0+1i
+\end{R}
+%
+What happened when you tried to calculate |sqrt(-1)|?, -1 is
+treated as a real number and since square roots are undefined for the
+negative reals, R produced a warning message and returned a special
+value called |NaN| (Not a Number). Note that square roots of
+negative complex numbers are well defined so |sqrt(-1+0i)|
+works fine.
+%
+\begin{R}
+> 1/0
+[1] Inf
+\end{R}
+Division by zero produces an object that represents infinite numbers.
+
+\subsection{Comparison Operators}
+
+You've already been introduced to the most commonly used arithmetic
+operators. Also useful are the comparison operators:
+%
+\begin{R}
+> 10 < 9  # less than
+[1] FALSE
+> 10 > 9  # greater than
+[1] TRUE
+> 10 <= (5 * 2) # less than or equal to
+[1] TRUE
+> 10 >= pi # greater than or equal to
+[1] TRUE
+> 10 == 10 # equals
+[1] TRUE
+> 10 != 10 # does not equal
+[1] FALSE
+> 10 == (sqrt(10)^2) # Surprised by the result? See below.
+[1] FALSE
+> 4 == (sqrt(4)^2) # Even more confused?
+[1] TRUE
+\end{R}
+%
+Comparisons return boolean values. Be careful to distinguish between
+|==| (tests equality) and |=| (the alternative
+assignment operator equivalent to |<-|).
+
+How about the last two statement comparing two values to the square of
+their square roots? Mathematically we know that both
+$(\sqrt{10})^2 = 10$ and $(\sqrt{4})^2 = 4$ are true statements. Why
+does R tell us the first statement is false? What we're running into
+here are the limits of computer precision. A computer can't represent
+$\sqrt 10$ exactly, whereas $\sqrt 4$ can be exactly represented.
+Precision in numerical computing is a complex subject and beyond the
+scope of this course. Later in the course we'll discuss some ways of
+implementing sanity checks to avoid situations like that illustrated
+above.
+
+\subsection{Working with Vectors in R}
+
+\subsubsection{Vector Arithmetic and Comparison}
+
+Remember that in R arithmetic operations work on vectors as well as on
+single numbers (in fact single numbers \emph{are} vectors).
+%
+\begin{R}
+> x <- c(2, 4, 6, 8, 10)
+> x * 2
+[1]  4  8 12 16 20
+> x * pi
+[1]  6.283185 12.566371 18.849556 25.132741 31.415927
+> y <- c(0, 1, 3, 5, 9)
+> x + y
+[1]  2  5  9 13 19
+> x * y
+[1]  0  4 18 40 90
+> x/y
+[1]      Inf 4.000000 2.000000 1.600000 1.111111
+> z <- c(1, 4, 7, 11)
+> x + z
+[1]  3  8 13 19 11
+Warning message:
+longer object length
+        is not a multiple of shorter object length in: x + z
+\end{R}
+%
+When vectors are not of the same length R `recycles' the elements of the
+shorter vector to make the lengths conform. In the example above
+|z| was treated as if it was the vector |(1, 4, 7, 11, 1)|.
+
+The comparison operators also work on vectors as shown below.
+Comparisons involving vectors return vectors of booleans.
+%
+\begin{R}
+> x > 5
+[1] FALSE FALSE  TRUE  TRUE  TRUE
+> x != 4
+[1]  TRUE FALSE  TRUE  TRUE  TRUE
+\end{R}
+
+
+\subsubsection{Indexing Vectors}
+
+For a vector of length $n$, we can access the elements by the indices $1
+\ldots n$. Trying to access an element beyond these limits returns a special
+constant called |NA| (Not Available) that indicates missing or non-existent
+values.
+%
+\begin{R}
+> length(x)
+[1] 5
+> x[1]
+[1] 2
+> x[4]
+[1] 8
+> x[6]
+[1] NA
+> x[-1]
+[1]  4  6  8 10
+> x[c(3,5)]
+[1]  6 10
+\end{R}
+%
+Negative indices are used to exclude particular elements. |x[-1]| returns all
+elements of |x| except the first. You can get multiple elements of a vector by
+indexing by another vector. In the example above |x[c(3,5)]| returns the third
+and fifth element of |x|.
+
+\subsubsection{Combining Indexing and Comparison}
+
+A very powerful feature of R is the ability to combine the comparison
+operators with indexing. This facilitates data filtering and subsetting.
+Some examples:
+%
+\begin{R}
+> x <- c(2, 4, 6, 8, 10)
+> x[x > 5]
+[1]  6  8 10
+> x[x < 4 | x > 6]
+[1]  2  8 10
+\end{R}
+%
+
+In the first example we retrieved all the elements of |x| that are larger than
+5 (read as `x where x is greater than 5'). In the second example we retrieved
+those elements of |x| that were smaller than four \emph{or} greater than six.
+The symbol \lstinline!|! is the `logical or' operator. Other logical operators
+include |&| (`logical and' or `intersection') and |!| (negation). Combining
+indexing and comparison is a powerful concept and one you'll probably find
+useful for analyzing your own data.
+
+\subsubsection{Generating Regular Sequences}
+
+Creating sequences of numbers that are separated by a specified value or
+that follow a particular patterns turns out to be a common task in
+programming. R has some built-in operators and functions to simplify
+this task.
+%
+\begin{R}
+> s <- 1:10
+> s
+ [1]  1  2  3  4  5  6  7  8  9 10
+> s <- 10:1
+> s
+ [1] 10  9  8  7  6  5  4  3  2  1
+> s <- seq(0.5,1.5,by=0.1)
+> s
+ [1] 0.5 0.6 0.7 0.8 0.9 1.0 1.1 1.2 1.3 1.4 1.5
+# 'by' is the 3rd argument so you don't have to specify it
+> s <- seq(0.5, 1.5, 0.33)
+> s
+[1] 0.50 0.83 1.16 1.49
+\end{R}
+
+|rep()| is another way to generate patterned data.
+%
+\begin{R}
+> rep(c("Male","Female"),3)
+[1] "Male"   "Female" "Male"   "Female" "Male"   "Female"
+> rep(c(T,T, F),2)
+[1]  TRUE  TRUE FALSE  TRUE  TRUE FALSE
+\end{R}
+
+
+\subsection{Some Useful Functions}
+
+You've already seem a number of functions (e.g. |sin()|,
+|log|, |length()|, etc). Functions are called by
+invoking the function name followed by parentheses containing zero or
+more \emph{arguments} to the function. Arguments can include the data
+the function operates on as well as settings for function parameter
+values. We'll discuss function arguments in greater detail below.
+
+\subsubsection{Creating vectors}
+
+An important function that you've used extensively but we've glossed
+over is the |c()| function. This is short for `concatenate' or
+`combine' and as you've seen it combines it's arguments to form a
+vector.
+
+For vectors of more than 10 or so elements it gets tiresome and error
+prone to create vectors using |c()|. For medium length vectors
+the |scan()| function is very useful.
+%
+\begin{R}
+> test.scores <- scan()
+1: 98 92 78 65 52 59 75 77 84 31 83 72 59 69 71 66
+17:
+Read 16 items
+> test.scores
+ [1] 98 92 78 65 52 59 75 77 84 31 83 72 59 69 71 66
+\end{R}
+%
+When you invoke |scan()| without any arguments the function
+will read in a list of values separated by white space (usually spaces
+or tabs). Values are read until |scan()| encounters a blank
+line or the end of file (EOF) signal (platform dependent).
+
+Note that we created a variable with the name |test.scores|.
+If you have previous programming experience you might be surprised that
+this works. Unlike most languages, R allows you to use periods in
+variable names. Descriptive variable names generally improve readability
+but they can also become cumbersome (e.g.
+|my.long.and.obnoxious.variable.name|). As a general rule of
+thumb use short variable names when working at the interpreter and more
+descriptive variable names in functions.
+
+\subsubsection{Useful Numerical Functions}
+
+Let's introduce some additional numerical functions that are useful for
+operating on vectors.
+%
+\begin{R}
+> sum(test.scores)
+[1] 1131
+> min(test.scores)
+[1] 31
+> max(test.scores)
+[1] 98
+> range(test.scores) # min,max returned as a vec of len 2
+[1] 31 98
+> sorted.scores <- sort(test.scores)
+> sorted.scores
+ [1] 31 52 59 59 65 66 69 71 72 75 77 78 83 84 92 98
+> w <- c(-1, 2, -3, 3)
+> abs(w) # absolute value function
+\end{R}
+
+
+\subsection{Function Arguments in R}
+
+Function arguments can specify the data that a function operates on or
+parameters that the function uses. Some arguments are required, while
+others are optional and are assigned default values if not specified.
+
+Take for example the |log()| function. If you examine the help
+file for the |log()| function you'll see that it takes two
+arguments, refered to as `|x|' and `|base|'. The
+argument |x| represents the numeric vector you pass to the
+function and is a required argument (see what happens when you type
+|log()| without giving an argument). The argument
+|base| is optional. By default the value of |base|
+is $e = 2.71828\ldots$. Therefore by default the |log()|
+function returns natural logarithms. If you want logarithms to a
+different base you can change the |base| argument as in the
+following examples:
+%
+\begin{R}
+> log(2) # log of 2, base e
+[1] 0.6931472
+> log(2,2) # log of 2, base 2
+[1] 1
+> log(2, 4) # log of 2, base 4
+[1] 0.5
+\end{R}
+
+
+
+\subsection{Simple Input in R}
+
+The \lstinline!c()! and \lstinline!scan()! functions are fine for
+creating small to medium vectors at the interpreter, but eventually
+you'll want to start manipulating larger collections of data. There are
+a variety of functions in R for retrieving data from files.
+
+The most convenient file format to work with are tab delimited text
+files. Text files have the advantage that they are human readable and
+are easily shared across different platforms. If you get in the habit of
+archiving data as text files you'll never find yourself in a situation
+where you're unable to retrieve important data because the binary data
+format has changed between versions of a program.
+
+\subsection{Using \lstinline!scan()! to input data}
+
+\lstinline!scan()! itself can be used to read data out of a file.
+Download the file \lstinline!algae.txt! from the class website and try
+the following (after changing your working directory):
+
+\begin{R}
+> algae <- scan('algae.txt')
+Read 12 items
+> algae
+ [1] 0.530 0.183 0.603 0.994 0.708 0.006 0.867 0.059 0.349 0.699 0.983 0.100
+\end{R}
+One of the things to be aware of when using \lstinline!scan()! is that
+if the data type contained in the file can not be coerced to doubles
+than you must specify the data type using the \lstinline!what! argument.
+The \lstinline!what! argument is also used to enable the use of
+\lstinline!scan()! with columnar data. Download \lstinline!algae2.txt!
+and try the following:
+
+\begin{R}
+> algae.table <- scan('algae2.txt', what=list('',double(0)))
+                        # note use of list argument to what
+> algae.table
+[[1]]
+ [1] "Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sep" "Oct" "Nov" "Dec"
+
+[[2]]
+ [1] 0.530 0.183 0.603 0.994 0.708 0.006 0.867 0.059 0.349 0.699 0.983 0.100
+
+> algae.table[[1]]
+ [1] "Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sep" "Oct" "Nov" "Dec"
+> algae.table[[2]]
+ [1] 0.530 0.183 0.603 0.994 0.708 0.006 0.867 0.059 0.349 0.699 0.983 0.100
+\end{R}
+Use help to learn more about \lstinline!scan()!.
+
+\subsection{Using \lstinline!read.table()! to input data}
+
+\lstinline!read.table()! (and it's derivates - see the help file)
+provides a more convenient interface for reading tabular data. Using the
+file \lstinline!turtles.txt!:
+
+\begin{R}
+> turtles <- read.table('turtles.txt', header=T)
+> turtles
+   sex length width height
+1    f     98    81     38
+2    f    103    84     38
+3    f    103    86     42
+  # output truncated
+> names(turtles)
+[1] "sex"    "length" "width"  "height"
+> length(turtles)
+[1] 4
+> length(turtles$sex)
+[1] 48
+\end{R}
+What kind of data structure is \lstinline!turtles!? What happens when
+you call the \lstinline!read.table()! function without specifying the
+argument \lstinline!header=T!?
+
+You'll be using the \lstinline!read.table()}!function frequently. Spend
+some time reading the documentation and playing around with different
+argument values (for example, try and figure out how to specify
+different column names on input).
+
+Note: \lstinline!read.table()! is more convenient but \lstinline!scan()!
+is more efficient for large files. See the R documentation for more
+info.
+
+\subsection{Basic Statistical Functions in R}
+
+There are a wealth of statistical functions built into R. Let's start to
+put these to use.
+
+If you wanted to know the mean carapace width of turtles in your sample
+you could calculate this simply as follows:
+
+\begin{R}
+> sum(turtles$width)/length(turtles$width)
+[1] 95.4375
+\end{R}
+Of course R has a built in \lstinline!mean()! function.
+
+\begin{R}
+mean(turtles$width) [1] 95.4375
+\end{R}
+One of the advantages of the built in \lstinline!mean()! function is
+that it knows how to operate on lists as well as vectors:
+
+\begin{R}
+> mean(turtles)
+      sex    length     width    height
+       NA 124.68750  95.43750  46.33333
+Warning message:
+argument is not numeric or logical: returning NA in: mean.default(X[[1]], ...)
+\end{R}
+Can you figure out why the above produced a warning message? Let's take
+a look at some more standard statistical functions:
+
+\begin{R}
+> min(turtles$width)
+[1] 74
+> max(turtles$width)
+[1] 132
+> range(turtles$width)
+[1]  74 132
+> median(turtles$width)
+[1] 93
+> summary(turtles$width)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
+  74.00   86.00   93.00   95.44  102.00  132.00
+> var(turtles$width) # variance
+[1] 160.6769
+> sd(turtles$width)  # standard deviation
+[1] 12.67584
+\end{R}
+
+
+\subsection{Simple Plots in R}
+
+One of the advantages of R is it's ability to produce a variety of plots
+and statistical graphics. Try out the following:
+
+\begin{R}
+> hist(turtles$width)  # histogram plot
+> hist(turtles$width,10) # produces a histogram with 10 bins
+> hist(turtles$width,breaks=10, xlab="Carapace Width", probability=T)
+> boxplot(turtles$width) # simple box plot
+# a fancy box plot showing multiple variables
+> boxplot(list(turtles$length, turtles$width,  turtles$height),
++        names=c("Carapace\nLength","Carapace\nWidth","Carapace\nHeight"),
++        ylab="millimeters")
+> title("Turtle Shell Variables")
+> plot(turtles$length, turtles$width)
+# how does this differ from the plot above?
+> plot(turtles$length ~ turtles$width)
+> plot(turtles$length, turtles$width,
++      xlab="Carapace Length(mm)", ylab="Carapace Width(mm)")
+> title("Relationship Between\nLength and Width")
+\end{R}
+
+
+To get a sense of some of the graphical power of R try the
+\lstinline!demo()! function:
+%
+\begin{R}
+> demo(graphics)
+\end{R}

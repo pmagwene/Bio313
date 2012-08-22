@@ -28,7 +28,7 @@ Phone: 613-8159
 %===========================================================
 \begin{frame}
   \frametitle{Overview of Lecture}
-  
+
 \begin{itemize}
 		\item Course Mechanics
 		\begin{itemize}
@@ -54,22 +54,22 @@ Phone: 613-8159
 \begin{frame}
   \frametitle{Class Structure}
 \begin{itemize}
-	\item Lectures	
-	
+	\item Lectures
+
 		\begin{itemize}
 			\item Typically 60-75 minutes
 			\item Emphasize the mathematical basis of the methods/approaches from both a geometric and algebraic basis
 			\item Discuss algorithms underlying the methods
 		\end{itemize}
-		
+
 	\item Hands-on
-	
+
 			\begin{itemize}
 				\item Walk through some examples
 				\item Apply the techniques and concepts to real data
 				\item Highlight available R/Python libraries
 			\end{itemize}
-	
+
 \end{itemize}
 
 \end{frame}
@@ -86,7 +86,7 @@ Phone: 613-8159
 \multicolumn{1}{c}{{\sl Date}} & \multicolumn{1}{c}{{\sl Topic}} \\
 August 28 & Introduction; Getting Acquainted with R \\
 September 4 & Data as vectors; Vector operations: dot product, correlation, regression as projection \\
-September 11 & Linear Algebra Review I; Descriptive statistics as matrix operations, multivariate visualizations \\
+September 11 & Linear Algebra Review I; Descriptive statistics as matrix operations \\
 September 18 & Linear Algebra Review II; Regression models \\
 September 25 & Eigenvectors and Eigenvalues; Principal Components Analysis \\
 October 2 & Singular Value Decomposition, Biplots, and Correspondence Analysis\\
@@ -95,9 +95,9 @@ October 16 & \multicolumn{1}{c}{{\sc \alert{Fall Break}}} \\
 October 23 & Analyses based on Similarity/Distance I; Hierarchical and K-means clustering\\
 October 30 & Analyses based on Similarity/Distance II; Multidimensional scaling\\
 November 6 & Randomization and Monte Carlo Methods; Jackknife, Bootstrap, and Permutation Tests\\
-November 13 & Building Simulations in Python\\ 
+November 13 & Building Simulations in Python\\
 November 20 & Building Bioinformatics Pipelines I; Pipes, redirection, subprocesses \\
-November 27 & Building Bioinformatics Pipelines II; Putting the concepts to work \\ 
+November 27 & Building Bioinformatics Pipelines II; Putting the concepts to work \\
 
 
 \end{tabular}
@@ -113,7 +113,7 @@ November 27 & Building Bioinformatics Pipelines II; Putting the concepts to work
 
 \begin{enumerate}
 
-\item Introduce multivariate statistics from a geometric perspective, emphasizing the geometry of vector spaces. 
+\item Introduce multivariate statistics from a geometric perspective, emphasizing the geometry of vector spaces.
 
 \item Develop a good working knowledge of R (a statistical computing environment) and Python (a general purpose programming language).
 
@@ -134,11 +134,11 @@ November 27 & Building Bioinformatics Pipelines II; Putting the concepts to work
 
 \begin{itemize}
 
-\item Wickens, T.\ D. 1995. The geometry of multivariate statistics. 
+\item Wickens, T.\ D. 1995. The geometry of multivariate statistics.
 
-\item Matloff, N. 2011. The Art of R Programming. 
+\item Matloff, N. 2011. The Art of R Programming.
 
-\item Downey, A.\ B., J.\ Elkner, and C.\ Meyers. How to think like a computer scientist: learning with Python. 
+\item Downey, A.\ B., J.\ Elkner, and C.\ Meyers. How to think like a computer scientist: learning with Python.
 \begin{itemize}
 	\item Available at \texttt{http://www.ibiblio.org/obp/thinkCSpy/}
 \end{itemize}
@@ -164,7 +164,7 @@ November 27 & Building Bioinformatics Pipelines II; Putting the concepts to work
 
 \item Math
 \begin{itemize}
-	\item Hamilton, A. G. 1989. Linear algebra: an introduction with concurrent examples. Cambridge University Press.	
+	\item Hamilton, A. G. 1989. Linear algebra: an introduction with concurrent examples. Cambridge University Press.
 \end{itemize}
 
 \end{itemize}
@@ -227,7 +227,7 @@ The first half of the course is built around these use of the R programming lang
 
 %===========================================================
 \begin{frame}
-  
+
 \begin{center}
 \LARGE{Introduction to R}
 \end{center}
@@ -497,17 +497,17 @@ The first half of the course is built around these use of the R programming lang
 Vectors are the simplest data structure in R
 \begin{itemize}
 	\item vectors represent an ordered list of items
-\begin{Rcode}	
+\begin{Rcode}
 > x <- c(2,4,6,8)
 > y <- c('joe','bob','fred')
 \end{Rcode}
 
 	\item vectors have length (possibly zero) and type
-\begin{Rcode}	
+\begin{Rcode}
 > typeof(x)
 [1] "double"
 > length(x)
-[1] 4		
+[1] 4
 > typeof(y)
 [1] "character"
 \end{Rcode}
@@ -525,8 +525,8 @@ Vectors are the simplest data structure in R
 Accesing the objects in a vector is accomplished by `indexing':
 \begin{itemize}
 	\item The elements of the vector are assigned indices $1 \ldots n$ where $n$ is the length of the vector
-	
-\begin{Rcode}	
+
+\begin{Rcode}
 > x <- c(2,4,6,8)
 > length(x)
 [1] 4
@@ -571,7 +571,7 @@ Accesing the objects in a vector is accomplished by `indexing':
 \begin{Rcode}
 > x <- c(1+1i, 2+1i, 'Fred', 10)
 > x
-[1] "1+1i" "2+1i" "Fred" "10"  
+[1] "1+1i" "2+1i" "Fred" "10"
 \end{Rcode}
 
 \end{itemize}
@@ -643,7 +643,7 @@ Accessing objects in Lists:
 
 \begin{itemize}
 
-\item Items in lists are accessed in a  different manner than vectors. 
+\item Items in lists are accessed in a  different manner than vectors.
 
 \begin{itemize}
 \item Typically you use double brackets (\texttt{[[]]})to return the element at index \texttt{i}
@@ -706,7 +706,7 @@ $years.in.school
 \end{itemize}
 
 \end{frame}
-%=========================================================== 
+%===========================================================
 
 
 
