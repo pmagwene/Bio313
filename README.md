@@ -1,6 +1,8 @@
 
 # Biology 313: Statistical Computing for Biologists
 
+* NOTE: As of August 2012 the latest version of this course material is at my [Bio 723 Github Repository](https://github.com/pmagwene/Bio723). *
+
 Bio 313 is a course I offer at Duke University.  The focus of this course is statistical computing for the biological sciences with an emphasis on common multivariate statistical methods and techniques for exploratory data analysis. A major goal of the course is to help graduate students in the biological sciences develop practical insights into methods that they are likely to encounter in their own research, and the potential advantages and pitfalls that come with their use. 
 
 In terms of mathematical perspectives, the course emphasize a geometric approach to understanding multivariate statistics.  I try to help students develop an intuition for the geometry of vector spaces and discuss topics like correlation and regression in terms of angles between vectors, dot products, and projection.
